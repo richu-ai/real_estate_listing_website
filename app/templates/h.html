@@ -1,0 +1,1670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium Real Estate Listings - Find your dream property" data-translate-key="metaDescription">
+    <title data-translate-key="pageTitle">Premium Real Estate Listings | Find Your Dream Property</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            margin-right: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        nav a.active {
+            background-color: var(--accent-color);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin: 0;
+        }
+
+        header h1 span {
+            color: var(--accent-color);
+        }
+
+        header h1 span[data-translate-key="logoPremium"] {
+            color: var(--accent-color);
+        }
+
+        .logo-tagline {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 0.1rem;
+        }
+
+        .language-switcher {
+            margin-left: 1.5rem;
+        }
+
+        .language-switcher select {
+            padding: 0.4rem 0.6rem;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .language-switcher select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero h2 b {
+            font-weight: 700;
+            color: var(--light-color);
+        }
+
+        .hero h2 b[data-translate-key="heroTitleBold"] {
+            font-weight: 700;
+            color: var(--light-color);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .search-bar {
+            display: flex;
+            max-width: 700px;
+            margin: 0 auto;
+            box-shadow: var(--shadow);
+            border-radius: 30px;
+            overflow: hidden;
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            border: none;
+            font-size: 1rem;
+            outline: none;
+            border-radius: 30px 0 0 30px; /* Rounded left corners */
+        }
+
+        .search-bar button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0 1.8rem;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1.1rem;
+            border-radius: 0 30px 30px 0; /* Rounded right corners */
+        }
+
+        .search-bar button:hover {
+            background-color: #c0392b;
+        }
+
+        .categories {
+            margin-top: 3rem;
+        }
+
+        .categories h2 {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            font-size: 2rem;
+            color: var(--dark-color);
+            position: relative;
+        }
+
+        .categories h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 0.5rem auto 0;
+        }
+
+        .categories h2 b {
+            font-weight: 700;
+        }
+
+        .categories h2 b[data-translate-key="categoriesTitleBold"] {
+            font-weight: 700;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .category {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .category:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .category-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .category-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .category:hover .category-img img {
+            transform: scale(1.05);
+        }
+
+        .category h3 {
+            padding: 1.2rem;
+            text-align: center;
+            background-color: white;
+            color: var(--dark-color);
+            font-size: 1.2rem;
+            margin-top: auto;
+            border-top: 1px solid #eee;
+        }
+
+        .category h3 b {
+            font-weight: 700;
+        }
+
+        .category h3 b[data-translate-key$="TitleBold"] {
+            font-weight: 700;
+        }
+
+        .chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 350px;
+            z-index: 1000;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .chatbot-toggle {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 60px;
+            height: 60px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+            transition: all 0.3s ease;
+        }
+
+        .chatbot-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .chatbot-toggle i {
+            font-size: 24px;
+        }
+
+        .chatbot-window {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transform: translateY(100%);
+            opacity: 0;
+            transition: all 0.3s ease;
+            height: 0;
+            margin-bottom: 70px;
+        }
+
+        .chatbot-window.active {
+            transform: translateY(0);
+            opacity: 1;
+            height: 500px;
+        }
+
+        .chatbot-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chatbot-header h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .chatbot-header button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .chatbot-messages {
+            height: 370px;
+            overflow-y: auto;
+            padding: 15px;
+            background-color: #f9f9f9;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 18px;
+            line-height: 1.4;
+            position: relative;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .bot-message {
+            background-color: #e9e9e9;
+            color: #333;
+            border-top-left-radius: 5px;
+            align-self: flex-start;
+        }
+
+        .user-message {
+            background-color: var(--secondary-color);
+            color: white;
+            border-top-right-radius: 5px;
+            margin-left: auto;
+        }
+
+        .chatbot-input {
+            display: flex;
+            padding: 10px;
+            background-color: white;
+            border-top: 1px solid #eee;
+        }
+
+        .chatbot-input input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .chatbot-input button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .chatbot-input button:hover {
+            background-color: #c0392b;
+        }
+
+        .typing-indicator {
+            display: flex;
+            padding: 10px 15px;
+            background-color: #e9e9e9;
+            border-radius: 18px;
+            width: fit-content;
+            margin-bottom: 15px;
+        }
+
+        .typing-indicator span {
+            height: 8px;
+            width: 8px;
+            background-color: #666;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 2px;
+            animation: bounce 1.5s infinite ease-in-out;
+        }
+
+        .typing-indicator span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-indicator span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes bounce {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-5px); }
+        }
+
+        .suggested-questions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .suggested-question {
+            background-color: #e9e9e9;
+            color: #333;
+            border: none;
+            border-radius: 15px;
+            padding: 6px 12px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .suggested-question:hover {
+            background-color: #ddd;
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column ul li a {
+            color: var(--light-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        .copyright b {
+            font-weight: 600;
+            color: #ccc;
+        }
+
+        .copyright b[data-translate-key="copyrightBrand"] {
+            font-weight: 600;
+            color: #ccc;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 0.8rem 1rem;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav {
+                margin-right: 0;
+                width: 100%;
+                justify-content: center;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav li {
+                margin-right: 0.8rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .logo-container {
+                margin-left: 0;
+                order: -1;
+            }
+            
+            .language-switcher {
+                margin-left: 0;
+                margin-top: 0.5rem;
+            }
+            
+            .hero {
+                padding: 3rem 1rem;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .search-bar {
+                flex-direction: column;
+                border-radius: 8px;
+            }
+            
+            .search-bar input {
+                border-radius: 4px;
+                margin-bottom: 0.5rem;
+            }
+            
+            .search-bar button {
+                border-radius: 4px;
+                padding: 1rem;
+            }
+            
+            .category-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .chatbot-container {
+                width: 90%;
+                right: 5%;
+                bottom: 10px;
+            }
+            
+            .chatbot-window.active {
+                height: 400px;
+            }
+            
+            .chatbot-messages {
+                height: 270px;
+            }
+            
+            .footer-content {
+                text-align: center;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Premium Real Estate Logo" class="logo">
+                    <div class="logo-text">
+                        <h1><span data-translate-key="logoPremium">Premium</span> <span data-translate-key="logoRealEstate">Real Estate</span></h1>
+                        <p class="logo-tagline" data-translate-key="logoTagline">Find your dream property</p>
+                    </div>
+                </div>
+
+                <nav>
+                    <ul>
+                        <li><a href="/admin"><b data-translate-key="navAdmin">Admin</b></a></li>
+                        <li><a href="/agent-dashboard" class="active"><b data-translate-key="navAgentPortal">Agent Portal</b></a></li>
+                        <li><a href="/valuation"><b data-translate-key="navValuation">Valuation</b></a></li>
+                        <li><a href="/ai"><b data-translate-key="navAI">AI Property Match</b></a></li>
+                    </ul>
+                </nav>
+
+                <div class="language-switcher">
+                    <label for="lang-select" class="sr-only" data-translate-key="langSelectLabel">Select Language:</label>
+                    <select id="lang-select">
+                        <option value="en">English</option>
+                        <option value="hi">हिन्दी</option>
+                        <option value="ml">മലയാളം</option>
+                        <option value="kn">ಕನ್ನಡ</option>
+                        <option value="ta">தமிழ்</option>
+                        <option value="te">తెలుగు</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <h2 data-translate-key="heroTitle">Find Your <b data-translate-key="heroTitleBold">Dream Property</b> Today</h2>
+                <p data-translate-key="heroDescription">Discover exclusive real estate listings tailored to your lifestyle and budget. Use our smart search or ask our AI assistant!</p>
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search by location, price, or property type..." data-translate-placeholder-key="searchPlaceholder">
+                    <button type="submit" id="searchButton"><i class="fas fa-search"></i></button>
+                </div>
+            </section>
+
+            <section class="categories">
+                 <h2 data-translate-key="categoriesTitle">Explore Our <b data-translate-key="categoriesTitleBold">Property Categories</b></h2>
+                <div class="category-grid">
+                    <div class="category" id="apartments" onclick="location.href='/apartments'">
+                        <div class="category-img">
+                             <!-- Placeholder image from Pexels -->
+                            <img src="https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Luxury Apartments">
+                        </div>
+                         <h3><b data-translate-key="categoryApartmentsTitleBold">Luxury Apartments</b></h3>
+                    </div>
+                    <div class="category" id="modern-houses" onclick="location.href='/modren-house'">
+                        <div class="category-img">
+                            <!-- Placeholder image from Pexels -->
+                            <img src="https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Modern Houses">
+                        </div>
+                        <h3><b data-translate-key="categoryHousesTitleBold">Modern Houses</b></h3>
+                    </div>
+                    <div class="category" id="vacant-land" onclick="location.href='/vacant-land'">
+                        <div class="category-img">
+                            <!-- Using Pexels instead of local path -->
+                            <img src="{{ url_for('static', filename='images/vacent-land.jpeg') }}" alt="Vacant Land">
+                        </div>
+                        <h3><b data-translate-key="categoryLandTitleBold">Vacant Land</b></h3>
+                    </div>
+                    <div class="category" id="cozy-cottages" onclick="location.href='/cozzy-cottage'">
+                        <div class="category-img">
+                            <!-- Placeholder image from Pexels -->
+                            <img src="https://images.pexels.com/photos/208736/pexels-photo-208736.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Cozy Cottages">
+                        </div>
+                        <h3><b data-translate-key="categoryCottagesTitleBold">Cozzy Cottages</b></h3>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- AI Chatbot Container -->
+        <div class="chatbot-container">
+            <div class="chatbot-toggle" id="chatbotToggle">
+                <i class="fas fa-comments"></i>
+            </div>
+            <div class="chatbot-window" id="chatbotWindow">
+                <div class="chatbot-header">
+                     <!-- Added data-translate-key -->
+                    <h3><i class="fas fa-robot"></i> <span data-translate-key="chatbotTitle">Real Estate Assistant</span></h3>
+                    <button id="closeChatbot"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="chatbot-messages" id="chatbotMessages">
+                    <!-- Initial message will be added by JS -->
+                </div>
+                <div class="chatbot-input">
+                     <!-- Added data-translate-placeholder-key -->
+                    <input type="text" id="userInput" placeholder="Ask me about properties..." data-translate-placeholder-key="chatbotInputPlaceholder">
+                    <button id="sendMessage"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 data-translate-key="footerCompany">Company</h3>
+                    <ul>
+                        <li><a href="/about" data-translate-key="footerAbout">About Us</a></li>
+                        <li><a href="/team" data-translate-key="footerTeam">Our Team</a></li>
+                        <li><a href="/careers" data-translate-key="footerCareers">Careers</a></li>
+                        <li><a href="/blog" data-translate-key="footerBlog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 data-translate-key="footerServices">Services</h3>
+                    <ul>
+                        <li><a href="/buy" data-translate-key="footerBuy">Buy Property</a></li>
+                        <li><a href="/sell" data-translate-key="footerSell">Sell Property</a></li>
+                        <li><a href="/rent" data-translate-key="footerRent">Rent Properties</a></li>
+                        <li><a href="/valuation" data-translate-key="footerValuation">Property Valuation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 data-translate-key="footerSupport">Support</h3>
+                    <ul>
+                        <li><a href="/contact" data-translate-key="footerContact">Contact Us</a></li>
+                        <li><a href="/faq" data-translate-key="footerFAQ">FAQ</a></li>
+                        <li><a href="/privacy" data-translate-key="footerPrivacy">Privacy Policy</a></li>
+                        <li><a href="/terms" data-translate-key="footerTerms">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 data-translate-key="footerConnect">Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                 <!-- Added data-translate-key -->
+                <p data-translate-key="copyrightText">© <b data-translate-key="copyrightBrand">2024 Premium Real Estate Listings</b>. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // --- Translations Object ---
+        // IMPORTANT: Add accurate translations for all languages!
+        const translations = {
+            'en': {
+                metaDescription: "Premium Real Estate Listings - Find your dream property",
+                pageTitle: "Premium Real Estate Listings | Find Your Dream Property",
+                logoPremium: "Premium",
+                logoRealEstate: "Real Estate",
+                logoTagline: "Find your dream property",
+                navLogin: "Login",
+                navRegister: "Register",
+                navAdmin: "Admin",
+                navAgentPortal: "Agent Portal",
+                navAI: "AI Property Match", // Added for AI page link
+                langSelectLabel: "Select Language:",
+                heroTitle: "Find Your {bold} Today",
+                heroTitleBold: "Dream Property",
+                heroDescription: "Discover exclusive real estate listings tailored to your lifestyle and budget. Use our smart search or ask our AI assistant!",
+                searchPlaceholder: "Search by location, price, or property type...",
+                categoriesTitle: "Explore Our {bold}",
+                categoriesTitleBold: "Property Categories",
+                categoryApartmentsTitleBold: "Luxury Apartments",
+                categoryHousesTitleBold: "Modern Houses",
+                categoryLandTitleBold: "Vacant Land",
+                categoryCottagesTitleBold: "Cozy Cottages",
+                chatbotTitle: "Real Estate Assistant",
+                chatbotInitialGreeting: "Hello! I'm your real estate assistant. How can I help you find your perfect property today?",
+                chatbotSuggestion1: "Show luxury apartments",
+                chatbotSuggestion2: "What's the average price?",
+                chatbotSuggestion3: "How to contact an agent?",
+                chatbotInputPlaceholder: "Ask me about properties...",
+                chatbotResponseGreeting: "Hello! I'm your real estate assistant. How can I help you today?",
+                chatbotResponseApartments: "We have a great selection of luxury apartments. Our apartments feature modern amenities, great locations, and competitive pricing. You can view them here: [Apartments Link - *Replace*]",
+                chatbotResponseHouses: "We offer beautiful modern houses in various neighborhoods. Our homes range from cozy cottages to luxury estates. Check them out: [Houses Link - *Replace*]",
+                chatbotResponseLand: "We have several vacant land properties available. Great potential for building your dream home or investment: [Land Link - *Replace*]",
+                chatbotResponsePrice: "Property prices vary. For specific pricing, please browse the listings or contact an agent. On average:\n- Apartments: $300k - $1.2M\n- Houses: $500k - $2.5M\n- Land: $100k - $800k/acre",
+                chatbotResponseContact: "You can contact our agents via the 'Contact Us' page or call 1-800-REAL-EST. Would you like me to provide the contact page link?",
+                chatbotResponseContactYes: "Yes, provide link",
+                chatbotResponseContactHours: "What are office hours?",
+                chatbotResponseContactViewing: "Schedule a viewing",
+                chatbotResponseDefault: "I'm sorry, I didn't understand that. I can help with properties, prices, and agent contacts. How about trying one of these?",
+                chatbotSuggestionPriceRange: "What's the price range?",
+                chatbotSuggestionLocation: "Where are they located?",
+                chatbotSuggestionPets: "Are pets allowed?",
+                chatbotSuggestionModernHouses: "Show modern houses",
+                chatbotSuggestionPools: "Any with pools?",
+                chatbotSuggestionShowLand: "Show available land",
+                chatbotSuggestionZoning: "What are zoning restrictions?",
+                chatbotSuggestionWaterfront: "Any waterfront properties?",
+                chatbotSuggestionCheapest: "Show cheapest options",
+                chatbotSuggestionLuxury: "Show luxury properties",
+                footerCompany: "Company",
+                footerAbout: "About Us",
+                footerTeam: "Our Team",
+                footerCareers: "Careers",
+                footerBlog: "Blog",
+                footerServices: "Services",
+                footerBuy: "Buy Property",
+                footerSell: "Sell Property",
+                footerRent: "Rent Properties",
+                footerValuation: "Property Valuation",
+                footerSupport: "Support",
+                footerContact: "Contact Us",
+                footerFAQ: "FAQ",
+                footerPrivacy: "Privacy Policy",
+                footerTerms: "Terms of Service",
+                footerConnect: "Connect With Us",
+                copyrightText: "© {bold}. All rights reserved.",
+                copyrightBrand: "2024 Premium Real Estate Listings",
+            },
+            'hi': { // हिन्दी - *** Placeholder translations - PLEASE PROVIDE ACCURATE ONES ***
+                metaDescription: "प्रीमियम रियल एस्टेट लिस्टिंग - अपनी सपनों की संपत्ति खोजें",
+                pageTitle: "प्रीमियम रियल एस्टेट लिस्टिंग | अपनी सपनों की संपत्ति खोजें",
+                logoPremium: "प्रीमियम",
+                logoRealEstate: "रियल एस्टेट",
+                logoTagline: "अपनी सपनों की संपत्ति खोजें",
+                navLogin: "लॉगिन करें",
+                navRegister: "रजिस्टर करें",
+                navAdmin: "एडमिन",
+                navAgentPortal: "एजेंट पोर्टल",
+                navAI: "AI संपत्ति मिलान", // Added for AI page link
+                langSelectLabel: "भाषा चुनें:",
+                heroTitle: "आज ही अपनी {bold} ढूंढें",
+                heroTitleBold: "सपनों की संपत्ति",
+                heroDescription: "अपनी जीवनशैली और बजट के अनुरूप विशिष्ट रियल एस्टेट लिस्टिंग खोजें। हमारे स्मार्ट खोज का उपयोग करें या हमारे AI सहायक से पूछें!",
+                searchPlaceholder: "स्थान, मूल्य, या संपत्ति के प्रकार से खोजें...",
+                categoriesTitle: "हमारी {bold} एक्सप्लोर करें",
+                categoriesTitleBold: "संपत्ति श्रेणियाँ",
+                categoryApartmentsTitleBold: "लक्जरी अपार्टमेंट",
+                categoryHousesTitleBold: "आधुनिक मकान",
+                categoryLandTitleBold: "खाली ज़मीन",
+                categoryCottagesTitleBold: "आरामदायक कॉटेज",
+                chatbotTitle: "रियल एस्टेट सहायक",
+                chatbotInitialGreeting: "नमस्ते! मैं आपका रियल एस्टेट सहायक हूँ। आज मैं आपकी आदर्श संपत्ति खोजने में कैसे मदद कर सकता हूँ?",
+                chatbotSuggestion1: "लक्जरी अपार्टमेंट दिखाएं",
+                chatbotSuggestion2: "औसत कीमत क्या है?",
+                chatbotSuggestion3: "एजेंट से कैसे संपर्क करें?",
+                chatbotInputPlaceholder: "मुझसे संपत्तियों के बारे में पूछें...",
+                chatbotResponseGreeting: "नमस्ते! मैं आपका रियल एस्टेट सहायक हूँ। मैं आज आपकी कैसे मदद कर सकता हूँ?",
+                chatbotResponseApartments: "हमारे पास लक्ज़री अपार्टमेंट्स का शानदार चयन है। हमारे अपार्टमेंट्स में आधुनिक सुविधाएं, बेहतरीन स्थान और प्रतिस्पर्धी मूल्य निर्धारण शामिल हैं। आप उन्हें यहाँ देख सकते हैं: [Apartments Link - *Replace*]",
+                chatbotResponseHouses: "हम विभिन्न पड़ोस में सुंदर आधुनिक घर प्रदान करते हैं। हमारे घर आरामदायक कॉटेज से लेकर लक्जरी एस्टेट तक हैं। उन्हें देखें: [Houses Link - *Replace*]",
+                chatbotResponseLand: "हमारे पास कई खाली भूमि संपत्तियां उपलब्ध हैं। अपने सपनों का घर बनाने या निवेश के लिए बढ़िया क्षमता: [Land Link - *Replace*]",
+                chatbotResponsePrice: "संपत्ति की कीमतें अलग-अलग होती हैं। विशिष्ट मूल्य निर्धारण के लिए, कृपया लिस्टिंग ब्राउज़ करें या किसी एजेंट से संपर्क करें। औसतन:\n- अपार्टमेंट: $300k - $1.2M\n- मकान: $500k - $2.5M\n- भूमि: $100k - $800k/एकड़",
+                chatbotResponseContact: "आप 'हमसे संपर्क करें' पृष्ठ के माध्यम से हमारे एजेंटों से संपर्क कर सकते हैं या 1-800-REAL-EST पर कॉल कर सकते हैं। क्या आप चाहते हैं कि मैं संपर्क पृष्ठ लिंक प्रदान करूं?",
+                chatbotResponseContactYes: "हाँ, लिंक प्रदान करें",
+                chatbotResponseContactHours: "कार्यालय के घंटे क्या हैं?",
+                chatbotResponseContactViewing: "देखने का समय निर्धारित करें",
+                chatbotResponseDefault: "मुझे क्षमा करें, मुझे वह समझ नहीं आया। मैं संपत्तियों, कीमतों और एजेंट संपर्कों में मदद कर सकता हूं। इनमें से किसी एक को आज़माने के बारे में क्या ख़याल है?",
+                chatbotSuggestionPriceRange: "मूल्य सीमा क्या है?",
+                chatbotSuggestionLocation: "वे कहाँ स्थित हैं?",
+                chatbotSuggestionPets: "क्या पालतू जानवरों की अनुमति है?",
+                chatbotSuggestionModernHouses: "आधुनिक घर दिखाओ",
+                chatbotSuggestionPools: "कोई पूल वाला है?",
+                chatbotSuggestionShowLand: "उपलब्ध भूमि दिखाएँ",
+                chatbotSuggestionZoning: "ज़ोनिंग प्रतिबंध क्या हैं?",
+                chatbotSuggestionWaterfront: "कोई वाटरफ्रंट संपत्ति?",
+                chatbotSuggestionCheapest: "सबसे सस्ते विकल्प दिखाएं",
+                chatbotSuggestionLuxury: "लक्जरी संपत्तियां दिखाएं",
+                footerCompany: "कंपनी",
+                footerAbout: "हमारे बारे में",
+                footerTeam: "हमारी टीम",
+                footerCareers: "करियर",
+                footerBlog: "ब्लॉग",
+                footerServices: "सेवाएं",
+                footerBuy: "संपत्ति खरीदें",
+                footerSell: "संपत्ति बेचें",
+                footerRent: "किराए की संपत्तियाँ",
+                footerValuation: "संपत्ति मूल्यांकन",
+                footerSupport: "सहायता",
+                footerContact: "हमसे संपर्क करें",
+                footerFAQ: "सामान्य प्रश्न",
+                footerPrivacy: "गोपनीयता नीति",
+                footerTerms: "सेवा की शर्तें",
+                footerConnect: "हमसे जुड़ें",
+                copyrightText: "© {bold}. सर्वाधिकार सुरक्षित।",
+                copyrightBrand: "2024 प्रीमियम रियल एस्टेट लिस्टिंग",
+            },
+            'ml': { // മലയാളം - *** Placeholder translations - PLEASE PROVIDE ACCURATE ONES ***
+                metaDescription: "പ്രീമിയം റിയൽ എസ്റ്റേറ്റ് ലിസ്റ്റിംഗുകൾ - നിങ്ങളുടെ സ്വപ്ന പ്രോപ്പർട്ടി കണ്ടെത്തുക",
+                pageTitle: "പ്രീമിയം റിയൽ എസ്റ്റേറ്റ് ലിസ്റ്റിംഗുകൾ | നിങ്ങളുടെ സ്വപ്ന പ്രോപ്പർട്ടി കണ്ടെത്തുക",
+                logoPremium: "പ്രീമിയം",
+                logoRealEstate: "റിയൽ എസ്റ്റേറ്റ്",
+                logoTagline: "നിങ്ങളുടെ സ്വപ്ന പ്രോപ്പർട്ടി കണ്ടെത്തുക",
+                navLogin: "ലോഗിൻ ചെയ്യുക",
+                navRegister: "രജിസ്റ്റർ ചെയ്യുക",
+                navAdmin: "അഡ്മിൻ",
+                navAgentPortal: "ഏജന്റ് പോർട്ടൽ",
+                langSelectLabel: "ഭാഷ തിരഞ്ഞെടുക്കുക:",
+                heroTitle: "ഇന്ന് നിങ്ങളുടെ {bold} കണ്ടെത്തുക",
+                heroTitleBold: "സ്വപ്ന പ്രോപ്പർട്ടി",
+                heroDescription: "നിങ്ങളുടെ ജീവിതശൈലിക്കും ബഡ്ജറ്റിനും അനുയോജ്യമായ എക്സ്ക്ലൂസീവ് റിയൽ എസ്റ്റേറ്റ് ലിസ്റ്റിംഗുകൾ കണ്ടെത്തുക. ഞങ്ങളുടെ സ്മാർട്ട് തിരയൽ ഉപയോഗിക്കുക അല്ലെങ്കിൽ ഞങ്ങളുടെ AI അസിസ്റ്റന്റിനോട് ചോദിക്കുക!",
+                searchPlaceholder: "സ്ഥലം, വില, അല്ലെങ്കിൽ പ്രോപ്പർട്ടി തരം ഉപയോഗിച്ച് തിരയുക...",
+                categoriesTitle: "ഞങ്ങളുടെ {bold} പര്യവേക്ഷണം ചെയ്യുക",
+                categoriesTitleBold: "പ്രോപ്പർട്ടി വിഭാഗങ്ങൾ",
+                categoryApartmentsTitleBold: "ആഢംബര അപ്പാർട്ട്മെന്റുകൾ",
+                categoryHousesTitleBold: "ആധുനിക വീടുകൾ",
+                categoryLandTitleBold: "ഒഴിഞ്ഞ സ്ഥലം",
+                categoryCottagesTitleBold: "സുഖപ്രദമായ കോട്ടേജുകൾ",
+                chatbotTitle: "റിയൽ എസ്റ്റേറ്റ് അസിസ്റ്റന്റ്",
+                chatbotInitialGreeting: "ഹലോ! ഞാൻ നിങ്ങളുടെ റിയൽ എസ്റ്റേറ്റ് അസിസ്റ്റന്റ് ആണ്. നിങ്ങളുടെ തികഞ്ഞ പ്രോപ്പർട്ടി കണ്ടെത്താൻ ഇന്ന് ഞാൻ നിങ്ങളെ എങ്ങനെ സഹായിക്കും?",
+                chatbotSuggestion1: "ആഢംബര അപ്പാർട്ട്മെന്റുകൾ കാണിക്കുക",
+                chatbotSuggestion2: "ശരാശരി വില എത്രയാണ്?",
+                chatbotSuggestion3: "ഒരു ഏജന്റുമായി എങ്ങനെ ബന്ധപ്പെടാം?",
+                chatbotInputPlaceholder: "പ്രോപ്പർട്ടികളെക്കുറിച്ച് എന്നോട് ചോദിക്കൂ...",
+                 chatbotResponseGreeting: "ഹലോ! ഞാൻ നിങ്ങളുടെ റിയൽ എസ്റ്റേറ്റ് അസിസ്റ്റന്റ് ആണ്. ഇന്ന് ഞാൻ നിങ്ങളെ എങ്ങനെ സഹായിക്കും?",
+                chatbotResponseApartments: "ഞങ്ങൾക്ക് ആഢംബര അപ്പാർട്ട്മെന്റുകളുടെ മികച്ച ശേഖരം ഉണ്ട്. ഞങ്ങളുടെ അപ്പാർട്ട്മെന്റുകൾ ആധുനിക സൗകര്യങ്ങൾ, മികച്ച സ്ഥലങ്ങൾ, മത്സര വിലനിർണ്ണയം എന്നിവ അവതരിപ്പിക്കുന്നു. നിങ്ങൾക്ക് അവ ഇവിടെ കാണാം: [Apartments Link - *Replace*]",
+                chatbotResponseHouses: "വിവിധ അയൽപക്കങ്ങളിൽ ഞങ്ങൾ മനോഹരമായ ആധുനിക വീടുകൾ വാഗ്ദാനം ചെയ്യുന്നു. ഞങ്ങളുടെ വീടുകൾ സുഖപ്രദമായ കോട്ടേജുകൾ മുതൽ ആഢംബര എസ്റ്റേറ്റുകൾ വരെയാണ്. അവ പരിശോധിക്കുക: [Houses Link - *Replace*]",
+                chatbotResponseLand: "ഞങ്ങൾക്ക് നിരവധി ഒഴിഞ്ഞ ഭൂമി പ്രോപ്പർട്ടികൾ ലഭ്യമാണ്. നിങ്ങളുടെ സ്വപ്ന ഭവനം നിർമ്മിക്കുന്നതിനോ നിക്ഷേപം നടത്തുന്നതിനോ ഉള്ള മികച്ച സാധ്യത: [Land Link - *Replace*]",
+                chatbotResponsePrice: "പ്രോപ്പർട്ടി വിലകൾ വ്യത്യാസപ്പെടുന്നു. പ്രത്യേക വിലനിർണ്ണയത്തിനായി, ദയവായി ലിസ്റ്റിംഗുകൾ ബ്രൗസ് ചെയ്യുക അല്ലെങ്കിൽ ഒരു ഏജന്റുമായി ബന്ധപ്പെടുക. ശരാശരി:\n- അപ്പാർട്ട്മെന്റുകൾ: $300k - $1.2M\n- വീടുകൾ: $500k - $2.5M\n- ഭൂമി: $100k - $800k/ഏക്കർ",
+                chatbotResponseContact: "'ഞങ്ങളെ ബന്ധപ്പെടുക' പേജ് വഴിയോ 1-800-REAL-EST എന്ന നമ്പറിൽ വിളിച്ചോ നിങ്ങൾക്ക് ഞങ്ങളുടെ ഏജന്റുമാരുമായി ബന്ധപ്പെടാം. കോൺടാക്റ്റ് പേജ് ലിങ്ക് ഞാൻ നൽകണോ?",
+                chatbotResponseContactYes: "അതെ, ലിങ്ക് നൽകുക",
+                chatbotResponseContactHours: "ഓഫീസ് സമയം എപ്പോഴാണ്?",
+                chatbotResponseContactViewing: "കാണുന്നതിന് ഷെഡ്യൂൾ ചെയ്യുക",
+                chatbotResponseDefault: "ക്ഷമിക്കണം, എനിക്കത് മനസ്സിലായില്ല. പ്രോപ്പർട്ടികൾ, വിലകൾ, ഏജന്റ് കോൺടാക്റ്റുകൾ എന്നിവയിൽ എനിക്ക് സഹായിക്കാനാകും. ഇവയിലൊന്ന് ശ്രമിക്കുന്നതിനെക്കുറിച്ച് എന്തുപറയുന്നു?",
+                chatbotSuggestionPriceRange: "വില പരിധി എന്താണ്?",
+                chatbotSuggestionLocation: "അവ എവിടെയാണ് സ്ഥിതിചെയ്യുന്നത്?",
+                chatbotSuggestionPets: "വളർത്തുമൃഗങ്ങളെ അനുവദിച്ചിട്ടുണ്ടോ?",
+                chatbotSuggestionModernHouses: "ആധുനിക വീടുകൾ കാണിക്കുക",
+                chatbotSuggestionPools: "കുളങ്ങളുള്ള ഏതെങ്കിലും?",
+                chatbotSuggestionShowLand: "ലഭ്യമായ ഭൂമി കാണിക്കുക",
+                chatbotSuggestionZoning: "സോണിംഗ് നിയന്ത്രണങ്ങൾ എന്തൊക്കെയാണ്?",
+                chatbotSuggestionWaterfront: "വെള്ളത്തിനരികിലുള്ള ഏതെങ്കിലും പ്രോപ്പർട്ടികൾ?",
+                chatbotSuggestionCheapest: "ഏറ്റവും വിലകുറഞ്ഞ ഓപ്ഷനുകൾ കാണിക്കുക",
+                chatbotSuggestionLuxury: "ആഢംബര പ്രോപ്പർട്ടികൾ കാണിക്കുക",
+                footerCompany: "കമ്പനി",
+                footerAbout: "ഞങ്ങളെക്കുറിച്ച്",
+                footerTeam: "ഞങ്ങളുടെ ടീം",
+                footerCareers: "കരിയർ",
+                footerBlog: "ബ്ലോഗ്",
+                footerServices: "സേവനങ്ങൾ",
+                footerBuy: "പ്രോപ്പർട്ടി വാങ്ങുക",
+                footerSell: "പ്രോപ്പർട്ടി വിൽക്കുക",
+                footerRent: "പ്രോപ്പർട്ടികൾ വാടകയ്ക്ക്",
+                footerValuation: "പ്രോപ്പർട്ടി മൂല്യനിർണ്ണയം",
+                footerSupport: "പിന്തുണ",
+                footerContact: "ഞങ്ങളെ ബന്ധപ്പെടുക",
+                footerFAQ: "പതിവുചോദ്യങ്ങൾ",
+                footerPrivacy: "സ്വകാര്യതാ നയം",
+                footerTerms: "സേവന നിബന്ധനകൾ",
+                footerConnect: "ഞങ്ങളുമായി ബന്ധപ്പെടുക",
+                copyrightText: "© {bold}. എല്ലാ അവകാശങ്ങളും നിക്ഷിപ്തം.",
+                copyrightBrand: "2024 പ്രീമിയം റിയൽ എസ്റ്റേറ്റ് ലിസ്റ്റിംഗുകൾ",
+            },
+            'kn': { // ಕನ್ನಡ - *** Placeholder translations - PLEASE PROVIDE ACCURATE ONES ***
+                metaDescription: "ಪ್ರೀಮಿಯಂ ರಿಯಲ್ ಎಸ್ಟೇಟ್ ಪಟ್ಟಿಗಳು - ನಿಮ್ಮ ಕನಸಿನ ಆಸ್ತಿಯನ್ನು ಹುಡುಕಿ",
+                pageTitle: "ಪ್ರೀಮಿಯಂ ರಿಯಲ್ ಎಸ್ಟೇಟ್ ಪಟ್ಟಿಗಳು | ನಿಮ್ಮ ಕನಸಿನ ಆಸ್ತಿಯನ್ನು ಹುಡುಕಿ",
+                logoPremium: "ಪ್ರೀಮಿಯಂ",
+                logoRealEstate: "ರಿಯಲ್ ಎಸ್ಟೇಟ್",
+                logoTagline: "ನಿಮ್ಮ ಕನಸಿನ ಆಸ್ತಿಯನ್ನು ಹುಡುಕಿ",
+                navLogin: "ಲಾಗಿನ್ ಮಾಡಿ",
+                navRegister: "ನೋಂದಾಯಿಸಿ",
+                navAdmin: "ನಿರ್ವಾಹಕ",
+                navAgentPortal: "ಏಜೆಂಟ್ ಪೋರ್ಟಲ್",
+                langSelectLabel: "ಭಾಷೆ ಆಯ್ಕೆಮಾಡಿ:",
+                heroTitle: "ಇಂದು ನಿಮ್ಮ {bold} ಹುಡುಕಿ",
+                heroTitleBold: "ಕನಸಿನ ಆಸ್ತಿ",
+                heroDescription: "ನಿಮ್ಮ ಜೀವನಶೈಲಿ ಮತ್ತು ಬಜೆಟ್‌ಗೆ ಅನುಗುಣವಾಗಿ ವಿಶೇಷವಾದ ರಿಯಲ್ ಎಸ್ಟೇಟ್ ಪಟ್ಟಿಗಳನ್ನು ಅನ್ವೇಷಿಸಿ. ನಮ್ಮ ಸ್ಮಾರ್ಟ್ ಹುಡುಕಾಟವನ್ನು ಬಳಸಿ ಅಥವಾ ನಮ್ಮ AI ಸಹಾಯಕರನ್ನು ಕೇಳಿ!",
+                searchPlaceholder: "ಸ್ಥಳ, ಬೆಲೆ, ಅಥವಾ ಆಸ್ತಿ ಪ್ರಕಾರದ ಮೂಲಕ ಹುಡುಕಿ...",
+                categoriesTitle: "ನಮ್ಮ {bold} ಅನ್ವೇಷಿಸಿ",
+                categoriesTitleBold: "ಆಸ್ತಿ ವರ್ಗಗಳು",
+                categoryApartmentsTitleBold: "ಐಷಾರಾಮಿ ಅಪಾರ್ಟ್‌ಮೆಂಟ್‌ಗಳು",
+                categoryHousesTitleBold: "ಆಧುನಿಕ ಮನೆಗಳು",
+                categoryLandTitleBold: "ಖಾಲಿ ಜಮೀನು",
+                categoryCottagesTitleBold: " ಸ್ನೇಹಶೀಲ ಕಾಟೇಜ್‌ಗಳು",
+                chatbotTitle: "ರಿಯಲ್ ಎಸ್ಟೇಟ್ ಸಹಾಯಕ",
+                chatbotInitialGreeting: "ನಮಸ್ಕಾರ! ನಾನು ನಿಮ್ಮ ರಿಯಲ್ ಎಸ್ಟೇಟ್ ಸಹಾಯಕ. ನಿಮ್ಮ ಪರಿಪೂರ್ಣ ಆಸ್ತಿಯನ್ನು ಹುಡುಕಲು ಇಂದು ನಾನು ನಿಮಗೆ ಹೇಗೆ ಸಹಾಯ ಮಾಡಬಹುದು?",
+                chatbotSuggestion1: "ಐಷಾರಾಮಿ ಅಪಾರ್ಟ್‌ಮೆಂಟ್‌ಗಳನ್ನು ತೋರಿಸಿ",
+                chatbotSuggestion2: "ಸರಾಸರಿ ಬೆಲೆ ಎಷ್ಟು?",
+                chatbotSuggestion3: "ಏಜೆಂಟ್ ಅನ್ನು ಹೇಗೆ ಸಂಪರ್ಕಿಸುವುದು?",
+                chatbotInputPlaceholder: "ಆಸ್ತಿಗಳ ಬಗ್ಗೆ ನನ್ನನ್ನು ಕೇಳಿ...",
+                chatbotResponseGreeting: "ನಮಸ್ಕಾರ! ನಾನು ನಿಮ್ಮ ರಿಯಲ್ ಎಸ್ಟೇಟ್ ಸಹಾಯಕ. ಇಂದು ನಾನು ನಿಮಗೆ ಹೇಗೆ ಸಹಾಯ ಮಾಡಬಹುದು?",
+                chatbotResponseApartments: "ನಾವು ಐಷಾರಾಮಿ ಅಪಾರ್ಟ್‌ಮೆಂಟ್‌ಗಳ ಉತ್ತಮ ಆಯ್ಕೆಯನ್ನು ಹೊಂದಿದ್ದೇವೆ. ನಮ್ಮ ಅಪಾರ್ಟ್‌ಮೆಂಟ್‌ಗಳು ಆಧುನಿಕ ಸೌಕರ್ಯಗಳು, ಉತ್ತಮ ಸ್ಥಳಗಳು ಮತ್ತು ಸ್ಪರ್ಧಾತ್ಮಕ ಬೆಲೆಗಳನ್ನು ಒಳಗೊಂಡಿವೆ. ನೀವು ಅವುಗಳನ್ನು ಇಲ್ಲಿ ವೀಕ್ಷಿಸಬಹುದು: [Apartments Link - *Replace*]",
+                chatbotResponseHouses: "ನಾವು ವಿವಿಧ ನೆರೆಹೊರೆಗಳಲ್ಲಿ ಸುಂದರವಾದ ಆಧುನಿಕ ಮನೆಗಳನ್ನು ನೀಡುತ್ತೇವೆ. ನಮ್ಮ ಮನೆಗಳು ಸ್ನೇಹಶೀಲ ಕಾಟೇಜ್‌ಗಳಿಂದ ಹಿಡಿದು ಐಷಾರಾಮಿ ಎಸ್ಟೇಟ್‌ಗಳವರೆಗೆ ಇವೆ. ಅವುಗಳನ್ನು ಪರಿಶೀಲಿಸಿ: [Houses Link - *Replace*]",
+                chatbotResponseLand: "ನಮ್ಮಲ್ಲಿ ಹಲವಾರು ಖಾಲಿ ಭೂಮಿ ಆಸ್ತಿಗಳು ಲಭ್ಯವಿದೆ. ನಿಮ್ಮ ಕನಸಿನ ಮನೆ ನಿರ್ಮಿಸಲು ಅಥವಾ ಹೂಡಿಕೆ ಮಾಡಲು ಉತ್ತಮ ಸಾಮರ್ಥ್ಯ: [Land Link - *Replace*]",
+                chatbotResponsePrice: "ಆಸ್ತಿ ಬೆಲೆಗಳು ಬದಲಾಗುತ್ತವೆ. ನಿರ್ದಿಷ್ಟ ಬೆಲೆಗಳಿಗಾಗಿ, ದಯವಿಟ್ಟು ಪಟ್ಟಿಗಳನ್ನು ಬ್ರೌಸ್ ಮಾಡಿ ಅಥವಾ ಏಜೆಂಟ್ ಅನ್ನು ಸಂಪರ್ಕಿಸಿ. ಸರಾಸರಿ:\n- ಅಪಾರ್ಟ್‌ಮೆಂಟ್‌ಗಳು: $300k - $1.2M\n- ಮನೆಗಳು: $500k - $2.5M\n- ಭೂಮಿ: $100k - $800k/ಎಕರೆ",
+                chatbotResponseContact: "'ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ' ಪುಟದ ಮೂಲಕ ಅಥವಾ 1-800-REAL-EST ಗೆ ಕರೆ ಮಾಡುವ ಮೂಲಕ ನೀವು ನಮ್ಮ ಏಜೆಂಟ್‌ಗಳನ್ನು ಸಂಪರ್ಕಿಸಬಹುದು. ನಾನು ಸಂಪರ್ಕ ಪುಟದ ಲಿಂಕ್ ಅನ್ನು ಒದಗಿಸಬೇಕೇ?",
+                chatbotResponseContactYes: "ಹೌದು, ಲಿಂಕ್ ಒದಗಿಸಿ",
+                chatbotResponseContactHours: "ಕಚೇರಿ ಸಮಯಗಳು ಯಾವುವು?",
+                chatbotResponseContactViewing: "ವೀಕ್ಷಣೆಯನ್ನು ನಿಗದಿಪಡಿಸಿ",
+                chatbotResponseDefault: "ಕ್ಷಮಿಸಿ, ನನಗೆ ಅದು ಅರ್ಥವಾಗಲಿಲ್ಲ. ನಾನು ಆಸ್ತಿಗಳು, ಬೆಲೆಗಳು ಮತ್ತು ಏಜೆಂಟ್ ಸಂಪರ್ಕಗಳಿಗೆ ಸಹಾಯ ಮಾಡಬಹುದು. ಇವುಗಳಲ್ಲಿ ಒಂದನ್ನು ಪ್ರಯತ್ನಿಸುವ ಬಗ್ಗೆ ಹೇಗೆ?",
+                chatbotSuggestionPriceRange: "ಬೆಲೆ ವ್ಯಾಪ್ತಿ ಏನು?",
+                chatbotSuggestionLocation: "ಅವು ಎಲ್ಲಿವೆ?",
+                chatbotSuggestionPets: "ಸಾಕುಪ್ರಾಣಿಗಳನ್ನು ಅನುಮತಿಸಲಾಗಿದೆಯೇ?",
+                chatbotSuggestionModernHouses: "ಆಧುನಿಕ ಮನೆಗಳನ್ನು ತೋರಿಸು",
+                chatbotSuggestionPools: "ಪೂಲ್‌ಗಳಿರುವ ಯಾವುದಾದರೂ?",
+                chatbotSuggestionShowLand: "ಲಭ್ಯವಿರುವ ಭೂಮಿಯನ್ನು ತೋರಿಸಿ",
+                chatbotSuggestionZoning: "ವಲಯ ನಿರ್ಬಂಧಗಳು ಯಾವುವು?",
+                chatbotSuggestionWaterfront: "ಯಾವುದೇ ಜಲಾಭಿಮುಖ ಆಸ್ತಿಗಳು?",
+                chatbotSuggestionCheapest: "ಅಗ್ಗದ ಆಯ್ಕೆಗಳನ್ನು ತೋರಿಸಿ",
+                chatbotSuggestionLuxury: "ಐಷಾರಾಮಿ ಆಸ್ತಿಗಳನ್ನು ತೋರಿಸಿ",
+                footerCompany: "ಕಂಪನಿ",
+                footerAbout: "ನಮ್ಮ ಬಗ್ಗೆ",
+                footerTeam: "ನಮ್ಮ ತಂಡ",
+                footerCareers: "ವೃತ್ತಿಗಳು",
+                footerBlog: "ಬ್ಲಾಗ್",
+                footerServices: "ಸೇವೆಗಳು",
+                footerBuy: "ಆಸ್ತಿ ಖರೀದಿಸಿ",
+                footerSell: "ಆಸ್ತಿ ಮಾರಾಟ ಮಾಡಿ",
+                footerRent: "ಬಾಡಿಗೆ ಆಸ್ತಿಗಳು",
+                footerValuation: "ಆಸ್ತಿ ಮೌಲ್ಯಮಾಪನ",
+                footerSupport: "ಬೆಂಬಲ",
+                footerContact: "ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ",
+                footerFAQ: "FAQ",
+                footerPrivacy: "ಗೌಪ್ಯತಾ ನೀತಿ",
+                footerTerms: "ಸೇವಾ ನಿಯಮಗಳು",
+                footerConnect: "ನಮ್ಮೊಂದಿಗೆ ಸಂಪರ್ಕ ಸಾಧಿಸಿ",
+                copyrightText: "© {bold}. ಎಲ್ಲ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.",
+                copyrightBrand: "2024 ಪ್ರೀಮಿಯಂ ರಿಯಲ್ ಎಸ್ಟೇಟ್ ಪಟ್ಟಿಗಳು",
+            },
+            'ta': { // தமிழ் - *** Placeholder translations - PLEASE PROVIDE ACCURATE ONES ***
+                metaDescription: "பிரீமியம் ரியல் எஸ்டேட் பட்டியல்கள் - உங்கள் கனவு சொத்தை கண்டறியுங்கள்",
+                pageTitle: "பிரீமியம் ரியல் எஸ்டேட் பட்டியல்கள் | உங்கள் கனவு சொத்தை கண்டறியுங்கள்",
+                logoPremium: "பிரீமியம்",
+                logoRealEstate: "ரியல் எஸ்டேட்",
+                logoTagline: "உங்கள் கனவு சொத்தை கண்டறியுங்கள்",
+                navLogin: "உள்நுழைய",
+                navRegister: "பதிவு செய்ய",
+                navAdmin: "நிர்வாகம்",
+                navAgentPortal: "முகவர் தளம்",
+                langSelectLabel: "மொழியைத் தேர்ந்தெடுக்கவும்:",
+                heroTitle: "இன்றே உங்கள் {bold} கண்டறியுங்கள்",
+                heroTitleBold: "கனவு சொத்து",
+                heroDescription: "உங்கள் வாழ்க்கை முறை மற்றும் பட்ஜெட்டுக்கு ஏற்ற பிரத்யேக ரியல் எஸ்டேட் பட்டியல்களைக் கண்டறியவும். எங்கள் ஸ்மார்ட் தேடலைப் பயன்படுத்தவும் அல்லது எங்கள் AI உதவியாளரிடம் கேளுங்கள்!",
+                searchPlaceholder: "இடம், விலை அல்லது சொத்து வகை மூலம் தேடவும்...",
+                categoriesTitle: "எங்கள் {bold} ஆராயுங்கள்",
+                categoriesTitleBold: "சொத்து வகைகள்",
+                categoryApartmentsTitleBold: "சொகுசு அடுக்குமாடி குடியிருப்புகள்",
+                categoryHousesTitleBold: "நவீன வீடுகள்",
+                categoryLandTitleBold: "காலி நிலம்",
+                categoryCottagesTitleBold: "வசதியான குடிசைகள்",
+                chatbotTitle: "ரியல் எஸ்டேட் உதவியாளர்",
+                chatbotInitialGreeting: "வணக்கம்! நான் உங்கள் ரியல் எஸ்டேட் உதவியாளர். உங்கள் சரியான சொத்தை கண்டுபிடிக்க இன்று நான் உங்களுக்கு எப்படி உதவ முடியும்?",
+                chatbotSuggestion1: "சொகுசு அடுக்குமாடி குடியிருப்புகளைக் காட்டு",
+                chatbotSuggestion2: "சராசரி விலை என்ன?",
+                chatbotSuggestion3: "ஒரு முகவரை எவ்வாறு தொடர்பு கொள்வது?",
+                chatbotInputPlaceholder: "சொத்துக்களைப் பற்றி என்னிடம் கேளுங்கள்...",
+                chatbotResponseGreeting: "வணக்கம்! நான் உங்கள் ரியல் எஸ்டேட் உதவியாளர். இன்று நான் உங்களுக்கு எப்படி உதவ முடியும்?",
+                chatbotResponseApartments: "எங்களிடம் சொகுசு அடுக்குமாடி குடியிருப்புகளின் சிறந்த தேர்வு உள்ளது. எங்கள் அடுக்குமாடி குடியிருப்புகள் நவீன வசதிகள், சிறந்த இடங்கள் மற்றும் போட்டி விலை நிர்ணயம் ஆகியவற்றைக் கொண்டுள்ளன. அவற்றை இங்கே காணலாம்: [Apartments Link - *Replace*]",
+                chatbotResponseHouses: "பல்வேறு சுற்றுப்புறங்களில் அழகான நவீன வீடுகளை நாங்கள் வழங்குகிறோம். எங்கள் வீடுகள் வசதியான குடிசைகள் முதல் சொகுசு தோட்டங்கள் வரை உள்ளன. அவற்றைப் பாருங்கள்: [Houses Link - *Replace*]",
+                chatbotResponseLand: "எங்களிடம் பல காலி நில சொத்துக்கள் உள்ளன. உங்கள் கனவு இல்லத்தை கட்டுவதற்கு அல்லது முதலீடு செய்வதற்கு சிறந்த ஆற்றல்: [Land Link - *Replace*]",
+                chatbotResponsePrice: "சொத்து விலைகள் மாறுபடும். குறிப்பிட்ட விலைக்கு, பட்டியல்களை உலாவவும் அல்லது முகவரைத் தொடர்பு கொள்ளவும். சராசரியாக:\n- அடுக்குமாடி குடியிருப்புகள்: $300k - $1.2M\n- வீடுகள்: $500k - $2.5M\n- நிலம்: $100k - $800k/ஏக்கர்",
+                chatbotResponseContact: "'எங்களைத் தொடர்புகொள்' பக்கம் வழியாக அல்லது 1-800-REAL-EST ஐ அழைப்பதன் மூலம் எங்கள் முகவர்களைத் தொடர்புகொள்ளலாம். தொடர்புப் பக்க இணைப்பை நான் வழங்க வேண்டுமா?",
+                chatbotResponseContactYes: "ஆம், இணைப்பை வழங்கவும்",
+                chatbotResponseContactHours: "அலுவலக நேரம் என்ன?",
+                chatbotResponseContactViewing: "பார்வையிட திட்டமிடவும்",
+                chatbotResponseDefault: "மன்னிக்கவும், எனக்கு அது புரியவில்லை. சொத்துக்கள், விலைகள் மற்றும் முகவர் தொடர்புகளுக்கு என்னால் உதவ முடியும். இவற்றில் ஒன்றை முயற்சிக்கலாமா?",
+                chatbotSuggestionPriceRange: "விலை வரம்பு என்ன?",
+                chatbotSuggestionLocation: "அவை எங்கே அமைந்துள்ளன?",
+                chatbotSuggestionPets: "செல்லப்பிராணிகள் அனுமதிக்கப்படுகின்றனவா?",
+                chatbotSuggestionModernHouses: "நவீன வீடுகளைக் காட்டு",
+                chatbotSuggestionPools: "குளங்கள் உள்ளதா?",
+                chatbotSuggestionShowLand: "கிடைக்கும் நிலத்தைக் காட்டு",
+                chatbotSuggestionZoning: "மண்டல கட்டுப்பாடுகள் என்ன?",
+                chatbotSuggestionWaterfront: "நீர்முனை சொத்துக்கள் ஏதேனும் உள்ளதா?",
+                chatbotSuggestionCheapest: "மலிவான விருப்பங்களைக் காட்டு",
+                chatbotSuggestionLuxury: "சொகுசு சொத்துக்களைக் காட்டு",
+                footerCompany: "நிறுவனம்",
+                footerAbout: "எங்களைப் பற்றி",
+                footerTeam: "எங்கள் குழு",
+                footerCareers: "வேலை வாய்ப்புகள்",
+                footerBlog: "வலைப்பதிவு",
+                footerServices: "சேவைகள்",
+                footerBuy: "சொத்து வாங்க",
+                footerSell: "சொத்து விற்க",
+                footerRent: "வாடகை சொத்துக்கள்",
+                footerValuation: "சொத்து மதிப்பீடு",
+                footerSupport: "ஆதரவு",
+                footerContact: "எங்களைத் தொடர்பு கொள்ளவும்",
+                footerFAQ: "அடிக்கடி கேட்கப்படும் கேள்விகள்",
+                footerPrivacy: "தனியுரிமைக் கொள்கை",
+                footerTerms: "சேவை விதிமுறைகள்",
+                footerConnect: "எங்களுடன் இணையுங்கள்",
+                copyrightText: "© {bold}. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.",
+                copyrightBrand: "2024 பிரீமியம் ரியல் எஸ்டேட் பட்டியல்கள்",
+            },
+            'te': { // తెలుగు - *** Placeholder translations - PLEASE PROVIDE ACCURATE ONES ***
+                metaDescription: "ప్రీమియం రియల్ ఎస్టేట్ జాబితాలు - మీ కలల ఆస్తిని కనుగొనండి",
+                pageTitle: "ప్రీమియం రియల్ ఎస్టేట్ జాబితాలు | మీ కలల ఆస్తిని కనుగొనండి",
+                logoPremium: "ప్రీమియం",
+                logoRealEstate: "రియల్ ఎస్టేట్",
+                logoTagline: "మీ కలల ఆస్తిని కనుగొనండి",
+                navLogin: "లాగిన్",
+                navRegister: "నమోదు చేసుకోండి",
+                navAdmin: "నిర్వాహకుడు",
+                navAgentPortal: "ఏజెంట్ పోర్టల్",
+                langSelectLabel: "భాషను ఎంచుకోండి:",
+                heroTitle: "ఈ రోజే మీ {bold} కనుగొనండి",
+                heroTitleBold: "కలల ఆస్తి",
+                heroDescription: "మీ జీవనశైలి మరియు బడ్జెట్‌కు అనుగుణంగా ప్రత్యేకమైన రియల్ ఎస్టేట్ జాబితాలను కనుగొనండి. మా స్మార్ట్ శోధనను ఉపయోగించండి లేదా మా AI సహాయకుడిని అడగండి!",
+                searchPlaceholder: "స్థానం, ధర లేదా ఆస్తి రకం ద్వారా శోధించండి...",
+                categoriesTitle: "మా {bold} అన్వేషించండి",
+                categoriesTitleBold: "ఆస్తి వర్గాలు",
+                categoryApartmentsTitleBold: " విలాసవంతమైన అపార్ట్‌మెంట్లు",
+                categoryHousesTitleBold: "ఆధునిక ఇళ్ళు",
+                categoryLandTitleBold: "ఖాళీ స్థలం",
+                categoryCottagesTitleBold: "హాయిగా ఉండే కాటేజీలు",
+                chatbotTitle: "రియల్ ఎస్టేట్ సహాయకుడు",
+                chatbotInitialGreeting: "హలో! నేను మీ రియల్ ఎస్టేట్ సహాయకుడిని. మీ ఖచ్చితమైన ఆస్తిని కనుగొనడంలో ఈ రోజు నేను మీకు ఎలా సహాయపడగలను?",
+                chatbotSuggestion1: " విలాసవంతమైన అపార్ట్‌మెంట్‌లను చూపించు",
+                chatbotSuggestion2: "సగటు ధర ఎంత?",
+                chatbotSuggestion3: "ఏజెంట్‌ను ఎలా సంప్రదించాలి?",
+                chatbotInputPlaceholder: "ఆస్తుల గురించి నన్ను అడగండి...",
+                chatbotResponseGreeting: "హలో! నేను మీ రియల్ ఎస్టేట్ సహాయకుడిని. ఈ రోజు నేను మీకు ఎలా సహాయపడగలను?",
+                chatbotResponseApartments: "మా వద్ద విలాసవంతమైన అపార్ట్‌మెంట్‌ల గొప్ప ఎంపిక ఉంది. మా అపార్ట్‌మెంట్‌లు ఆధునిక సౌకర్యాలు, గొప్ప స్థానాలు మరియు పోటీ ధరలను కలిగి ఉన్నాయి. మీరు వాటిని ఇక్కడ చూడవచ్చు: [Apartments Link - *Replace*]",
+                chatbotResponseHouses: "మేము వివిధ పరిసరాల్లో అందమైన ఆధునిక గృహాలను అందిస్తున్నాము. మా ఇళ్లు హాయిగా ఉండే కాటేజీల నుండి విలాసవంతమైన ఎస్టేట్‌ల వరకు ఉంటాయి. వాటిని తనిఖీ చేయండి: [Houses Link - *Replace*]",
+                chatbotResponseLand: "మా వద్ద అనేక ఖాళీ భూమి ఆస్తులు అందుబాటులో ఉన్నాయి. మీ కలల ఇంటిని నిర్మించడానికి లేదా పెట్టుబడి పెట్టడానికి గొప్ప సామర్థ్యం: [Land Link - *Replace*]",
+                chatbotResponsePrice: "ఆస్తి ధరలు మారుతూ ఉంటాయి. నిర్దిష్ట ధరల కోసం, దయచేసి జాబితాలను బ్రౌజ్ చేయండి లేదా ఏజెంట్‌ను సంప్రదించండి. సగటున:\n- అపార్ట్‌మెంట్లు: $300k - $1.2M\n- ఇళ్ళు: $500k - $2.5M\n- భూమి: $100k - $800k/ఎకరా",
+                chatbotResponseContact: "'మమ్మల్ని సంప్రదించండి' పేజీ ద్వారా లేదా 1-800-REAL-ESTకి కాల్ చేయడం ద్వారా మీరు మా ఏజెంట్‌లను సంప్రదించవచ్చు. నేను సంప్రదింపు పేజీ లింక్‌ను అందించాలనుకుంటున్నారా?",
+                chatbotResponseContactYes: "అవును, లింక్‌ను అందించండి",
+                chatbotResponseContactHours: "కార్యాలయ సమయాలు ఏమిటి?",
+                chatbotResponseContactViewing: "వీక్షణను షెడ్యూల్ చేయండి",
+                chatbotResponseDefault: "క్షమించండి, నాకు అది అర్థం కాలేదు. నేను ఆస్తులు, ధరలు మరియు ఏజెంట్ పరిచయాలతో సహాయం చేయగలను. వీటిలో ఒకదాన్ని ప్రయత్నించడం గురించి ఎలా?",
+                chatbotSuggestionPriceRange: "ధర పరిధి ఎంత?",
+                chatbotSuggestionLocation: "అవి ఎక్కడ ఉన్నాయి?",
+                chatbotSuggestionPets: "పెంపుడు జంతువులను అనుమతించారా?",
+                chatbotSuggestionModernHouses: "ఆధునిక ఇళ్లను చూపించు",
+                chatbotSuggestionPools: "పూల్స్ ఉన్నవి ఏవైనా ఉన్నాయా?",
+                chatbotSuggestionShowLand: "అందుబాటులో ఉన్న భూమిని చూపించు",
+                chatbotSuggestionZoning: "జోనింగ్ పరిమితులు ఏమిటి?",
+                chatbotSuggestionWaterfront: "ఏవైనా వాటర్‌ఫ్రంట్ ఆస్తులు ఉన్నాయా?",
+                chatbotSuggestionCheapest: "చౌకైన ఎంపికలను చూపించు",
+                chatbotSuggestionLuxury: "విలాసవంతమైన ఆస్తులను చూపించు",
+                footerCompany: "కంపెనీ",
+                footerAbout: "మా గురించి",
+                footerTeam: "మా బృందం",
+                footerCareers: "కెరీర్లు",
+                footerBlog: "బ్లాగ్",
+                footerServices: "సేవలు",
+                footerBuy: "ఆస్తి కొనండి",
+                footerSell: "ఆస్తి అమ్మండి",
+                footerRent: "అద్దె ఆస్తులు",
+                footerValuation: "ఆస్తి మూల్యాంకనం",
+                footerSupport: "మద్దతు",
+                footerContact: "మమ్మల్ని సంప్రదించండి",
+                footerFAQ: "FAQ",
+                footerPrivacy: "గోప్యతా విధానం",
+                footerTerms: "సేవా నిబంధనలు",
+                footerConnect: "మాతో కనెక్ట్ అవ్వండి",
+                copyrightText: "© {bold}. సర్వహక్కులు ప్రత్యేకించబడినవి.",
+                copyrightBrand: "2024 ప్రీమియం రియల్ ఎస్టేట్ జాబితాలు",
+            },
+            // Add Kannada (kn), Tamil (ta), Telugu (te) similarly
+        }
+
+        // --- Language Switching Logic ---
+        const langSelect = document.getElementById('lang-select');
+        const translatableElements = document.querySelectorAll('[data-translate-key]');
+        const translatablePlaceholders = document.querySelectorAll('[data-translate-placeholder-key]');
+        const htmlElement = document.documentElement;
+
+        // Function to change the language
+        function changeLanguage(lang) {
+            if (!translations[lang]) {
+                console.warn(`Language "${lang}" not found in translations. Defaulting to 'en'.`);
+                lang = 'en';
+            }
+
+            // Update page lang attribute
+            htmlElement.lang = lang;
+
+            // Update text content
+            translatableElements.forEach(el => {
+                const key = el.getAttribute('data-translate-key');
+                let translation = translations[lang][key] || translations['en'][key]; // Fallback to English
+
+                if (translation) {
+                    // Handle simple placeholders like {bold}
+                    if (translation.includes('{bold}')) {
+                         const boldKey = el.querySelector('[data-translate-key]')?.getAttribute('data-translate-key');
+                         const boldText = translations[lang][boldKey] || translations['en'][boldKey] || '';
+                         translation = translation.replace('{bold}', `<b>${boldText}</b>`);
+                         el.innerHTML = translation; // Use innerHTML for tags
+                    } else {
+                         el.textContent = translation; // Use textContent for plain text
+                    }
+                } else {
+                    console.warn(`Translation key "${key}" not found for lang "${lang}" or "en".`);
+                }
+            });
+
+            // Update placeholders
+            translatablePlaceholders.forEach(el => {
+                const key = el.getAttribute('data-translate-placeholder-key');
+                const translation = translations[lang][key] || translations['en'][key]; // Fallback to English
+                if (translation) {
+                    el.placeholder = translation;
+                } else {
+                     console.warn(`Placeholder key "${key}" not found for lang "${lang}" or "en".`);
+                }
+            });
+
+             // Update meta description and title
+            const metaDesc = document.querySelector('meta[name="description"]');
+            if (metaDesc) metaDesc.content = translations[lang]['metaDescription'] || translations['en']['metaDescription'];
+            document.title = translations[lang]['pageTitle'] || translations['en']['pageTitle'];
+
+
+            // Update Chatbot initial state if needed
+            clearChatbotMessages();
+            addInitialChatbotMessage(lang);
+
+
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Event listener for language selector
+        langSelect.addEventListener('change', (event) => {
+            changeLanguage(event.target.value);
+        });
+
+        // Function to set initial language on page load
+        function setInitialLanguage() {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            // You could also try detecting browser language: navigator.language.split('-')[0];
+            const initialLang = savedLang || 'en'; // Default to English if no preference saved
+            if (initialLang !== 'en') { // Only change if not default
+                langSelect.value = initialLang;
+                changeLanguage(initialLang);
+            } else {
+                // Ensure chatbot gets initial English message even on default load
+                addInitialChatbotMessage('en');
+            }
+        }
+
+
+        // --- Enhanced Search Functionality (Remains mostly the same) ---
+        const searchButton = document.getElementById('searchButton');
+        const searchInput = document.getElementById('searchInput');
+
+        function performSearch() {
+            // Search logic might need adaptation if keywords need translation
+            const searchTerm = searchInput.value.toLowerCase().trim();
+
+            if (searchTerm === '') {
+                return; // Don't do anything if search is empty
+            }
+            // Redirect to the new Flask search route with query parameter
+            window.location.href = `/search?q=${encodeURIComponent(searchTerm)}`;
+        }
+
+        searchButton.addEventListener('click', performSearch);
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+        // --- AI Chatbot Functionality (Adapted for Language) ---
+        const chatbotToggle = document.getElementById('chatbotToggle');
+        const chatbotWindow = document.getElementById('chatbotWindow');
+        const closeChatbot = document.getElementById('closeChatbot');
+        const chatbotMessages = document.getElementById('chatbotMessages');
+        const userInput = document.getElementById('userInput');
+        const sendMessage = document.getElementById('sendMessage');
+        let currentChatLang = 'en'; // Track chatbot language
+
+        // Update chatbot language when main language changes
+        function updateChatbotLanguage(lang) {
+            currentChatLang = lang;
+            // Potentially clear chat and add new initial greeting?
+            // Handled in changeLanguage function now.
+        }
+        document.getElementById('lang-select').addEventListener('change', (e) => updateChatbotLanguage(e.target.value));
+
+
+        // Check if elements exist before adding listeners
+        if (chatbotToggle && chatbotWindow && closeChatbot && chatbotMessages && userInput && sendMessage) {
+
+            // Toggle chatbot window
+            chatbotToggle.addEventListener('click', () => {
+                chatbotWindow.classList.toggle('active');                 // Change toggle icon based on state
+                 if (chatbotWindow.classList.contains('active')) {
+                    chatbotToggle.innerHTML = '<i class="fas fa-times"></i>'; // Close icon
+                 } else {
+                    chatbotToggle.innerHTML = '<i class="fas fa-comments"></i>'; // Original icon
+                 }
+            });
+
+            // Close chatbot
+            closeChatbot.addEventListener('click', () => {
+                chatbotWindow.classList.remove('active');
+                chatbotToggle.innerHTML = '<i class="fas fa-comments"></i>'; // Reset icon
+            });
+
+            // Send message function
+            function sendUserMessage() {
+                const message = userInput.value.trim();
+                if (message === '') return;
+                addMessage(message, 'user');
+                userInput.value = '';
+                showTypingIndicator();
+                // Use currentChatLang when processing
+                setTimeout(() => { processUserMessage(message, currentChatLang); }, 1000);
+            }
+
+            sendMessage.addEventListener('click', sendUserMessage);
+            userInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendUserMessage(); });
+
+             // Clear Chatbot Messages
+            function clearChatbotMessages() {
+                chatbotMessages.innerHTML = ''; // Clear previous messages
+            }
+
+            // Add Initial Chatbot Message based on language
+            function addInitialChatbotMessage(lang) {
+                const initialGreeting = translations[lang]?.chatbotInitialGreeting || translations['en']?.chatbotInitialGreeting;
+                const suggestion1 = translations[lang]?.chatbotSuggestion1 || translations['en']?.chatbotSuggestion1;
+                const suggestion2 = translations[lang]?.chatbotSuggestion2 || translations['en']?.chatbotSuggestion2;
+                const suggestion3 = translations[lang]?.chatbotSuggestion3 || translations['en']?.chatbotSuggestion3;
+
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message', 'bot-message');
+                messageDiv.textContent = initialGreeting; // Use textContent for security
+
+                const suggestionsContainer = document.createElement('div');
+                suggestionsContainer.classList.add('suggested-questions-container'); // Wrapper div
+                const suggestionsDiv = document.createElement('div');
+                suggestionsDiv.classList.add('suggested-questions');
+
+                [suggestion1, suggestion2, suggestion3].forEach(suggestionText => {
+                    if(suggestionText) {
+                        const button = document.createElement('button');
+                        button.classList.add('suggested-question');
+                        button.textContent = suggestionText;
+                        suggestionsDiv.appendChild(button);
+                    }
+                });
+                suggestionsContainer.appendChild(suggestionsDiv);
+                messageDiv.appendChild(suggestionsContainer); // Append suggestions to message bubble
+                chatbotMessages.appendChild(messageDiv);
+                scrollToBottom();
+            }
+
+            // Add message to chat
+            function addMessage(text, sender) {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message', sender === 'user' ? 'user-message' : 'bot-message');
+                messageDiv.textContent = text; // Use textContent for security
+                chatbotMessages.appendChild(messageDiv);
+                scrollToBottom();
+            }
+
+            // Scroll chat to bottom
+            function scrollToBottom() {
+                 chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+            }
+
+             // Show/Remove Typing Indicator (no changes needed)
+            let typingIndicatorElement = null;
+            function showTypingIndicator() { /* ... as before ... */ }
+            function removeTypingIndicator() { /* ... as before ... */ }
+
+             // Handle Suggested Questions
+             chatbotMessages.addEventListener('click', (e) => {
+                if (e.target.classList.contains('suggested-question')) {
+                    const text = e.target.textContent;
+                     addMessage(text, 'user');
+                     showTypingIndicator();
+                     // Remove the suggestions container after one is clicked
+                    const container = e.target.closest('.suggested-questions-container');
+                    if (container) container.remove();
+                    // Use currentChatLang when processing
+                     setTimeout(() => { processUserMessage(text, currentChatLang); }, 1000);
+                 }
+             });
+
+
+            // Process user message and generate response (Now language aware)
+            function processUserMessage(message, lang) {
+                removeTypingIndicator();
+                const lowerMessage = message.toLowerCase();
+                // Pass lang to generateResponse
+                let response = generateResponse(lowerMessage, lang);
+
+                addMessage(response.text, 'bot');
+
+                if (response.suggestions && response.suggestions.length > 0) {
+                    const suggestionsContainer = document.createElement('div');
+                    suggestionsContainer.classList.add('message', 'bot-message', 'suggested-questions-container'); // Wrapper div
+                    const suggestionsDiv = document.createElement('div');
+                    suggestionsDiv.classList.add('suggested-questions');
+
+                    response.suggestions.forEach(suggestion => {
+                        const button = document.createElement('button');
+                        button.classList.add('suggested-question');
+                        button.textContent = suggestion;
+                        suggestionsDiv.appendChild(button);
+                    });
+                    suggestionsContainer.appendChild(suggestionsDiv);
+                    chatbotMessages.appendChild(suggestionsContainer);
+                }
+                scrollToBottom();
+            }
+
+            // Response generation logic (Adapted for Language)
+             function generateResponse(message, lang) {
+                // Use translated keys for suggestions
+                const suggestionsMap = {
+                    'en': {
+                         s1: translations['en'].chatbotSuggestion1,
+                         s2: translations['en'].chatbotSuggestion2,
+                         s3: translations['en'].chatbotSuggestion3,
+                         priceRange: translations['en'].chatbotSuggestionPriceRange,
+                         location: translations['en'].chatbotSuggestionLocation,
+                         pets: translations['en'].chatbotSuggestionPets,
+                         modernHouses: translations['en'].chatbotSuggestionModernHouses,
+                         pools: translations['en'].chatbotSuggestionPools,
+                         showLand: translations['en'].chatbotSuggestionShowLand,
+                         zoning: translations['en'].chatbotSuggestionZoning,
+                         waterfront: translations['en'].chatbotSuggestionWaterfront,
+                         cheapest: translations['en'].chatbotSuggestionCheapest,
+                         luxury: translations['en'].chatbotSuggestionLuxury,
+                         contactYes: translations['en'].chatbotResponseContactYes,
+                         contactHours: translations['en'].chatbotResponseContactHours,
+                         contactViewing: translations['en'].chatbotResponseContactViewing,
+                    },
+                    'hi': {
+                        s1: translations['hi'].chatbotSuggestion1,
+                        s2: translations['hi'].chatbotSuggestion2,
+                        s3: translations['hi'].chatbotSuggestion3,
+                        priceRange: translations['hi'].chatbotSuggestionPriceRange,
+                        location: translations['hi'].chatbotSuggestionLocation,
+                        pets: translations['hi'].chatbotSuggestionPets,
+                        modernHouses: translations['hi'].chatbotSuggestionModernHouses,
+                        pools: translations['hi'].chatbotSuggestionPools,
+                        showLand: translations['hi'].chatbotSuggestionShowLand,
+                        zoning: translations['hi'].chatbotSuggestionZoning,
+                        waterfront: translations['hi'].chatbotSuggestionWaterfront,
+                        cheapest: translations['hi'].chatbotSuggestionCheapest,
+                        luxury: translations['hi'].chatbotSuggestionLuxury,
+                        contactYes: translations['hi'].chatbotResponseContactYes,
+                        contactHours: translations['hi'].chatbotResponseContactHours,
+                        contactViewing: translations['hi'].chatbotResponseContactViewing,
+                    },
+                     'ml': {
+                        s1: translations['ml'].chatbotSuggestion1,
+                        s2: translations['ml'].chatbotSuggestion2,
+                        s3: translations['ml'].chatbotSuggestion3,
+                        priceRange: translations['ml'].chatbotSuggestionPriceRange,
+                        location: translations['ml'].chatbotSuggestionLocation,
+                        pets: translations['ml'].chatbotSuggestionPets,
+                        modernHouses: translations['ml'].chatbotSuggestionModernHouses,
+                        pools: translations['ml'].chatbotSuggestionPools,
+                        showLand: translations['ml'].chatbotSuggestionShowLand,
+                        zoning: translations['ml'].chatbotSuggestionZoning,
+                        waterfront: translations['ml'].chatbotSuggestionWaterfront,
+                        cheapest: translations['ml'].chatbotSuggestionCheapest,
+                        luxury: translations['ml'].chatbotSuggestionLuxury,
+                        contactYes: translations['ml'].chatbotResponseContactYes,
+                        contactHours: translations['ml'].chatbotResponseContactHours,
+                        contactViewing: translations['ml'].chatbotResponseContactViewing,
+                    },
+                     'kn': {
+                        s1: translations['kn'].chatbotSuggestion1,
+                        s2: translations['kn'].chatbotSuggestion2,
+                        s3: translations['kn'].chatbotSuggestion3,
+                        priceRange: translations['kn'].chatbotSuggestionPriceRange,
+                        location: translations['kn'].chatbotSuggestionLocation,
+                        pets: translations['kn'].chatbotSuggestionPets,
+                        modernHouses: translations['kn'].chatbotSuggestionModernHouses,
+                        pools: translations['kn'].chatbotSuggestionPools,
+                        showLand: translations['kn'].chatbotSuggestionShowLand,
+                        zoning: translations['kn'].chatbotSuggestionZoning,
+                        waterfront: translations['kn'].chatbotSuggestionWaterfront,
+                        cheapest: translations['kn'].chatbotSuggestionCheapest,
+                        luxury: translations['kn'].chatbotSuggestionLuxury,
+                        contactYes: translations['kn'].chatbotResponseContactYes,
+                        contactHours: translations['kn'].chatbotResponseContactHours,
+                        contactViewing: translations['kn'].chatbotResponseContactViewing,
+                    },
+                     'ta': {
+                        s1: translations['ta'].chatbotSuggestion1,
+                        s2: translations['ta'].chatbotSuggestion2,
+                        s3: translations['ta'].chatbotSuggestion3,
+                        priceRange: translations['ta'].chatbotSuggestionPriceRange,
+                        location: translations['ta'].chatbotSuggestionLocation,
+                        pets: translations['ta'].chatbotSuggestionPets,
+                        modernHouses: translations['ta'].chatbotSuggestionModernHouses,
+                        pools: translations['ta'].chatbotSuggestionPools,
+                        showLand: translations['ta'].chatbotSuggestionShowLand,
+                        zoning: translations['ta'].chatbotSuggestionZoning,
+                        waterfront: translations['ta'].chatbotSuggestionWaterfront,
+                        cheapest: translations['ta'].chatbotSuggestionCheapest,
+                        luxury: translations['ta'].chatbotSuggestionLuxury,
+                        contactYes: translations['ta'].chatbotResponseContactYes,
+                        contactHours: translations['ta'].chatbotResponseContactHours,
+                        contactViewing: translations['ta'].chatbotResponseContactViewing,
+                    },
+                     'te': {
+                        s1: translations['te'].chatbotSuggestion1,
+                        s2: translations['te'].chatbotSuggestion2,
+                        s3: translations['te'].chatbotSuggestion3,
+                        priceRange: translations['te'].chatbotSuggestionPriceRange,
+                        location: translations['te'].chatbotSuggestionLocation,
+                        pets: translations['te'].chatbotSuggestionPets,
+                        modernHouses: translations['te'].chatbotSuggestionModernHouses,
+                        pools: translations['te'].chatbotSuggestionPools,
+                        showLand: translations['te'].chatbotSuggestionShowLand,
+                        zoning: translations['te'].chatbotSuggestionZoning,
+                        waterfront: translations['te'].chatbotSuggestionWaterfront,
+                        cheapest: translations['te'].chatbotSuggestionCheapest,
+                        luxury: translations['te'].chatbotSuggestionLuxury,
+                        contactYes: translations['te'].chatbotResponseContactYes,
+                        contactHours: translations['te'].chatbotResponseContactHours,
+                        contactViewing: translations['te'].chatbotResponseContactViewing,
+                    },
+                    // Add other languages here
+                };
+
+                const currentSuggestions = suggestionsMap[lang] || suggestionsMap['en']; // Fallback to English
+
+                // Keywords for matching - these could also be translated or use more robust intent detection
+                const keywords = {
+                    greetings: ['hello', 'hi', 'hey', 'greetings', 'नमस्ते', 'ഹലോ', 'ನಮಸ್ಕಾರ', 'வணக்கம்', 'హలో'],
+                    apartments: ['apartment', 'condo', 'flat', 'studio', 'अपार्टमेंट', 'അപ്പാർട്ട്മെന്റ്', 'ಅಪಾರ್ಟ್ಮೆಂಟ್', 'அடுக்குமாடி', 'అపార్ట్మెంట్'],
+                    houses: ['house', 'home', 'villa', 'residence', 'घर', 'വീട്', 'ಮನೆ', 'வீடு', 'ఇల్లు'],
+                    land: ['land', 'plot', 'acreage', 'vacant', 'ज़मीन', 'സ്ഥലം', 'ಭೂಮಿ', 'நிலம்', 'భూమి'],
+                    price: ['price', 'cost', 'expensive', 'cheap', 'affordable', 'कीमत', 'വില', 'ಬೆಲೆ', 'விலை', 'ధర'],
+                    contact: ['contact', 'call', 'email', 'reach', 'agent', 'representative', 'संपर्क', 'ബന്ധപ്പെടുക', 'ಸಂಪರ್ಕಿಸಿ', 'தொடர்பு', 'సంప్రదించండి'],
+                    // Add more translated keywords if needed
+                };
+
+                // Get translated responses, fallback to English
+                const getResponseText = (key) => translations[lang]?.[key] || translations['en']?.[key];
+
+                // Determine response based on keywords
+                if (keywords.greetings.some(p => message.includes(p))) {
+                    return { text: getResponseText('chatbotResponseGreeting'), suggestions: [currentSuggestions.s1, currentSuggestions.s2, currentSuggestions.s3] };
+                }
+                if (keywords.apartments.some(p => message.includes(p))) {
+                    return { text: getResponseText('chatbotResponseApartments'), suggestions: [currentSuggestions.priceRange, currentSuggestions.location, currentSuggestions.pets] };
+                }
+                if (keywords.houses.some(p => message.includes(p))) {
+                     return { text: getResponseText('chatbotResponseHouses'), suggestions: [currentSuggestions.modernHouses, currentSuggestions.s2, currentSuggestions.pools] };
+                }
+                 if (keywords.land.some(p => message.includes(p))) {
+                     return { text: getResponseText('chatbotResponseLand'), suggestions: [currentSuggestions.showLand, currentSuggestions.zoning, currentSuggestions.waterfront] };
+                 }
+                if (keywords.price.some(p => message.includes(p))) {
+                    return { text: getResponseText('chatbotResponsePrice'), suggestions: [currentSuggestions.cheapest, currentSuggestions.luxury, currentSuggestions.s3] };
+                }
+                if (keywords.contact.some(p => message.includes(p))) {
+                    return { text: getResponseText('chatbotResponseContact'), suggestions: [currentSuggestions.contactYes, currentSuggestions.contactHours, currentSuggestions.contactViewing] };
+                }
+
+                // Default response
+                return { text: getResponseText('chatbotResponseDefault'), suggestions: [currentSuggestions.s1, currentSuggestions.s2, currentSuggestions.s3] };
+            }
+
+
+        } else {
+            console.error("Chatbot elements not found. Check IDs.");
+        }
+
+        // --- Initial Language Setup ---
+        document.addEventListener('DOMContentLoaded', setInitialLanguage);
+
+    </script>
+</body>
+</html>
+<!-- End of HTML Document -->

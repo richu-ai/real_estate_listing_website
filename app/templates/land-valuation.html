@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional land valuation tools and methods to determine the fair market value of your property">
+    <title>Land Valuation Tools | Prime Land Properties</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #c7232e;
+            --secondary-color: #556b2f;
+            --accent-color: #e5ede6;
+            --light-color: #f8f9fa;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --border-radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lato', sans-serif;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+
+        body {
+            background-color: #f9f9f7;
+            color: var(--text-color);
+            line-height: 1.6;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        header h1 span {
+            color: var(--accent-color);
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        nav a.active {
+            background-color: var(--accent-color);
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .breadcrumb {
+            padding: 1rem 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .page-header {
+            margin-bottom: 2rem;
+        }
+
+        .page-header h2 {
+            font-size: 2.2rem;
+            color: var(--secondary-color);
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            color: #666;
+            max-width: 800px;
+        }
+
+        .content-section {
+            background-color: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        .content-section h3 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .content-section p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .valuation-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .method-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            border-top: 4px solid var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .method-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .method-card h4 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .method-card h4 i {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        .method-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .method-card ul {
+            margin-left: 1.5rem;
+            color: #666;
+        }
+
+        .method-card ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .calculator-container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin: 2rem 0;
+        }
+
+        .calculator-tabs {
+            display: flex;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 1.5rem;
+        }
+
+        .tab-button {
+            padding: 0.75rem 1.5rem;
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            font-weight: 600;
+            color: #666;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .tab-button.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .calculator-input {
+            margin-bottom: 1.5rem;
+        }
+
+        .calculator-input label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        .calculator-input input, 
+        .calculator-input select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+        }
+
+        .calculator-input input:focus, 
+        .calculator-input select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        .calculator-results {
+            background-color: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-top: 1.5rem;
+            display: none;
+        }
+
+        .calculator-results h4 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .result-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .result-row:last-child {
+            border-bottom: none;
+        }
+
+        .result-label {
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        .result-value {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .calculate-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+            font-size: 1rem;
+        }
+
+        .calculate-btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+
+        .comparison-table th, 
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .comparison-table th {
+            background-color: var(--accent-color);
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .comparison-table tr:hover {
+            background-color: #f0f0f0;
+        }
+
+        .info-box {
+            background-color: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .info-box h4 {
+            color: #2e7d32;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-box h4 i {
+            color: #2e7d32;
+        }
+
+        .warning-box {
+            background-color: #fff8e1;
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .warning-box h4 {
+            color: #ff9800;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .warning-box h4 i {
+            color: #ff9800;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .action-button {
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+            text-align: center;
+        }
+
+        .primary-button {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .primary-button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .secondary-button {
+            background-color: white;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+
+        .secondary-button:hover {
+            background-color: #f0f0f0;
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+
+        .footer-column h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column ul li a {
+            color: var(--light-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .valuation-methods {
+                grid-template-columns: 1fr;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            .calculator-tabs {
+                flex-direction: column;
+            }
+
+            .tab-button {
+                border-bottom: none;
+                border-left: 3px solid transparent;
+                text-align: left;
+            }
+
+            .tab-button.active {
+                border-bottom: none;
+                border-left-color: var(--primary-color);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1><span>Prime</span> Land Properties</h1>
+                <nav>
+                    <a href="/h">Home</a>
+                    <a href="/l">Login</a>
+                    <a href="/register">Register</a>
+                    <a href="/land-valuation" class="active">Valuation</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="breadcrumb">
+                <a href="/h">Home</a> &raquo; <a href="/resources">Resources</a> &raquo; <span>Land Valuation</span>
+            </div>
+
+            <div class="page-header">
+                <h2>Land Valuation Tools & Methods</h2>
+                <p>Accurately determining the value of land requires understanding different valuation approaches and market factors. Use these professional tools and methods to assess your property's worth.</p>
+            </div>
+
+            <div class="content-section">
+                <h3>Land Valuation Methods</h3>
+                <p>Professional appraisers use these standard methods to determine land value. Each has strengths depending on property type and market conditions.</p>
+
+                <div class="valuation-methods">
+                    <div class="method-card">
+                        <h4><i class="fas fa-chart-line"></i> Sales Comparison Approach</h4>
+                        <p>Compares the subject property to similar recently sold properties (comparables) with adjustments for differences.</p>
+                        <p><strong>Best for:</strong> Residential lots, vacant land in developed areas</p>
+                        <ul>
+                            <li>Most common method for land valuation</li>
+                            <li>Requires good comparable sales data</li>
+                            <li>Adjust for size, location, zoning, topography</li>
+                        </ul>
+                    </div>
+
+                    <div class="method-card">
+                        <h4><i class="fas fa-calculator"></i> Land Residual Method</h4>
+                        <p>Calculates land value by subtracting development costs from estimated completed project value.</p>
+                        <p><strong>Best for:</strong> Development sites, income-producing potential</p>
+                        <ul>
+                            <li>Accounts for highest and best use</li>
+                            <li>Requires development cost estimates</li>
+                            <li>Accounts for profit and risk factors</li>
+                        </ul>
+                    </div>
+
+                    <div class="method-card">
+                        <h4><i class="fas fa-dollar-sign"></i> Income Capitalization</h4>
+                        <p>Values land based on its income potential, converting net income to present value.</p>
+                        <p><strong>Best for:</strong> Commercial land, agricultural property</p>
+                        <ul>
+                            <li>Based on land's income-generating capacity</li>
+                            <li>Requires market rent and expense data</li>
+                            <li>Uses capitalization rate from market</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h3>Land Valuation Calculator</h3>
+                <p>Estimate your land's value using our professional valuation tools. Select the method that best fits your property type.</p>
+
+                <div class="calculator-container">
+                    <div class="calculator-tabs">
+                        <button class="tab-button active" data-tab="sales-comparison">Sales Comparison</button>
+                        <button class="tab-button" data-tab="residual-method">Residual Method</button>
+                        <button class="tab-button" data-tab="income-cap">Income Capitalization</button>
+                    </div>
+
+                    <div id="sales-comparison" class="tab-content active">
+                        <div class="calculator-input">
+                            <label for="comp1-price">Comparable Sale 1 Price (₹)</label>
+                            <input type="number" id="comp1-price" placeholder="e.g. 5000000">
+                        </div>
+                        <div class="calculator-input">
+                            <label for="comp1-adjustment">Adjustment for Differences (₹)</label>
+                            <input type="number" id="comp1-adjustment" placeholder="e.g. -200000">
+                        </div>
+                        <div class="calculator-input">
+                            <label for="comp2-price">Comparable Sale 2 Price (₹)</label>
+                            <input type="number" id="comp2-price" placeholder="e.g. 4800000">
+                        </div>
+                        <div class="calculator-input">
+                            <label for="comp2-adjustment">Adjustment for Differences (₹)</label>
+                            <input type="number" id="comp2-adjustment" placeholder="e.g. 300000">
+                        </div>
+                        <div class="calculator-input">
+                            <label for="comp3-price">Comparable Sale 3 Price (₹)</label>
+                            <input type="number" id="comp3-price" placeholder="e.g. 5200000">
+                        </div>
+                        <div class="calculator-input">
+                            <label for="comp3-adjustment">Adjustment for Differences (₹)</label>
+                            <input type="number" id="comp3-adjustment" placeholder="e.g. -150000">
+                        </div>
+                        <button class="calculate-btn" id="calculate-sales">Calculate Estimated Value</button>
+                        <div class="calculator-results" id="sales-results">
+                            <h4>Valuation Results</h4>
+                            <div class="result-row">
+                                <span class="result-label">Adjusted Comp 1 Value:</span>
+                                <span class="result-value" id="adjusted-comp1">₹0</span>
+                            </div>
+                            <div class="result-row">
+                                <span class="result-label">Adjusted Comp 2 Value:</span>
+                                <span class="result-value" id="adjusted-comp2">₹0</span>
+                            </div>
+                            <div class="result-row">
+                                <span class="result-label">Adjusted Comp 3 Value:</span>
+                                <span class="result-value" id="adjusted-comp3">₹0</span>
+                            </div>
+                            <div class="result-row">
+                                <span class="result-label">Estimated Value Range:</span>
+                                <span class="result-value" id="value-range">₹0 - ₹0</span>
+                            </div>
+                            <div class="result-row">
+                                <span class="result-label">Recommended Value:</span>
+                                <span class="result-value" id="recommended-value">₹0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="residual-method" class="tab-content">
+                        <div class="calculator-input">
+                            <label for="project-value">Estimated Completed Project Value (₹)</label>
+                            <input type="number" id="project-value" placeholder="e.g. 10000000">
+                        </div>
+                        <div class="calculator-input">
+                            <label for="construction-cost">Construction Costs (₹)</label>
+                            <input type="number" id="construction-cost" placeholder="e.g. 6000000">
+                        </div>
+                        <div class="calculator-input">
+                            <label for="developer-profit">Developer Profit (%)</label>
+                            <input type="number" id="developer-profit" value="15" min="0" max="100">
+                        </div>
+                        <div class="calculator-input">
+                            <label for="finance-costs">Finance & Other Costs (₹)</label>
+                            <input type="number" id="finance-costs" placeholder="e.g. 500000">
+                        </div>
+                        <button class="calculate-btn" id="calculate-residual">Calculate Land Value</button>
+                        <div class="calculator-results" id="residual-results">
+                            <h4>Residual Valuation Results</h4>
+                            <div class="result-row">
+                                <span class="result-label">Gross Development Value:</span>
+                                <span class="result-value" id="gdv">₹0</span>
+                            </div>
+                            <div class="result-row">
+                                <span class="result-label">Total Development Costs:</span>
+                                <span class="result-value" id="total-costs">₹0</span>
+                            </div>
+                            <div class="result-row">
+                                <span class="result-label">Developer Profit:</span>
+                                <span class="result-value" id="profit-amount">₹0</span>
+                            </div>
+                            <div class="result-row">
+                                <span class="result-label">Residual Land Value:</span>
+                                <span class="result-value" id="land-value">₹0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="income-cap" class="tab-content">
+                        <div class="calculator-input">
+                            <label for="net-income">Annual Net Income (₹)</label>
+                            <input type="number" id="net-income" placeholder="e.g. 500000">
+                        </div>
+                        <div class="calculator-input">
+                            <label for="cap-rate">Market Capitalization Rate (%)</label>
+                            <input type="number" id="cap-rate" value="8" step="0.1" min="1" max="20">
+                        </div>
+                        <div class="calculator-input">
+                            <label for="expenses">Annual Expenses (₹)</label>
+                            <input type="number" id="expenses" placeholder="e.g. 100000">
+                        </div>
+                        <button class="calculate-btn" id="calculate-income">Calculate Value</button>
+                        <div class="calculator-results" id="income-results">
+                            <h4>Income Approach Results</h4>
+                            <div class="result-row">
+                                <span class="result-label">Net Operating Income:</span>
+                                <span class="result-value" id="noi">₹0</span>
+                            </div>
+                            <div class="result-row">
+                                <span class="result-label">Capitalization Rate:</span>
+                                <span class="result-value" id="cap-rate-display">0%</span>
+                            </div>
+                            <div class="result-row">
+                                <span class="result-label">Estimated Land Value:</span>
+                                <span class="result-value" id="income-value">₹0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <h4><i class="fas fa-lightbulb"></i> Professional Tip</h4>
+                    <p>For the most accurate valuation, consider using multiple methods and comparing results. Land valuation is both an art and a science - professional appraisers combine quantitative analysis with qualitative judgment about market conditions.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h3>Factors Affecting Land Value</h3>
+                <p>These key factors significantly influence land valuation in most markets:</p>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Factor</th>
+                            <th>Impact on Value</th>
+                            <th>How to Assess</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Location</td>
+                            <td>Most significant factor - prime locations command premium prices</td>
+                            <td>Compare to similar locations, check proximity to amenities</td>
+                        </tr>
+                        <tr>
+                            <td>Zoning</td>
+                            <td>Allowed uses affect value (residential, commercial, mixed-use)</td>
+                            <td>Verify with local planning department</td>
+                        </tr>
+                        <tr>
+                            <td>Size & Shape</td>
+                            <td>Larger parcels often have higher per-unit value; regular shapes are preferred</td>
+                            <td>Compare price per sq.ft./acre to similar properties</td>
+                        </tr>
+                        <tr>
+                            <td>Topography</td>
+                            <td>Flat, buildable land is most valuable; steep slopes reduce usability</td>
+                            <td>Review topographic maps, site visit</td>
+                        </tr>
+                        <tr>
+                            <td>Utilities</td>
+                            <td>Available utilities increase value; lack of utilities decreases value</td>
+                            <td>Check with utility providers, local government</td>
+                        </tr>
+                        <tr>
+                            <td>Access</td>
+                            <td>Good road access increases value; landlocked parcels have lower value</td>
+                            <td>Verify legal access, road frontage</td>
+                        </tr>
+                        <tr>
+                            <td>Market Conditions</td>
+                            <td>Supply and demand fluctuations affect land values</td>
+                            <td>Review recent sales trends, inventory levels</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="content-section">
+                <h3>Common Valuation Mistakes to Avoid</h3>
+                <div class="warning-box">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Valuation Pitfalls</h4>
+                    <ul class="checklist" style="margin-top: 0.5rem;">
+                        <li>Using inappropriate comparable properties</li>
+                        <li>Failing to properly adjust for differences between properties</li>
+                        <li>Overestimating development potential or income streams</li>
+                        <li>Underestimating development costs or timeframes</li>
+                        <li>Ignoring current market conditions and trends</li>
+                        <li>Not considering highest and best use of the property</li>
+                        <li>Valuing based on emotional attachment rather than market data</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="/h" class="action-button secondary-button">Back to Home</a>
+                <a href="/contact" class="action-button primary-button">Get Professional Valuation</a>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Land Buying</h3>
+                    <ul>
+                        <li><a href="/buying-guide">Land Buying Guide</a></li>
+                        <li><a href="/zoning-info">Zoning Information</a></li>
+                        <li><a href="/financing">Land Loans</a></li>
+                        <li><a href="/due-diligence">Due Diligence</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Land Selling</h3>
+                    <ul>
+                        <li><a href="/selling-process">Selling Process</a></li>
+                        <li><a href="/land-valuation">Valuation Tools</a></li>
+                        <li><a href="/tax-implications">Tax Implications</a></li>
+                        <li><a href="/listing-options">Listing Options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="/land-use">Land Use Planning</a></li>
+                        <li><a href="/environmental">Environmental Factors</a></li>
+                        <li><a href="/surveying">Surveying Info</a></li>
+                        <li><a href="/faq">Land Buying FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fas fa-phone-alt"></i></a>
+                    </div>
+                    <p style="margin-top: 1rem; color: #ccc;">Sign up for our Land Investor newsletter</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <b>2023 Prime Land Properties</b>. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Tab functionality
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding content
+                button.classList.add('active');
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Sales Comparison Calculator
+        document.getElementById('calculate-sales').addEventListener('click', function() {
+            // Get input values
+            const comp1Price = parseFloat(document.getElementById('comp1-price').value) || 0;
+            const comp1Adj = parseFloat(document.getElementById('comp1-adjustment').value) || 0;
+            const comp2Price = parseFloat(document.getElementById('comp2-price').value) || 0;
+            const comp2Adj = parseFloat(document.getElementById('comp2-adjustment').value) || 0;
+            const comp3Price = parseFloat(document.getElementById('comp3-price').value) || 0;
+            const comp3Adj = parseFloat(document.getElementById('comp3-adjustment').value) || 0;
+            
+            // Calculate adjusted values
+            const adjComp1 = comp1Price + comp1Adj;
+            const adjComp2 = comp2Price + comp2Adj;
+            const adjComp3 = comp3Price + comp3Adj;
+            
+            // Calculate value range
+            const values = [adjComp1, adjComp2, adjComp3].filter(v => v > 0);
+            const minValue = Math.min(...values);
+            const maxValue = Math.max(...values);
+            const avgValue = values.reduce((a, b) => a + b, 0) / values.length;
+            
+            // Display results
+            document.getElementById('adjusted-comp1').textContent = '₹' + adjComp1.toLocaleString('en-IN');
+            document.getElementById('adjusted-comp2').textContent = '₹' + adjComp2.toLocaleString('en-IN');
+            document.getElementById('adjusted-comp3').textContent = '₹' + adjComp3.toLocaleString('en-IN');
+            document.getElementById('value-range').textContent = '₹' + minValue.toLocaleString('en-IN') + ' - ₹' + maxValue.toLocaleString('en-IN');
+            document.getElementById('recommended-value').textContent = '₹' + avgValue.toLocaleString('en-IN');
+            
+            // Show results
+            document.getElementById('sales-results').style.display = 'block';
+        });
+
+        // Residual Method Calculator
+        document.getElementById('calculate-residual').addEventListener('click', function() {
+            // Get input values
+            const projectValue = parseFloat(document.getElementById('project-value').value) || 0;
+            const constructionCost = parseFloat(document.getElementById('construction-cost').value) || 0;
+            const developerProfitPercent = parseFloat(document.getElementById('developer-profit').value) || 0;
+            const financeCosts = parseFloat(document.getElementById('finance-costs').value) || 0;
+            
+            // Calculate values
+            const developerProfit = projectValue * (developerProfitPercent / 100);
+            const totalCosts = constructionCost + financeCosts + developerProfit;
+            const landValue = projectValue - totalCosts;
+            
+            // Display results
+            document.getElementById('gdv').textContent = '₹' + projectValue.toLocaleString('en-IN');
+            document.getElementById('total-costs').textContent = '₹' + totalCosts.toLocaleString('en-IN');
+            document.getElementById('profit-amount').textContent = '₹' + developerProfit.toLocaleString('en-IN');
+            document.getElementById('land-value').textContent = '₹' + Math.max(0, landValue).toLocaleString('en-IN');
+            
+            // Show results
+            document.getElementById('residual-results').style.display = 'block';
+        });
+
+        // Income Capitalization Calculator
+        document.getElementById('calculate-income').addEventListener('click', function() {
+            // Get input values
+            const netIncome = parseFloat(document.getElementById('net-income').value) || 0;
+            const capRate = parseFloat(document.getElementById('cap-rate').value) || 0;
+            const expenses = parseFloat(document.getElementById('expenses').value) || 0;
+            
+            // Calculate values
+            const noi = netIncome - expenses;
+            const landValue = noi / (capRate / 100);
+            
+            // Display results
+            document.getElementById('noi').textContent = '₹' + noi.toLocaleString('en-IN');
+            document.getElementById('cap-rate-display').textContent = capRate + '%';
+            document.getElementById('income-value').textContent = '₹' + landValue.toLocaleString('en-IN');
+            
+            // Show results
+            document.getElementById('income-results').style.display = 'block';
+        });
+
+        // Initialize first calculator on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('calculate-sales').click();
+        });
+    </script>
+</body>
+</html>

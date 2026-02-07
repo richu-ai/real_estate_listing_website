@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Buy your dream property with Premium Real Estate - Exclusive listings and expert guidance">
+    <title>Buy Property | Premium Real Estate Listings</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            height: 100px;
+            width: auto;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        header h1 span {
+            color: var(--accent-color);
+        }
+
+        .logo-tagline {
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-top: 0.2rem;
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        nav a.active {
+            background-color: var(--accent-color);
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Buy Page Specific Styles */
+        .buy-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/buy-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+        }
+
+        .buy-hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .buy-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .buy-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .buy-intro h2 {
+            font-size: 2rem;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .buy-intro h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 0.5rem auto 0;
+        }
+
+        .buy-intro p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .search-filters {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            margin-bottom: 3rem;
+        }
+
+        .filter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .filter-group {
+            margin-bottom: 1rem;
+        }
+
+        .filter-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        .filter-group select, 
+        .filter-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .filter-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        .filter-results {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: #d5dbdb;
+            transform: translateY(-2px);
+        }
+
+        .properties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .property-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .property-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .property-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .property-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .property-card:hover .property-image img {
+            transform: scale(1.05);
+        }
+
+        .property-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .property-info {
+            padding: 1.5rem;
+        }
+
+        .property-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .property-address {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .property-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .feature i {
+            color: var(--accent-color);
+        }
+
+        .property-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn-small {
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 3rem;
+        }
+
+        .pagination a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background-color: white;
+            color: var(--text-color);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: var(--transition);
+            font-weight: 600;
+        }
+
+        .pagination a:hover, .pagination a.active {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .buy-guide {
+            background-color: var(--light-color);
+            padding: 3rem 2rem;
+            border-radius: 8px;
+            margin: 4rem 0;
+            text-align: center;
+        }
+
+        .buy-guide h2 {
+            font-size: 2rem;
+            color: var(--dark-color);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .buy-guide h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 0.5rem auto 0;
+        }
+
+        .guide-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 2rem auto 0;
+        }
+
+        .guide-step {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .guide-step h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+
+        .guide-step p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+
+        .footer-column h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column ul li a {
+            color: var(--light-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .logo-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+
+            nav {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .buy-hero h2 {
+                font-size: 2rem;
+            }
+
+            .filter-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-actions {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+
+            .property-actions {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .btn-small {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Premium Real Estate" class="logo">
+                    <div class="logo-text">
+                        <h1><span>Premium</span> Real Estate</h1>
+                        <p class="logo-tagline">Find your dream property</p>
+                    </div>
+                </div>
+                <nav>
+                    <a href="/h">Home</a>
+                    <a href="/buy" class="active">Buy</a>
+                    <a href="/sell">Sell</a>
+                    <a href="/contact">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="buy-hero">
+                <h2>Find Your <b>Dream Home</b></h2>
+                <p>Browse our exclusive selection of premium properties and discover your perfect match</p>
+            </section>
+
+            <section class="buy-intro">
+                <h2>Premium <b>Property Listings</b></h2>
+                <p>Our curated collection features the finest homes in the most desirable locations. Use our advanced filters to narrow down your search.</p>
+            </section>
+
+            <div class="search-filters">
+                <div class="filter-grid">
+                    <div class="filter-group">
+                        <label for="property-type">Property Type</label>
+                        <select id="property-type">
+                            <option value="">All Types</option>
+                            <option value="apartment">Apartment</option>
+                            <option value="house">House</option>
+                            <option value="villa">Villa</option>
+                            <option value="condo">Condo</option>
+                            <option value="land">Land</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="location">Location</label>
+                        <select id="location">
+                            <option value="">All Areas</option>
+                            <option value="downtown">Downtown</option>
+                            <option value="suburbs">Suburbs</option>
+                            <option value="waterfront">Waterfront</option>
+                            <option value="hills">Hills</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="bedrooms">Bedrooms</label>
+                        <select id="bedrooms">
+                            <option value="">Any</option>
+                            <option value="1">1+</option>
+                            <option value="2">2+</option>
+                            <option value="3">3+</option>
+                            <option value="4">4+</option>
+                            <option value="5">5+</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="price-range">Price Range</label>
+                        <select id="price-range">
+                            <option value="">Any Price</option>
+                            <option value="0-500000">$0 - $500,000</option>
+                            <option value="500000-1000000">$500,000 - $1M</option>
+                            <option value="1000000-2000000">$1M - $2M</option>
+                            <option value="2000000+">$2M+</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter-actions">
+                    <div class="filter-results">Showing 12 of 84 properties</div>
+                    <div class="filter-buttons">
+                        <button class="btn btn-secondary">Reset Filters</button>
+                        <button class="btn btn-primary">Search Properties</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="properties-grid">
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="{{ url_for('static', filename='images/luxury condo.jpg') }}" alt="Luxury Penthouse">
+                        <div class="property-badge">New Listing</div>
+                    </div>
+                    <div class="property-info">
+                        <div class="property-price">$1,250,000</div>
+                        <div class="property-address">123 Ocean View Drive, Malibu</div>
+                        <div class="property-features">
+                            <div class="feature"><i class="fas fa-bed"></i> 4 Beds</div>
+                            <div class="feature"><i class="fas fa-bath"></i> 3 Baths</div>
+                            <div class="feature"><i class="fas fa-ruler-combined"></i> 2,800 sqft</div>
+                        </div>
+                        <div class="property-actions">
+                            <button class="btn btn-primary btn-small">View Details</button>
+                            <button class="btn btn-secondary btn-small"><i class="far fa-heart"></i> Save</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="{{ url_for('static', filename='images/modren villa.webp') }}" alt="Modern Villa">
+                        <div class="property-badge">Open House</div>
+                    </div>
+                    <div class="property-info">
+                        <div class="property-price">$2,750,000</div>
+                        <div class="property-address">45 Hillside Avenue, Beverly Hills</div>
+                        <div class="property-features">
+                            <div class="feature"><i class="fas fa-bed"></i> 5 Beds</div>
+                            <div class="feature"><i class="fas fa-bath"></i> 4.5 Baths</div>
+                            <div class="feature"><i class="fas fa-ruler-combined"></i> 4,200 sqft</div>
+                        </div>
+                        <div class="property-actions">
+                            <button class="btn btn-primary btn-small">View Details</button>
+                            <button class="btn btn-secondary btn-small"><i class="far fa-heart"></i> Save</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="{{ url_for('static', filename='images/urbanloaftpenthouse.jpeg') }}" alt="Downtown Loft">
+                    </div>
+                    <div class="property-info">
+                        <div class="property-price">$850,000</div>
+                        <div class="property-address">789 Urban Street, Downtown</div>
+                        <div class="property-features">
+                            <div class="feature"><i class="fas fa-bed"></i> 2 Beds</div>
+                            <div class="feature"><i class="fas fa-bath"></i> 2 Baths</div>
+                            <div class="feature"><i class="fas fa-ruler-combined"></i> 1,500 sqft</div>
+                        </div>
+                        <div class="property-actions">
+                            <button class="btn btn-primary btn-small">View Details</button>
+                            <button class="btn btn-secondary btn-small"><i class="far fa-heart"></i> Save</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="{{ url_for('static', filename='images/suburban-development land.avif') }}" alt="Suburban Family Home">
+                    </div>
+                    <div class="property-info">
+                        <div class="property-price">$675,000</div>
+                        <div class="property-address">321 Maple Lane, Suburbia</div>
+                        <div class="property-features">
+                            <div class="feature"><i class="fas fa-bed"></i> 3 Beds</div>
+                            <div class="feature"><i class="fas fa-bath"></i> 2 Baths</div>
+                            <div class="feature"><i class="fas fa-ruler-combined"></i> 2,100 sqft</div>
+                        </div>
+                        <div class="property-actions">
+                            <button class="btn btn-primary btn-small">View Details</button>
+                            <button class="btn btn-secondary btn-small"><i class="far fa-heart"></i> Save</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="{{ url_for('static', filename='images/luxury condo.jpg') }}" alt="Luxury Condo">
+                        <div class="property-badge">Price Reduced</div>
+                    </div>
+                    <div class="property-info">
+                        <div class="property-price">$1,100,000</div>
+                        <div class="property-address">555 Skyline Tower, City Center</div>
+                        <div class="property-features">
+                            <div class="feature"><i class="fas fa-bed"></i> 3 Beds</div>
+                            <div class="feature"><i class="fas fa-bath"></i> 3 Baths</div>
+                            <div class="feature"><i class="fas fa-ruler-combined"></i> 2,400 sqft</div>
+                        </div>
+                        <div class="property-actions">
+                            <button class="btn btn-primary btn-small">View Details</button>
+                            <button class="btn btn-secondary btn-small"><i class="far fa-heart"></i> Save</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="{{ url_for('static', filename='images/vacent-land.jpeg') }}" alt="Vacant Land">
+                    </div>
+                    <div class="property-info">
+                        <div class="property-price">$350,000</div>
+                        <div class="property-address">Lot 42, Mountain View Road</div>
+                        <div class="property-features">
+                            <div class="feature"><i class="fas fa-vector-square"></i> 1.5 Acres</div>
+                            <div class="feature"><i class="fas fa-tree"></i> Wooded</div>
+                            <div class="feature"><i class="fas fa-tint"></i> Water Access</div>
+                        </div>
+                        <div class="property-actions">
+                            <button class="btn btn-primary btn-small">View Details</button>
+                            <button class="btn btn-secondary btn-small"><i class="far fa-heart"></i> Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class="buy-guide">
+                <h2>Your <b>Home Buying</b> Journey</h2>
+                <p>We guide you through every step of the process to make your home purchase smooth and successful</p>
+                
+                <div class="guide-steps">
+                    <div class="guide-step">
+                        <div class="step-number">1</div>
+                        <h3>Get Pre-Approved</h3>
+                        <p>Understand your budget and strengthen your offer with a mortgage pre-approval from our trusted lenders.</p>
+                    </div>
+                    <div class="guide-step">
+                        <div class="step-number">2</div>
+                        <h3>Find Your Home</h3>
+                        <p>Work with our agents to identify properties that match your criteria and schedule viewings.</p>
+                    </div>
+                    <div class="guide-step">
+                        <div class="step-number">3</div>
+                        <h3>Make an Offer</h3>
+                        <p>We'll help you craft a competitive offer and negotiate the best terms on your behalf.</p>
+                    </div>
+                    <div class="guide-step">
+                        <div class="step-number">4</div>
+                        <h3>Close & Move In</h3>
+                        <p>We'll handle all the paperwork and ensure a smooth closing process so you can enjoy your new home.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/team">Our Team</a></li>
+                        <li><a href="/careers">Careers</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="/buy">Buy Property</a></li>
+                        <li><a href="/sell">Sell Property</a></li>
+                        <li><a href="/rent">Rent Properties</a></li>
+                        <li><a href="/valuation">Property Valuation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="/contact">Contact Us</a></li>
+                        <li><a href="/faq">FAQ</a></li>
+                        <li><a href="/privacy">Privacy Policy</a></li>
+                        <li><a href="/terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <b>2023 Premium Real Estate Listings</b>. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Property card hover effects
+        document.querySelectorAll('.property-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.querySelector('img').style.transform = 'scale(1.05)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.querySelector('img').style.transform = 'scale(1)';
+            });
+        });
+
+        // Save property functionality
+        document.querySelectorAll('.btn-secondary').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const icon = this.querySelector('i');
+                if (icon.classList.contains('far')) {
+                    icon.classList.remove('far');
+                    icon.classList.add('fas');
+                    this.style.color = 'white';
+                    this.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--accent-color');
+                    alert('Property saved to your favorites!');
+                } else {
+                    icon.classList.remove('fas');
+                    icon.classList.add('far');
+                    this.style.color = '';
+                    this.style.backgroundColor = '';
+                }
+            });
+        });
+
+        // View details functionality
+        document.querySelectorAll('.btn-primary').forEach((btn, index) => {
+            if (btn.textContent.includes('View Details')) {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    window.location.href = `property-details-${index + 1}.html`;
+                });
+            }
+        });
+
+        // Make entire property card clickable
+        document.querySelectorAll('.property-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const index = Array.from(document.querySelectorAll('.property-card')).indexOf(this);
+                window.location.href = `property-details-${index + 1}.html`;
+            });
+        });
+
+        // Filter functionality
+        document.querySelector('.filter-buttons .btn-primary').addEventListener('click', function() {
+            const type = document.getElementById('property-type').value;
+            const location = document.getElementById('location').value;
+            const bedrooms = document.getElementById('bedrooms').value;
+            const priceRange = document.getElementById('price-range').value;
+            
+            alert(`Filters applied:\nType: ${type || 'Any'}\nLocation: ${location || 'Any'}\nBedrooms: ${bedrooms || 'Any'}\nPrice: ${priceRange || 'Any'}`);
+        });
+
+        // Reset filters
+        document.querySelector('.filter-buttons .btn-secondary').addEventListener('click', function() {
+            document.getElementById('property-type').value = '';
+            document.getElementById('location').value = '';
+            document.getElementById('bedrooms').value = '';
+            document.getElementById('price-range').value = '';
+        });
+
+        // Pagination functionality
+        document.querySelectorAll('.pagination a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (!this.classList.contains('active')) {
+                    document.querySelectorAll('.pagination a').forEach(a => a.classList.remove('active'));
+                    this.classList.add('active');
+                    // In a real implementation, this would load new properties
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

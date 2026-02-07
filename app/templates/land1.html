@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Details about Lakeside Building Lot - 1 acre waterfront property in Lonavala, Maharashtra">
+    <title>Lakeside Building Lot | Prime Land Properties</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #c7232e;
+            --secondary-color: #556b2f;
+            --accent-color: #e5ede6;
+            --light-color: #f8f9fa;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --border-radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lato', sans-serif;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+
+        body {
+            background-color: #f9f9f7;
+            color: var(--text-color);
+            line-height: 1.6;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        header h1 span {
+            color: var(--accent-color);
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        nav a.active {
+            background-color: var(--accent-color);
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .breadcrumb {
+            padding: 1rem 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .property-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+        }
+
+        .property-title h2 {
+            font-size: 2.2rem;
+            color: var(--secondary-color);
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 0.5rem;
+        }
+
+        .property-price {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .property-badge {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-left: 1rem;
+        }
+
+        .property-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .property-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #666;
+        }
+
+        .property-meta i {
+            color: var(--accent-color);
+        }
+
+        .property-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .main-image {
+            grid-column: span 2;
+            grid-row: span 2;
+            height: 400px;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .main-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .thumb-image {
+            height: 190px;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            cursor: pointer;
+        }
+
+        .thumb-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .thumb-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .property-details-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        .property-description {
+            background-color: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        .property-description h3 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .property-description p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .features-list {
+            columns: 2;
+            margin: 1.5rem 0;
+        }
+
+        .features-list li {
+            margin-bottom: 0.75rem;
+            list-style-type: none;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .features-list li:before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+        }
+
+        .property-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .feature-tag {
+            background-color: #f0f0f0;
+            color: var(--secondary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .property-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .sidebar-card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .sidebar-card h3 {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form button {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+        }
+
+        .contact-form button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .contact-form button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .details-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .details-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .details-table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .details-table td:first-child {
+            font-weight: 600;
+            color: var(--secondary-color);
+            width: 40%;
+        }
+
+        .map-container {
+            height: 300px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin-top: 2rem;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .action-button {
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+            text-align: center;
+        }
+
+        .primary-button {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .primary-button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .secondary-button {
+            background-color: white;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+
+        .secondary-button:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Rent vs Buy Calculator Styles */
+        .calculator-input {
+            margin-bottom: 1rem;
+        }
+
+        .calculator-input label {
+            display: block;
+            margin-bottom: 0.25rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .calculator-input input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+        }
+
+        .calculator-results {
+            margin-top: 1.5rem;
+        }
+
+        .calculator-results h4 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .calculator-results table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .calculator-results td {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .calculator-results td:last-child {
+            text-align: right;
+        }
+
+        .calculator-message {
+            margin-top: 1rem;
+            padding: 0.75rem;
+            border-radius: var(--border-radius);
+            color: white;
+            display: none;
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+
+        .footer-column h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column ul li a {
+            color: var(--light-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 992px) {
+            .property-details-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .property-gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .main-image {
+                grid-column: span 2;
+                height: 300px;
+            }
+
+            .features-list {
+                columns: 1;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .property-header {
+                flex-direction: column;
+            }
+
+            .property-price {
+                margin-top: 1rem;
+            }
+
+            .property-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .main-image {
+                grid-column: span 1;
+                height: 250px;
+            }
+
+            .thumb-image {
+                height: 120px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1><span>Prime</span> Land Properties</h1>
+                <nav>
+                    <a href="/h">Home</a>
+                    <a href="/l">Login</a>
+                    <a href="/register">Register</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="breadcrumb">
+                <a href="/vacant-land">Vacant Land</a> &raquo; <span>Lakeside Building Lot</span>
+            </div>
+
+            <div class="property-header">
+                <div class="property-title">
+                    <h2>Lakeside Building Lot</h2>
+                    <div class="property-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Lonavala, Maharashtra</span>
+                        <span><i class="fas fa-expand"></i> 1 Acre</span>
+                        <span><i class="fas fa-tint"></i> 200 ft Lake Frontage</span>
+                    </div>
+                </div>
+                <div class="property-price">
+                    ₹75 Lakh
+                    <span class="property-badge">Waterfront</span>
+                </div>
+            </div>
+
+            <div class="property-gallery">
+                <div class="main-image">
+                    <img src="/static/images/lakeside building lot.jpeg" alt="Lakeside Building Lot - Main View">
+                </div>
+                <div class="thumb-image">
+                    <img src="/static/images/lakesideview.jpg" alt="Lakeside View">
+                </div>
+                <div class="thumb-image">
+                    <img src="/static/images/buildingsite.jpg" alt="Building Site">
+                </div>
+                <div class="thumb-image">
+                    <img src="/static/images/lake access.jpeg" alt="Lake Access">
+                </div>
+                <div class="thumb-image">
+                    <img src="/static/images/surrounding area.jpeg" alt="Surrounding Area">
+                </div>
+            </div>
+
+            <div class="property-details-container">
+                <div class="property-main">
+                    <div class="property-description">
+                        <h3>Property Description</h3>
+                        <p>This exceptional 1-acre waterfront lot offers 200 feet of pristine lake frontage on beautiful Pawna Lake in Lonavala, Maharashtra. The property features a gently sloping terrain with a cleared building site that has been professionally graded and prepared for construction, while maintaining a natural buffer of mature hardwoods along the shoreline.</p>
+                        <p>The lot has been fully approved for residential construction with all necessary permits in place, including septic system approval and dock permit. The building site offers panoramic lake views and is positioned to maximize both privacy and water access.</p>
+                        <p>Pawna Lake is known for its excellent water quality, fishing, and recreational opportunities. The property includes deeded access to a shared boat launch just 0.3 km away, making it ideal for water enthusiasts. Year-round access is maintained via a private, well-maintained road.</p>
+
+                        <h3 style="margin-top: 2rem;">Key Features</h3>
+                        <ul class="features-list">
+                            <li>200 feet of direct lake frontage</li>
+                            <li>Approved building site with perc test</li>
+                            <li>Dock permit included</li>
+                            <li>Year-round maintained access</li>
+                            <li>Underground utilities available</li>
+                            <li>Survey and soil tests complete</li>
+                            <li>Mature trees provide privacy</li>
+                            <li>Excellent southern exposure</li>
+                            <li>Shared boat launch access</li>
+                            <li>Zoned for single-family residential</li>
+                        </ul>
+
+                        <div class="property-features">
+                            <span class="feature-tag">Septic Approved</span>
+                            <span class="feature-tag">Year-Round Access</span>
+                            <span class="feature-tag">Dock Permit</span>
+                            <span class="feature-tag">Surveyed</span>
+                            <span class="feature-tag">Utilities Available</span>
+                            <span class="feature-tag">Cleared Building Site</span>
+                        </div>
+
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.715036339874!2d73.4061883153789!3d18.57998798737055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2959e1f4e0f8b%3A0x1e3c2a6b0e3a3a6b!2sPawna%20Lake%2C%20Lonavala%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="property-sidebar">
+                    <div class="sidebar-card">
+                        <h3>Request Information</h3>
+                        <form class="contact-form">
+                            <input type="text" placeholder="Your Name" required>
+                            <input type="email" placeholder="Your Email" required>
+                            <input type="tel" placeholder="Phone Number">
+                            <textarea placeholder="Your Message" rows="4"></textarea>
+                            <button type="submit">Send Inquiry</button>
+                        </form>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Rent vs. Buy Calculator</h3>
+                        <div class="calculator">
+                            <div class="calculator-input">
+                                <label for="home-price">Home Price (₹)</label>
+                                <input type="number" id="home-price" value="7500000">
+                            </div>
+                            <div class="calculator-input">
+                                <label for="down-payment">Down Payment (%)</label>
+                                <input type="number" id="down-payment" value="20" min="0" max="100">
+                            </div>
+                            <div class="calculator-input">
+                                <label for="loan-term">Loan Term (years)</label>
+                                <input type="number" id="loan-term" value="20" min="1">
+                            </div>
+                            <div class="calculator-input">
+                                <label for="interest-rate">Interest Rate (%)</label>
+                                <input type="number" id="interest-rate" value="8.5" step="0.1">
+                            </div>
+                            <div class="calculator-input">
+                                <label for="rent-amount">Monthly Rent (₹)</label>
+                                <input type="number" id="rent-amount" value="25000">
+                            </div>
+                            <button id="calculate-btn" class="action-button primary-button" style="margin-top: 1rem;">Calculate</button>
+                            <div class="calculator-results" id="calculator-results" style="margin-top: 1.5rem; display: none;">
+                                <h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">Comparison Results</h4>
+                                <table style="width: 100%; border-collapse: collapse;">
+                                    <tr>
+                                        <td style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">Monthly Mortgage:</td>
+                                        <td style="padding: 0.5rem 0; border-bottom: 1px solid #eee; text-align: right;" id="monthly-mortgage">₹0</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">Monthly Rent:</td>
+                                        <td style="padding: 0.5rem 0; border-bottom: 1px solid #eee; text-align: right;" id="monthly-rent">₹0</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">Difference:</td>
+                                        <td style="padding: 0.5rem 0; border-bottom: 1px solid #eee; text-align: right;" id="monthly-difference">₹0</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.5rem 0; font-weight: 600;">Break-even Point:</td>
+                                        <td style="padding: 0.5rem 0; text-align: right; font-weight: 600;" id="break-even">0 years</td>
+                                    </tr>
+                                </table>
+                                <div id="calculator-message" style="margin-top: 1rem; padding: 0.75rem; border-radius: var(--border-radius); background-color: var(--accent-color); color: white; display: none;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Property Details</h3>
+                        <table class="details-table">
+                            <tr>
+                                <td>Property ID:</td>
+                                <td>LV-2023-125</td>
+                            </tr>
+                            <tr>
+                                <td>Lot Size:</td>
+                                <td>1 Acre</td>
+                            </tr>
+                            <tr>
+                                <td>Frontage:</td>
+                                <td>200 ft Lake Frontage</td>
+                            </tr>
+                            <tr>
+                                <td>Zoning:</td>
+                                <td>Residential (R-1)</td>
+                            </tr>
+                            <tr>
+                                <td>Access:</td>
+                                <td>Year-round, private road</td>
+                            </tr>
+                            <tr>
+                                <td>Topography:</td>
+                                <td>Gently sloping to lake</td>
+                            </tr>
+                            <tr>
+                                <td>Utilities:</td>
+                                <td>Electric, phone at road</td>
+                            </tr>
+                            <tr>
+                                <td>Taxes:</td>
+                                <td>₹15,000/year</td>
+                            </tr>
+                            <tr>
+                                <td>MLS#:</td>
+                                <td>MH-54321</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Schedule a Visit</h3>
+                        <p>Contact us to arrange a private showing of this exceptional lakeside property.</p>
+                        <div class="action-buttons">
+                            <a href="tel:+919876543210" class="action-button primary-button">
+                                <i class="fas fa-phone"></i> Call Agent
+                            </a>
+                            <a href="mailto:info@primeland.com" class="action-button secondary-button">
+                                <i class="fas fa-envelope"></i> Email
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Land Buying</h3>
+                    <ul>
+                        <li><a href="/buying-guide">Land Buying Guide</a></li>
+                        <li><a href="/zoning-info">Zoning Information</a></li>
+                        <li><a href="/financing">Land Loans</a></li>
+                        <li><a href="/due-diligence">Due Diligence</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Land Selling</h3>
+                    <ul>
+                        <li><a href="/selling-process">Selling Process</a></li>
+                        <li><a href="/land-valuation">Valuation Tools</a></li>
+                        <li><a href="/tax-implications">Tax Implications</a></li>
+                        <li><a href="/listing-options">Listing Options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="/land-use">Land Use Planning</a></li>
+                        <li><a href="/environmental">Environmental Factors</a></li>
+                        <li><a href="/surveying">Surveying Info</a></li>
+                        <li><a href="/faq">Land Buying FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fas fa-phone-alt"></i></a>
+                    </div>
+                    <p style="margin-top: 1rem; color: #ccc;">Sign up for our Land Investor newsletter</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <b>2023 Prime Land Properties</b>. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Image gallery functionality
+        document.querySelectorAll('.thumb-image').forEach(thumb => {
+            thumb.addEventListener('click', function() {
+                const mainImage = document.querySelector('.main-image img');
+                const thumbSrc = this.querySelector('img').src;
+                const mainSrc = mainImage.src;
+                
+                // Swap images
+                this.querySelector('img').src = mainSrc;
+                mainImage.src = thumbSrc;
+            });
+        });
+
+        // Contact form submission
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your inquiry. An agent will contact you shortly.');
+            this.reset();
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Rent vs Buy Calculator
+        document.getElementById('calculate-btn').addEventListener('click', function() {
+            // Get input values
+            const homePrice = parseFloat(document.getElementById('home-price').value);
+            const downPaymentPercent = parseFloat(document.getElementById('down-payment').value);
+            const loanTerm = parseFloat(document.getElementById('loan-term').value);
+            const interestRate = parseFloat(document.getElementById('interest-rate').value) / 100;
+            const rentAmount = parseFloat(document.getElementById('rent-amount').value);
+            
+            // Calculate
+            const downPaymentAmount = homePrice * (downPaymentPercent / 100);
+            const loanAmount = homePrice - downPaymentAmount;
+            const monthlyInterestRate = interestRate / 12;
+            const numberOfPayments = loanTerm * 12;
+            
+            // Monthly mortgage payment calculation
+            const monthlyMortgage = loanAmount * 
+                (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, numberOfPayments)) / 
+                (Math.pow(1 + monthlyInterestRate, numberOfPayments) - 1);
+            
+            // Calculate difference
+            const difference = monthlyMortgage - rentAmount;
+            
+            // Calculate break-even point (simplified)
+            const breakEvenYears = (downPaymentAmount / (rentAmount * 12)).toFixed(1);
+            
+            // Display results
+            document.getElementById('monthly-mortgage').textContent = '₹' + monthlyMortgage.toFixed(0);
+            document.getElementById('monthly-rent').textContent = '₹' + rentAmount.toFixed(0);
+            document.getElementById('monthly-difference').textContent = '₹' + difference.toFixed(0);
+            document.getElementById('break-even').textContent = breakEvenYears + ' years';
+            
+            // Show message based on comparison
+            const messageElement = document.getElementById('calculator-message');
+            messageElement.style.display = 'block';
+            
+            if (difference > 0) {
+                messageElement.textContent = 'Renting is cheaper by ₹' + difference.toFixed(0) + '/month';
+                messageElement.style.backgroundColor = '#4CAF50'; // Green
+            } else if (difference < 0) {
+                messageElement.textContent = 'Buying is cheaper by ₹' + Math.abs(difference).toFixed(0) + '/month';
+                messageElement.style.backgroundColor = '#2196F3'; // Blue
+            } else {
+                messageElement.textContent = 'Renting and buying costs are equal';
+                messageElement.style.backgroundColor = '#FFC107'; // Yellow
+                messageElement.style.color = '#333';
+            }
+            
+            // Show results
+            document.getElementById('calculator-results').style.display = 'block';
+        });
+
+        // Calculate on page load with default values
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('calculate-btn').click();
+        });
+    </script>
+</body>
+</html>

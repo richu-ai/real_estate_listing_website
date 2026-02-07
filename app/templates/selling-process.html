@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Step-by-step guide to selling your land with Prime Land Properties">
+    <title>Selling Process | Prime Land Properties</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #c7232e;
+            --secondary-color: #556b2f;
+            --accent-color: #e5ede6;
+            --light-color: #f8f9fa;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --border-radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lato', sans-serif;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+
+        body {
+            background-color: #f9f9f7;
+            color: var(--text-color);
+            line-height: 1.6;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        header h1 span {
+            color: var(--accent-color);
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        nav a.active {
+            background-color: var(--accent-color);
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .breadcrumb {
+            padding: 1rem 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .page-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .page-header h2 {
+            font-size: 2.2rem;
+            color: var(--secondary-color);
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            max-width: 800px;
+            margin: 0 auto;
+            color: #666;
+        }
+
+        .process-section {
+            background-color: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 3rem;
+        }
+
+        .process-section h3 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .process-section h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .process-step {
+            display: flex;
+            gap: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px dashed #ddd;
+            position: relative;
+        }
+
+        .process-step:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .step-number {
+            background-color: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-content h4 {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .step-tips {
+            background-color: #f9f9f9;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-top: 1rem;
+        }
+
+        .step-tips h5 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .step-tips ul {
+            list-style-type: none;
+        }
+
+        .step-tips li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .step-tips li:before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-size: 0.8rem;
+        }
+
+        .selling-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .option-card {
+            border: 1px solid #eee;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .option-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .option-card-header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 1rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .option-card-body {
+            padding: 1.5rem;
+        }
+
+        .option-card-body ul {
+            list-style: none;
+        }
+
+        .option-card-body li {
+            margin-bottom: 0.75rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .option-card-body li:before {
+            content: '\f054';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-size: 0.8rem;
+        }
+
+        .option-card-footer {
+            padding: 1rem;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .timeline-container {
+            margin: 3rem 0;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline:before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: var(--accent-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            top: 15px;
+            right: -8px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -8px;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .timeline-content h4 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content p {
+            color: #666;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .action-button {
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+            text-align: center;
+        }
+
+        .primary-button {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .primary-button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .secondary-button {
+            background-color: white;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+
+        .secondary-button:hover {
+            background-color: #f0f0f0;
+        }
+
+        .contact-card {
+            background-color: var(--accent-color);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .contact-card i {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+        }
+
+        .contact-card-content h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-question {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            transition: var(--transition);
+        }
+
+        .faq-question.active:after {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            display: none;
+            padding-top: 0.5rem;
+            color: #666;
+        }
+
+        .faq-answer.show {
+            display: block;
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+
+        .footer-column h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column ul li a {
+            color: var(--light-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .process-step {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .timeline:before {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-dot {
+                left: 23px !important;
+            }
+
+            .contact-card {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .selling-options {
+                grid-template-columns: 1fr;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1><span>Prime</span> Land Properties</h1>
+                <nav>
+                    <a href="/h">Home</a>
+                    <a href="/l">Login</a>
+                    <a href="/register">Register</a>
+                    <a href="/selling-process" class="active">Sell Land</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="breadcrumb">
+                <a href="/h">Home</a> &raquo; <span>Selling Process</span>
+            </div>
+
+            <div class="page-header">
+                <h2>Selling Your Land with Confidence</h2>
+                <p>Our streamlined selling process maximizes your property's value while minimizing stress and uncertainty. Here's how we make selling your land simple and profitable.</p>
+            </div>
+
+            <div class="process-section">
+                <h3>Our Step-by-Step Selling Process</h3>
+                
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Initial Consultation & Valuation</h4>
+                            <p>We begin with a comprehensive evaluation of your property, considering location, zoning, market trends, and development potential to determine its optimal market value.</p>
+                            <div class="step-tips">
+                                <h5>Pro Tip:</h5>
+                                <ul>
+                                    <li>Gather any existing surveys, deeds, or zoning documents</li>
+                                    <li>Note any unique features or recent improvements</li>
+                                    <li>Consider your ideal timeline for selling</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Marketing Strategy Development</h4>
+                            <p>We create a customized marketing plan that may include professional photography, drone footage, targeted digital advertising, and exposure to our network of developers and investors.</p>
+                            <div class="step-tips">
+                                <h5>Pro Tip:</h5>
+                                <ul>
+                                    <li>Clear any debris or obstructions for better photos</li>
+                                    <li>Highlight access points and road frontage</li>
+                                    <li>Consider seasonal factors that may affect appeal</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Property Listing & Promotion</h4>
+                            <p>Your property is showcased across multiple platforms including MLS, land-specific marketplaces, and our exclusive investor network with detailed information and compelling visuals.</p>
+                            <div class="step-tips">
+                                <h5>Pro Tip:</h5>
+                                <ul>
+                                    <li>Be available for potential buyer questions</li>
+                                    <li>Consider creating a simple informational flyer</li>
+                                    <li>Highlight any development approvals or permits</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Offer Review & Negotiation</h4>
+                            <p>We carefully evaluate all offers, provide detailed analysis of terms and conditions, and negotiate on your behalf to secure the best possible deal structure.</p>
+                            <div class="step-tips">
+                                <h5>Pro Tip:</h5>
+                                <ul>
+                                    <li>Consider financing options you're willing to accept</li>
+                                    <li>Understand the tax implications of your sale</li>
+                                    <li>Review comparable recent sales in your area</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Due Diligence & Closing</h4>
+                            <p>We guide you through the closing process, coordinating with title companies, surveyors, and attorneys to ensure a smooth transaction that meets all legal requirements.</p>
+                            <div class="step-tips">
+                                <h5>Pro Tip:</h5>
+                                <ul>
+                                    <li>Have your identification documents ready</li>
+                                    <li>Understand your closing cost responsibilities</li>
+                                    <li>Consider 1031 exchange options if reinvesting</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-section">
+                <h3>Selling Timeline</h3>
+                <p>While every sale is unique, here's a typical timeline you can expect when selling your land with us:</p>
+                
+                <div class="timeline-container">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4>Day 1-3</h4>
+                                <p>Initial consultation & property evaluation completed</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4>Day 4-7</h4>
+                                <p>Marketing materials prepared and listing goes live</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4>Week 2-4</h4>
+                                <p>Active marketing period with buyer showings</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4>Week 4-6</h4>
+                                <p>Offer received and accepted, contract signed</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4>Week 6-8</h4>
+                                <p>Due diligence period completed</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4>Week 8-10</h4>
+                                <p>Closing completed and funds disbursed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-section">
+                <h3>Selling Options</h3>
+                <p>We offer flexible selling solutions tailored to your needs and timeline:</p>
+                
+                <div class="selling-options">
+                    <div class="option-card">
+                        <div class="option-card-header">
+                            Traditional Listing
+                        </div>
+                        <div class="option-card-body">
+                            <ul>
+                                <li>Full-service marketing</li>
+                                <li>MLS exposure</li>
+                                <li>Professional photography</li>
+                                <li>Targeted advertising</li>
+                                <li>Maximum market exposure</li>
+                            </ul>
+                        </div>
+                        <div class="option-card-footer">
+                            <p>Best for: Sellers wanting top dollar with flexible timeline</p>
+                        </div>
+                    </div>
+
+                    <div class="option-card">
+                        <div class="option-card-header" style="background-color: var(--primary-color);">
+                            Quick Sale Program
+                        </div>
+                        <div class="option-card-body">
+                            <ul>
+                                <li>Cash offer within 72 hours</li>
+                                <li>No marketing costs</li>
+                                <li>As-is purchase</li>
+                                <li>Flexible closing date</li>
+                                <li>No showings or open houses</li>
+                            </ul>
+                        </div>
+                        <div class="option-card-footer">
+                            <p>Best for: Sellers needing fast, guaranteed sale</p>
+                        </div>
+                    </div>
+
+                    <div class="option-card">
+                        <div class="option-card-header" style="background-color: var(--dark-color);">
+                            Developer Network
+                        </div>
+                        <div class="option-card-body">
+                            <ul>
+                                <li>Exclusive to qualified developers</li>
+                                <li>Confidential marketing</li>
+                                <li>Competitive bidding</li>
+                                <li>Higher density potential</li>
+                                <li>Zoning expertise</li>
+                            </ul>
+                        </div>
+                        <div class="option-card-footer">
+                            <p>Best for: Large parcels with development potential</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-section">
+                <h3>Seller FAQ</h3>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How much does it cost to sell my land?</div>
+                    <div class="faq-answer">
+                        <p>Our standard commission is X% of the sale price. For our Quick Sale Program, there are no commissions - we make you a direct cash offer. Closing costs typically range from 1-3% of the sale price and may include title insurance, escrow fees, and recording fees.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How is my land's value determined?</div>
+                    <div class="faq-answer">
+                        <p>We evaluate multiple factors including location, zoning, topography, access, utilities availability, recent comparable sales, and current market demand. For development parcels, we also consider density potential and infrastructure requirements.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What documents do I need to sell my land?</div>
+                    <div class="faq-answer">
+                        <p>You'll typically need the deed, any existing surveys, property tax information, and documentation of any easements or restrictions. If the property has been recently inherited or is part of an estate, additional documentation may be required.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Can I sell land that's part of an inheritance?</div>
+                    <div class="faq-answer">
+                        <p>Yes, but all heirs must agree to the sale. The process may require additional legal steps depending on whether probate has been completed. We can connect you with probate real estate specialists if needed.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How long does it take to sell land?</div>
+                    <div class="faq-answer">
+                        <p>The average time to sell vacant land is 3-6 months, though desirable properties in hot markets may sell faster. Our Quick Sale Program can complete transactions in as little as 10 days if needed.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <i class="fas fa-handshake"></i>
+                <div class="contact-card-content">
+                    <h4>Ready to Sell Your Land?</h4>
+                    <p>Get a free, no-obligation valuation of your property and learn which selling option is right for you.</p>
+                    <div class="action-buttons">
+                        <a href="tel:+919876543210" class="action-button primary-button">
+                            <i class="fas fa-phone"></i> Request Valuation
+                        </a>
+                        <a href="mailto:sell@primeland.com" class="action-button secondary-button">
+                            <i class="fas fa-envelope"></i> Email Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Land Buying</h3>
+                    <ul>
+                        <li><a href="/buying-guide">Land Buying Guide</a></li>
+                        <li><a href="/zoning-info">Zoning Information</a></li>
+                        <li><a href="/financing">Land Loans</a></li>
+                        <li><a href="/due-diligence">Due Diligence</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Land Selling</h3>
+                    <ul>
+                        <li><a href="/selling-process">Selling Process</a></li>
+                        <li><a href="/land-valuation">Valuation Tools</a></li>
+                        <li><a href="/tax-implications">Tax Implications</a></li>
+                        <li><a href="/listing-options">Listing Options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="/land-use">Land Use Planning</a></li>
+                        <li><a href="/environmental">Environmental Factors</a></li>
+                        <li><a href="/surveying">Surveying Info</a></li>
+                        <li><a href="/faq">Land Buying FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fas fa-phone-alt"></i></a>
+                    </div>
+                    <p style="margin-top: 1rem; color: #ccc;">Sign up for our Land Investor newsletter</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <b>2023 Prime Land Properties</b>. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // FAQ functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const answer = this.nextElementSibling;
+                answer.classList.toggle('show');
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Initialize first FAQ as open
+        document.addEventListener('DOMContentLoaded', function() {
+            const firstQuestion = document.querySelector('.faq-question');
+            if (firstQuestion) {
+                firstQuestion.classList.add('active');
+                firstQuestion.nextElementSibling.classList.add('show');
+            }
+        });
+    </script>
+</body>
+</html>

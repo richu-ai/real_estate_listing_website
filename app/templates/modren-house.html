@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover contemporary modern houses for sale with cutting-edge design and premium amenities">
+    <title>Modern Architecture Homes | Premium Real Estate</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #b21111;
+            --secondary-color: #10a15b;
+            --accent-color: #13d6cc;
+            --light-color: #ecf0f1;
+            --dark-color: #104b85;
+            --text-color: #090101;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --border-radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Raleway:wght@800&display=swap');
+
+        body {
+            background-color: #f5f7fa;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            font-family: 'Raleway', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        header h1 span {
+            color: var(--accent-color);
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        nav a.active {
+            background-color: var(--accent-color);
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/modern-home-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 3rem;
+        }
+
+        .hero-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .search-bar {
+            display: flex;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            font-size: 1rem;
+        }
+
+        .search-bar button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0 1.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .search-bar button:hover {
+            background-color: #c0392b;
+        }
+
+        .search-results {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            box-shadow: var(--shadow);
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 10;
+            display: none;
+        }
+
+        .search-result-item {
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border-bottom: 1px solid #eee;
+        }
+
+        .search-result-item:hover {
+            background-color: #f5f5f5;
+        }
+
+        .search-result-item h4 {
+            color: var(--dark-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .search-result-item p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .no-results {
+            padding: 1rem;
+            color: #666;
+            text-align: center;
+        }
+
+        .property-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .property-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .property-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(16, 11, 11, 0.15);
+        }
+
+        .property-image {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .property-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .property-card:hover .property-image img {
+            transform: scale(1.05);
+        }
+
+        .property-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .property-details {
+            padding: 1.5rem;
+        }
+
+        .property-details h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+            font-weight: 700;
+        }
+
+        .property-location {
+            color: #777;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .property-price {
+            color: var(--accent-color);
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .property-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .feature-item i {
+            color: var(--accent-color);
+            width: 20px;
+            text-align: center;
+        }
+
+        .property-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .view-details {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            width: 100%;
+            text-align: center;
+        }
+
+        .view-details:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 3rem;
+            gap: 0.5rem;
+        }
+
+        .pagination a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: white;
+            color: var(--dark-color);
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .pagination a.active, .pagination a:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+
+        .footer-column h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column ul li a {
+            color: var(--light-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero-section h2 {
+                font-size: 2rem;
+            }
+
+            .search-bar {
+                flex-direction: column;
+            }
+
+            .search-bar input {
+                border-radius: var(--border-radius);
+                margin-bottom: 0.5rem;
+            }
+
+            .search-bar button {
+                border-radius: var(--border-radius);
+                padding: 1rem;
+            }
+
+            .search-results {
+                position: relative;
+                border-radius: 0 0 var(--border-radius) var(--border-radius);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .property-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .property-features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1><span>MODERN</span> LIVING</h1>
+                <nav>
+                    <a href="/h">Home</a>
+                    <a href="/l">Login</a>
+                    <a href="/register">Register</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero-section">
+                <h2>Contemporary Architectural Masterpieces</h2>
+                <p>Discover cutting-edge modern homes designed for sophisticated living</p>
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Search by location, architect, or features...">
+                    <button type="submit" id="search-button"><i class="fas fa-search"></i></button>
+                    <div class="search-results" id="search-results"></div>
+                </div>
+            </section>
+
+            <div class="property-grid" id="property-grid">
+                <div class="property-card" data-search="minimalist glass house goa india ocean smart home infinity pool">
+                    <div class="property-image">
+                        <img src="/static/images/minimalist-glasshouse.jpeg" alt="Minimalist Glass House">
+                        <span class="property-badge">Architectural</span>
+                    </div>
+                    <div class="property-details">
+                        <h3>Minimalist Glass House</h3>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i> Goa, India
+                        </div>
+                        <div class="property-price">₹18,50,00,000</div>
+                        <div class="property-features">
+                            <div class="feature-item">
+                                <i class="fas fa-bed"></i> 4 Bedrooms
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-bath"></i> 3.5 Baths
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-ruler-combined"></i> 3,200 sqft
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-calendar-alt"></i> 2022
+                            </div>
+                        </div>
+                        <p class="property-description">
+                            Stunning glass-walled residence with panoramic ocean views. Features smart home technology, infinity pool, and designer finishes throughout.
+                        </p>
+                        <a href="/modern1" class="view-details">View Details</a>
+                    </div>
+                </div>
+
+                <div class="property-card" data-search="urban loft penthouse mumbai india skyline rooftop terrace">
+                    <div class="property-image">
+                        <img src="/static/images/urbanloaftpenthouse.jpeg" alt="Urban Loft Penthouse">
+                        <span class="property-badge">Penthouse</span>
+                    </div>
+                    <div class="property-details">
+                        <h3>Urban Loft Penthouse</h3>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i> Mumbai, India
+                        </div>
+                        <div class="property-price">₹25,00,00,000</div>
+                        <div class="property-features">
+                            <div class="feature-item">
+                                <i class="fas fa-bed"></i> 3 Bedrooms
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-bath"></i> 2.5 Baths
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-ruler-combined"></i> 2,800 sqft
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-building"></i> 42nd Floor
+                            </div>
+                        </div>
+                        <p class="property-description">
+                            Sleek penthouse with floor-to-ceiling windows showcasing city skyline. Includes private rooftop terrace and smart home automation.
+                        </p>
+                        <a href="/modern2" class="view-details">View Details</a>
+                    </div>
+                </div>
+
+                <div class="property-card" data-search="concrete steel residence bangalore india brutalist solar panels geothermal">
+                    <div class="property-image">
+                        <img src="/static/images/concrete%20steel%20residence.jpeg" alt="Concrete & Steel Residence">
+                        <span class="property-badge">New Construction</span>
+                    </div>
+                    <div class="property-details">
+                        <h3>Concrete & Steel Residence</h3>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i> Bangalore, India
+                        </div>
+                        <div class="property-price">₹14,50,00,000</div>
+                        <div class="property-features">
+                            <div class="feature-item">
+                                <i class="fas fa-bed"></i> 4 Bedrooms
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-bath"></i> 3 Baths
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-ruler-combined"></i> 3,500 sqft
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-leaf"></i> LEED Certified
+                            </div>
+                        </div>
+                        <p class="property-description">
+                            Architectural masterpiece combining brutalist elements with warm wood accents. Features solar panels, geothermal heating, and smart irrigation.
+                        </p>
+                        <a href="/modern3" class="view-details">View Details</a>
+                    </div>
+                </div>
+
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Modern Living</h3>
+                    <ul>
+                        <li><a href="/about">About Modern Architecture</a></li>
+                        <li><a href="/architects">Featured Architects</a></li>
+                        <li><a href="/trends">Design Trends</a></li>
+                        <li><a href="/blog">Modern Living Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="/buy">Buy Modern Homes</a></li>
+                        <li><a href="/sell">Sell Your Modern Home</a></li>
+                        <li><a href="/design">Architectural Services</a></li>
+                        <li><a href="/consultation">Design Consultation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="/maintenance">Modern Home Care</a></li>
+                        <li><a href="/technology">Smart Home Tech</a></li>
+                        <li><a href="/sustainability">Sustainable Features</a></li>
+                        <li><a href="/faq">Modern Home FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <p style="margin-top: 1rem; color: #ccc;">Subscribe to Modern Design Digest</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <b>2023 MODERN LIVING</b>. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Enhanced property card interactions
+        document.querySelectorAll('.property-card').forEach(card => {
+            // Click handling
+            card.addEventListener('click', function(e) {
+                // Don't navigate if clicking on the view details button
+                if (!e.target.classList.contains('view-details')) {
+                    window.location.href = this.querySelector('a').getAttribute('href');
+                }
+            });
+
+            // Hover effects
+            card.addEventListener('mouseenter', function() {
+                this.querySelector('img').style.transform = 'scale(1.05)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.querySelector('img').style.transform = 'scale(1)';
+            });
+        });
+
+        // Pagination functionality
+        document.querySelectorAll('.pagination a').forEach(page => {
+            page.addEventListener('click', function(e) {
+                e.preventDefault();
+                // In a real app, this would load the appropriate page
+                document.querySelector('.pagination a.active').classList.remove('active');
+                this.classList.add('active');
+            });
+        });
+
+        // Enhanced Search functionality
+        const searchInput = document.getElementById('search-input');
+        const searchButton = document.getElementById('search-button');
+        const searchResults = document.getElementById('search-results');
+        const propertyCards = document.querySelectorAll('.property-card');
+        const propertyGrid = document.getElementById('property-grid');
+
+        // Function to perform search
+        function performSearch() {
+            const searchTerm = searchInput.value.trim().toLowerCase();
+            
+            if (searchTerm === '') {
+                searchResults.style.display = 'none';
+                // Show all properties if search is empty
+                propertyCards.forEach(card => {
+                    card.style.display = 'block';
+                });
+                return;
+            }
+
+            const results = [];
+            
+            // Search through property cards
+            propertyCards.forEach(card => {
+                const searchData = card.getAttribute('data-search').toLowerCase();
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const location = card.querySelector('.property-location').textContent.toLowerCase();
+                const description = card.querySelector('.property-description').textContent.toLowerCase();
+                
+                if (searchData.includes(searchTerm) || 
+                    title.includes(searchTerm) || 
+                    location.includes(searchTerm) || 
+                    description.includes(searchTerm)) {
+                    results.push({
+                        element: card,
+                        title: card.querySelector('h3').textContent,
+                        location: card.querySelector('.property-location').textContent,
+                        price: card.querySelector('.property-price').textContent,
+                        href: card.querySelector('a').getAttribute('href')
+                    });
+                }
+            });
+
+            // Display search results
+            displaySearchResults(results);
+            
+            // Highlight matching properties in the grid
+            propertyCards.forEach(card => {
+                const shouldShow = results.some(result => result.element === card);
+                card.style.display = shouldShow ? 'block' : 'none';
+            });
+        }
+
+        // Function to display search results dropdown
+        function displaySearchResults(results) {
+            searchResults.innerHTML = '';
+            
+            if (results.length === 0) {
+                const noResults = document.createElement('div');
+                noResults.className = 'no-results';
+                noResults.textContent = 'No properties found matching your search';
+                searchResults.appendChild(noResults);
+            } else {
+                results.forEach(result => {
+                    const resultItem = document.createElement('div');
+                    resultItem.className = 'search-result-item';
+                    resultItem.innerHTML = `
+                        <h4>${result.title}</h4>
+                        <p>${result.location} • ${result.price}</p>
+                    `;
+                    resultItem.addEventListener('click', () => {
+                        window.location.href = result.href;
+                    });
+                    searchResults.appendChild(resultItem);
+                });
+            }
+            
+            searchResults.style.display = results.length > 0 ? 'block' : 'none';
+        }
+
+        // Event listeners for search
+        searchInput.addEventListener('input', performSearch);
+        searchButton.addEventListener('click', performSearch);
+        
+        searchInput.addEventListener('focus', () => {
+            if (searchInput.value.trim() !== '') {
+                performSearch();
+            }
+        });
+        
+        // Hide search results when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!searchInput.contains(e.target) && !searchResults.contains(e.target) && !searchButton.contains(e.target)) {
+                searchResults.style.display = 'none';
+            }
+        });
+
+        // Show all properties when search is cleared with backspace
+        searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Backspace' && searchInput.value.trim() === '') {
+                propertyCards.forEach(card => {
+                    card.style.display = 'block';
+                });
+                searchResults.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

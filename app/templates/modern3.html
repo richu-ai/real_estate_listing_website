@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Concrete & Steel Residence in Austin, TX - Architectural Masterpiece">
+    <title>Concrete & Steel Residence | Modern Living</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #b21111;
+            --secondary-color: #10a15b;
+            --accent-color: #13d6cc;
+            --light-color: #ecf0f1;
+            --dark-color: #104b85;
+            --text-color: #090101;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --border-radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Raleway:wght@800&display=swap');
+
+        body {
+            background-color: #f5f7fa;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            font-family: 'Raleway', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        header h1 span {
+            color: var(--accent-color);
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        nav a.active {
+            background-color: var(--accent-color);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            margin: 1.5rem 0;
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            color: var(--secondary-color);
+        }
+
+        main {
+            flex: 1;
+            padding: 0 2rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .property-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+        }
+
+        .property-title h2 {
+            font-size: 2.2rem;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .property-location {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .property-price {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        .property-badge {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-left: 1rem;
+        }
+
+        .property-gallery {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            height: 550px;
+        }
+
+        .main-image {
+            grid-column: 1;
+            grid-row: 1 / span 2;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            height: 100%;
+            position: relative;
+        }
+
+        .secondary-image {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            height: 100%;
+            position: relative;
+        }
+
+        .property-gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .property-gallery img:hover {
+            transform: scale(1.03);
+        }
+
+        .property-details-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        .property-description {
+            margin-bottom: 2rem;
+        }
+
+        .property-description h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-color);
+            position: relative;
+            padding-bottom: 0.5rem;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .property-description h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .property-description p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .property-features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature-card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .feature-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .feature-card ul {
+            list-style: none;
+        }
+
+        .feature-card ul li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .feature-card i {
+            color: var(--accent-color);
+            width: 20px;
+            text-align: center;
+        }
+
+        .property-sidebar {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar-section {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .sidebar-section:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .sidebar-section h4 {
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .agent-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .agent-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .agent-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .agent-info h5 {
+            font-size: 1.2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .agent-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            width: 100%;
+            padding: 0.75rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            text-decoration: none;
+            margin-top: 1rem;
+        }
+
+        .contact-btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .schedule-btn {
+            display: inline-block;
+            width: 100%;
+            padding: 0.75rem;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .schedule-btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .amenities-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+
+        .amenities-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .amenities-list i {
+            color: var(--accent-color);
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+
+        .footer-column h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column ul li a {
+            color: var(--light-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 992px) {
+            .property-gallery {
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .property-header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .property-gallery {
+                grid-template-columns: 1fr;
+                grid-template-rows: 350px 200px 200px;
+                height: auto;
+            }
+
+            .main-image {
+                grid-column: 1;
+                grid-row: 1;
+            }
+
+            .property-details-container {
+                grid-template-columns: 1fr;
+            }
+
+            .property-features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .amenities-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .property-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .property-price {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1><span>MODERN</span> LIVING</h1>
+                <nav>
+                    <a href="/h">Home</a>
+                    <a href="/l">Login</a>
+                    <a href="/register">Register</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <a href="/modren-house" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to Modern Homes
+            </a>
+
+            <div class="property-header">
+                <div class="property-title">
+                    <h2>Concrete & Steel Residence <span class="property-badge">New Construction</span></h2>
+                    <div class="property-location">
+                        <i class="fas fa-map-marker-alt"></i> Austin, TX
+                    </div>
+                </div>
+                <div class="property-price">$1,950,000</div>
+            </div>
+
+            <div class="property-gallery">
+                <div class="main-image">
+                    <img src="/static/images/steel%20residence.jpg" alt="Concrete & Steel Residence Exterior">
+                </div>
+                <div class="secondary-image">
+                    <img src="/static/images/livingroom.jpeg" alt="Living Room with Floor-to-Ceiling Windows">
+                </div>
+                <div class="secondary-image">
+                    <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea" alt="Modern Kitchen">
+                </div>
+                <div class="secondary-image">
+                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3" alt="Outdoor Patio">
+                </div>
+                <div class="secondary-image">
+                    <img src="/static/images/master%20bedroom.jpeg" alt="Master Bedroom">
+                </div>
+            </div>
+
+            <div class="property-details-container">
+                <div class="property-main">
+                    <div class="property-description">
+                        <h3>Architectural Statement</h3>
+                        <p>This striking residence represents the perfect marriage of brutalist concrete and warm modernism, designed by architect Carlos Mendez in 2023. The 3,500 square foot home features exposed concrete walls, steel beams, and expansive glass that create a dramatic interplay of light and shadow throughout the day.</p>
+                        <p>The open floor plan centers around a double-height living space with a floating steel staircase and a 20-foot glass wall that opens completely to the outdoor living area. The home features radiant concrete floors, custom steel fixtures, and integrated smart home technology that controls lighting, security, and the home's geothermal climate system.</p>
+                        <p>Situated on a 1.2 acre lot with native landscaping, the property includes a 50-foot lap pool with a cantilevered concrete deck, an outdoor kitchen with a wood-fired pizza oven, and a detached studio/office with matching architectural style. The home is LEED Platinum certified, featuring solar panels, rainwater harvesting, and native drought-resistant landscaping.</p>
+                    </div>
+
+                    <div class="property-features-grid">
+                        <div class="feature-card">
+                            <h4><i class="fas fa-home"></i> Property Details</h4>
+                            <ul>
+                                <li><i class="fas fa-ruler-combined"></i> <strong>Square Feet:</strong> 3,500</li>
+                                <li><i class="fas fa-bed"></i> <strong>Bedrooms:</strong> 4</li>
+                                <li><i class="fas fa-bath"></i> <strong>Bathrooms:</strong> 3</li>
+                                <li><i class="fas fa-calendar-alt"></i> <strong>Year Built:</strong> 2023</li>
+                                <li><i class="fas fa-archway"></i> <strong>Architect:</strong> Carlos Mendez</li>
+                                <li><i class="fas fa-layer-group"></i> <strong>Stories:</strong> 2</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-card">
+                            <h4><i class="fas fa-tools"></i> Construction</h4>
+                            <ul>
+                                <li><i class="fas fa-cubes"></i> <strong>Structure:</strong> Concrete & Steel</li>
+                                <li><i class="fas fa-window-maximize"></i> <strong>Windows:</strong> Thermally Broken Glass</li>
+                                <li><i class="fas fa-thermometer-half"></i> <strong>Heating:</strong> Radiant Floor</li>
+                                <li><i class="fas fa-snowflake"></i> <strong>Cooling:</strong> Geothermal</li>
+                                <li><i class="fas fa-solar-panel"></i> <strong>Solar:</strong> 8.5kW System</li>
+                                <li><i class="fas fa-shield-alt"></i> <strong>Security:</strong> Smart System</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-card">
+                            <h4><i class="fas fa-star"></i> Special Features</h4>
+                            <ul>
+                                <li><i class="fas fa-swimming-pool"></i> Lap Pool with Cantilever Deck</li>
+                                <li><i class="fas fa-leaf"></i> LEED Platinum Certified</li>
+                                <li><i class="fas fa-umbrella"></i> Covered Outdoor Living Space</li>
+                                <li><i class="fas fa-lightbulb"></i> Smart Lighting System</li>
+                                <li><i class="fas fa-water"></i> Rainwater Harvesting</li>
+                                <li><i class="fas fa-tree"></i> Native Drought-Resistant Landscaping</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-card">
+                            <h4><i class="fas fa-award"></i> Awards & Recognition</h4>
+                            <ul>
+                                <li><i class="fas fa-trophy"></i> AIA Sustainable Design Award 2023</li>
+                                <li><i class="fas fa-medal"></i> Texas Architecture Prize</li>
+                                <li><i class="fas fa-leaf"></i> LEED Platinum Certification</li>
+                                <li><i class="fas fa-camera"></i> Featured in Dwell Magazine</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="property-sidebar">
+                    <div class="sidebar-section">
+                        <h4>Schedule a Viewing</h4>
+                        <p>Private showings available by appointment for qualified buyers.</p>
+                        <a href="#" class="schedule-btn">
+                            <i class="fas fa-calendar-alt"></i> Schedule Private Tour
+                        </a>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h4>Contact Architect Agent</h4>
+                        <div class="agent-card">
+                            <div class="agent-avatar">
+                                <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Elena Vasquez">
+                            </div>
+                            <div class="agent-info">
+                                <h5>Elena Vasquez</h5>
+                                <p>Modern Home Specialist</p>
+                            </div>
+                        </div>
+                        <a href="tel:+15557654321" class="contact-btn">
+                            <i class="fas fa-phone"></i> (555) 765-4321
+                        </a>
+                        <a href="mailto:elena@modernliving.com" class="contact-btn">
+                            <i class="fas fa-envelope"></i> Email Agent
+                        </a>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h4>Property Highlights</h4>
+                        <ul class="amenities-list">
+                            <li><i class="fas fa-cube"></i> Architectural Concrete Design</li>
+                            <li><i class="fas fa-expand"></i> Open Floor Plan</li>
+                            <li><i class="fas fa-home"></i> Smart Home Technology</li>
+                            <li><i class="fas fa-utensils"></i> Chef's Kitchen</li>
+                            <li><i class="fas fa-swimming-pool"></i> Lap Pool</li>
+                            <li><i class="fas fa-spa"></i> Spa Bathrooms</li>
+                            <li><i class="fas fa-leaf"></i> Sustainable Features</li>
+                            <li><i class="fas fa-tree"></i> Private Wooded Lot</li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h4>Virtual Experience</h4>
+                        <p>Explore this architectural masterpiece through our immersive 3D walkthrough.</p>
+                        <a href="#" class="contact-btn">
+                            <i class="fas fa-vr-cardboard"></i> Launch Virtual Tour
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Modern Living</h3>
+                    <ul>
+                        <li><a href="/about">About Modern Architecture</a></li>
+                        <li><a href="/architects">Featured Architects</a></li>
+                        <li><a href="/trends">Design Trends</a></li>
+                        <li><a href="/blog">Modern Living Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="/buy">Buy Modern Homes</a></li>
+                        <li><a href="/sell">Sell Your Modern Home</a></li>
+                        <li><a href="/design">Architectural Services</a></li>
+                        <li><a href="/consultation">Design Consultation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="/maintenance">Modern Home Care</a></li>
+                        <li><a href="/technology">Smart Home Tech</a></li>
+                        <li><a href="/sustainability">Sustainable Features</a></li>
+                        <li><a href="/faq">Modern Home FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <p style="margin-top: 1rem; color: #ccc;">Subscribe to Modern Design Digest</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <b>2023 MODERN LIVING</b>. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Image gallery functionality
+        document.querySelectorAll('.secondary-image').forEach(image => {
+            image.addEventListener('click', function() {
+                const mainImage = document.querySelector('.main-image img');
+                const clickedImage = this.querySelector('img');
+                
+                // Swap images
+                const tempSrc = mainImage.src;
+                const tempAlt = mainImage.alt;
+                
+                mainImage.src = clickedImage.src;
+                mainImage.alt = clickedImage.alt;
+                
+                clickedImage.src = tempSrc;
+                clickedImage.alt = tempAlt;
+            });
+        });
+
+        // Contact button functionality
+        document.querySelectorAll('.contact-btn, .schedule-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if (this.getAttribute('href') === '#') {
+                    e.preventDefault();
+                    alert('In a real application, this would open a contact form or initiate a phone call/email.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

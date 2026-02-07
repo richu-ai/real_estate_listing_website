@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Country living guides and resources for cottage owners and enthusiasts">
+    <title>Country Living Guides | Cozzy Cottages</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #9a1a1a;
+            --secondary-color: #2e5d4c;
+            --accent-color: #ff9a76;
+            --light-color: #f8f9fa;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --border-radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Merriweather', Georgia, serif;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+
+        body {
+            background-color: #f8f5f2;
+            color: var(--text-color);
+            line-height: 1.6;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: 'Merriweather', serif;
+        }
+
+        header h1 span {
+            color: var(--accent-color);
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        nav a.active {
+            background-color: var(--accent-color);
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .breadcrumb {
+            padding: 1rem 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .page-header {
+            text-align: center;
+            margin: 2rem 0 3rem;
+        }
+
+        .page-header h2 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            font-family: 'Merriweather', serif;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #666;
+        }
+
+        .guides-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .guide-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .guide-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .guide-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .guide-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .guide-card:hover .guide-image img {
+            transform: scale(1.05);
+        }
+
+        .guide-content {
+            padding: 1.5rem;
+        }
+
+        .guide-content h3 {
+            font-size: 1.4rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.75rem;
+            font-family: 'Merriweather', serif;
+        }
+
+        .guide-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .guide-category {
+            background-color: rgba(154, 26, 26, 0.1);
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .guide-excerpt {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .read-more {
+            display: inline-block;
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .read-more:hover {
+            color: var(--secondary-color);
+        }
+
+        .read-more i {
+            margin-left: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .read-more:hover i {
+            transform: translateX(3px);
+        }
+
+        .newsletter-section {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: var(--border-radius);
+            margin: 4rem 0;
+            text-align: center;
+        }
+
+        .newsletter-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-family: 'Merriweather', serif;
+        }
+
+        .newsletter-section p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: none;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .newsletter-form button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0 1.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .newsletter-form button:hover {
+            background-color: #ff8a5c;
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+
+        .footer-column h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-family: 'Merriweather', serif;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column ul li a {
+            color: var(--light-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 992px) {
+            .guides-container {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .page-header h2 {
+                font-size: 2rem;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-form input {
+                border-radius: var(--border-radius);
+                margin-bottom: 0.5rem;
+            }
+
+            .newsletter-form button {
+                border-radius: var(--border-radius);
+                padding: 0.75rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .guides-container {
+                grid-template-columns: 1fr;
+            }
+
+            .page-header h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1><span>Cozzy</span> Cottages Collection</h1>
+                <nav>
+                    <a href="/h">Home</a>
+                    <a href="/l">Login</a>
+                    <a href="/register">Register</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="breadcrumb">
+                <a href="/h">Home</a> &gt; <a href="/resources">Resources</a> &gt; Country Living Guides
+            </div>
+
+            <div class="page-header">
+                <h2>Country Living Guides</h2>
+                <p>Expert advice and practical tips for cottage living, maintenance, and making the most of your country retreat.</p>
+            </div>
+
+            <div class="guides-container">
+                <div class="guide-card">
+                    <div class="guide-image">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Cottage Maintenance">
+                    </div>
+                    <div class="guide-content">
+                        <div class="guide-meta">
+                            <span><i class="far fa-clock"></i> 15 min read</span>
+                            <span class="guide-category">Maintenance</span>
+                        </div>
+                        <h3>Essential Cottage Maintenance Checklist</h3>
+                        <p class="guide-excerpt">Keep your cottage in top condition year-round with our seasonal maintenance guide covering everything from roof inspections to plumbing winterization.</p>
+                        <a href="#" class="read-more">Read Guide <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+                    <div class="guide-image">
+                        <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf" alt="Houseboat Living">
+                    </div>
+                    <div class="guide-content">
+                        <div class="guide-meta">
+                            <span><i class="far fa-clock"></i> 12 min read</span>
+                            <span class="guide-category">Lifestyle</span>
+                        </div>
+                        <h3>The Complete Guide to Houseboat Living</h3>
+                        <p class="guide-excerpt">Everything you need to know about the unique joys and challenges of living on a houseboat, from maintenance tips to community living.</p>
+                        <a href="#" class="read-more">Read Guide <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+                    <div class="guide-image">
+                        <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6" alt="Energy Efficiency">
+                    </div>
+                    <div class="guide-content">
+                        <div class="guide-meta">
+                            <span><i class="far fa-clock"></i> 20 min read</span>
+                            <span class="guide-category">Sustainability</span>
+                        </div>
+                        <h3>Making Your Cottage Energy Efficient</h3>
+                        <p class="guide-excerpt">Practical upgrades and simple changes to reduce your energy bills and environmental impact while maintaining comfort in your country home.</p>
+                        <a href="#" class="read-more">Read Guide <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+                    <div class="guide-image">
+                        <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38" alt="Interior Design">
+                    </div>
+                    <div class="guide-content">
+                        <div class="guide-meta">
+                            <span><i class="far fa-clock"></i> 18 min read</span>
+                            <span class="guide-category">Design</span>
+                        </div>
+                        <h3>Cottage Interior Design: Rustic Meets Modern</h3>
+                        <p class="guide-excerpt">How to blend traditional rustic charm with modern comforts to create a cozy, functional cottage interior that stands the test of time.</p>
+                        <a href="#" class="read-more">Read Guide <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+                    <div class="guide-image">
+                        <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea" alt="Gardening">
+                    </div>
+                    <div class="guide-content">
+                        <div class="guide-meta">
+                            <span><i class="far fa-clock"></i> 25 min read</span>
+                            <span class="guide-category">Outdoors</span>
+                        </div>
+                        <h3>Cottage Gardening for Beginners</h3>
+                        <p class="guide-excerpt">Create an enchanting cottage garden with our month-by-month guide to planting, maintenance, and creating wildlife-friendly spaces.</p>
+                        <a href="#" class="read-more">Read Guide <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+                    <div class="guide-image">
+                        <img src="https://images.unsplash.com/photo-1600585152221-7b39df2aad08" alt="Renting">
+                    </div>
+                    <div class="guide-content">
+                        <div class="guide-meta">
+                            <span><i class="far fa-clock"></i> 15 min read</span>
+                            <span class="guide-category">Business</span>
+                        </div>
+                        <h3>Renting Your Cottage: A Complete Guide</h3>
+                        <p class="guide-excerpt">Maximize your rental income while protecting your property with our comprehensive guide to successful cottage rentals.</p>
+                        <a href="#" class="read-more">Read Guide <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="newsletter-section">
+                <h3>Get More Cottage Living Tips</h3>
+                <p>Subscribe to our monthly newsletter for exclusive guides, seasonal advice, and special offers for cottage owners.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <ul>
+                        <li><a href="/about">Our Story</a></li>
+                        <li><a href="/team">Meet the Team</a></li>
+                        <li><a href="/testimonials">Client Stories</a></li>
+                        <li><a href="/blog">Cottage Living Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="/buy">Buy a Cottage</a></li>
+                        <li><a href="/sell">Sell Your Cottage</a></li>
+                        <li><a href="/rent">Vacation Rentals</a></li>
+                        <li><a href="/consultation">Design Consultation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="/faq">Cottage Buying FAQ</a></li>
+                        <li><a href="/guides">Country Living Guides</a></li>
+                        <li><a href="/financing">Financing Options</a></li>
+                        <li><a href="/maintenance">Cottage Care Tips</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                    <p style="margin-top: 1rem; color: #ccc;">Subscribe to our Cottage Life newsletter</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <b>2023 Cozy Cottages Realty</b>. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Newsletter form submission
+        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for subscribing to our newsletter!');
+            this.reset();
+        });
+
+        // Sticky header on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.2)';
+            } else {
+                header.style.boxShadow = 'var(--shadow)';
+            }
+        });
+
+        // Guide card click functionality
+        document.querySelectorAll('.guide-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                // Don't trigger if clicking on a link inside the card
+                if (e.target.tagName !== 'A' && !e.target.closest('a')) {
+                    const link = this.querySelector('a');
+                    if (link) {
+                        window.location.href = link.href;
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PropChain | AI-Powered Real Estate with Blockchain</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; background-color: #f9f9f9;">
+    <!-- Header -->
+    <header style="background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d); color: white; padding: 1rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 2rem;">
+            <div style="display: flex; align-items: center;">
+                <i class="fas fa-home" style="font-size: 2rem; margin-right: 1rem;"></i>
+                <h1 style="margin: 0; font-size: 1.8rem;">Prop<span style="color: #ffd700;">Chain</span></h1>
+            </div>
+            <nav>
+                <ul style="display: flex; list-style: none; margin: 0; padding: 0;">
+                    <li style="margin-left: 1.5rem;"><a href="#features" style="color: white; text-decoration: none; font-weight: 500;">Features</a></li>
+                    <li style="margin-left: 1.5rem;"><a href="#listings" style="color: white; text-decoration: none; font-weight: 500;">Listings</a></li>
+                    <li style="margin-left: 1.5rem;"><a href="#ai" style="color: white; text-decoration: none; font-weight: 500;">AI Match</a></li>
+                    <li style="margin-left: 1.5rem;"><a href="#blockchain" style="color: white; text-decoration: none; font-weight: 500;">Blockchain</a></li>
+                    <li style="margin-left: 1.5rem;"><a href="#contact" style="color: white; text-decoration: none; font-weight: 500;">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section style="background: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80') no-repeat center center/cover; height: 70vh; display: flex; align-items: center; position: relative;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5);"></div>
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1; color: white;">
+            <h2 style="font-size: 3rem; margin-bottom: 1rem;">The Future of Real Estate is Here</h2>
+            <p style="font-size: 1.2rem; max-width: 600px; margin-bottom: 2rem;">AI-powered property recommendations combined with secure blockchain transactions for seamless real estate experiences.</p>
+            <div style="display: flex;">
+                <a href="#listings" style="background: #ffd700; color: #333; padding: 0.8rem 1.5rem; border-radius: 30px; text-decoration: none; font-weight: bold; margin-right: 1rem; transition: all 0.3s ease;">Browse Properties</a>
+                <a href="#ai" style="background: transparent; color: white; padding: 0.8rem 1.5rem; border: 2px solid white; border-radius: 30px; text-decoration: none; font-weight: bold; transition: all 0.3s ease;">Try AI Match</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" style="padding: 5rem 2rem; background-color: white;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: #1a2a6c;">Why Choose PropChain?</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div style="background: #f5f5f5; padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                    <i class="fas fa-brain" style="font-size: 3rem; color: #1a2a6c; margin-bottom: 1.5rem;"></i>
+                    <h3 style="margin-top: 0;">AI-Powered Recommendations</h3>
+                    <p>Our advanced machine learning algorithms analyze your preferences to find properties you'll love.</p>
+                </div>
+                <div style="background: #f5f5f5; padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                    <i class="fas fa-link" style="font-size: 3rem; color: #1a2a6c; margin-bottom: 1.5rem;"></i>
+                    <h3 style="margin-top: 0;">Blockchain Security</h3>
+                    <p>All transactions are recorded on an immutable blockchain ledger for complete transparency.</p>
+                </div>
+                <div style="background: #f5f5f5; padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                    <i class="fas fa-bolt" style="font-size: 3rem; color: #1a2a6c; margin-bottom: 1.5rem;"></i>
+                    <h3 style="margin-top: 0;">Instant Transactions</h3>
+                    <p>Smart contracts enable faster, more secure property transactions without intermediaries.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Listings Section -->
+    <section id="listings" style="padding: 5rem 2rem; background-color: #f5f7fa;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: #1a2a6c;">Featured Properties</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+                <!-- Property Card 1 -->
+                <div style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                    <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Modern House" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 1.5rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <h3 style="margin: 0;">Modern Villa</h3>
+                            <span style="background: #1a2a6c; color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">Verified</span>
+                        </div>
+                        <p style="color: #666; margin-bottom: 1.5rem;"><i class="fas fa-map-marker-alt" style="margin-right: 0.5rem;"></i> Beverly Hills, CA</p>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 1.5rem;">
+                            <div><i class="fas fa-bed" style="margin-right: 0.5rem;"></i> 4 Beds</div>
+                            <div><i class="fas fa-bath" style="margin-right: 0.5rem;"></i> 3 Baths</div>
+                            <div><i class="fas fa-ruler-combined" style="margin-right: 0.5rem;"></i> 3200 sqft</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <h4 style="margin: 0; color: #1a2a6c;">$2,450,000</h4>
+                            <a href="#" style="color: #1a2a6c; text-decoration: none; font-weight: bold;">View Details <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
+                        </div>
+                        <div style="margin-top: 1rem; font-size: 0.8rem; color: #666;">
+                            <i class="fas fa-link" style="margin-right: 0.3rem;"></i> Blockchain verified ownership
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 2 -->
+                <div style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Luxury Apartment" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 1.5rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <h3 style="margin: 0;">Luxury Penthouse</h3>
+                            <span style="background: #1a2a6c; color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">Verified</span>
+                        </div>
+                        <p style="color: #666; margin-bottom: 1.5rem;"><i class="fas fa-map-marker-alt" style="margin-right: 0.5rem;"></i> Manhattan, NY</p>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 1.5rem;">
+                            <div><i class="fas fa-bed" style="margin-right: 0.5rem;"></i> 3 Beds</div>
+                            <div><i class="fas fa-bath" style="margin-right: 0.5rem;"></i> 2.5 Baths</div>
+                            <div><i class="fas fa-ruler-combined" style="margin-right: 0.5rem;"></i> 2400 sqft</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <h4 style="margin: 0; color: #1a2a6c;">$3,200,000</h4>
+                            <a href="#" style="color: #1a2a6c; text-decoration: none; font-weight: bold;">View Details <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
+                        </div>
+                        <div style="margin-top: 1rem; font-size: 0.8rem; color: #666;">
+                            <i class="fas fa-link" style="margin-right: 0.3rem;"></i> Smart contract ready
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 3 -->
+                <div style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                    <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Suburban Home" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 1.5rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <h3 style="margin: 0;">Suburban Family Home</h3>
+                            <span style="background: #1a2a6c; color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">Verified</span>
+                        </div>
+                        <p style="color: #666; margin-bottom: 1.5rem;"><i class="fas fa-map-marker-alt" style="margin-right: 0.5rem;"></i> Austin, TX</p>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 1.5rem;">
+                            <div><i class="fas fa-bed" style="margin-right: 0.5rem;"></i> 5 Beds</div>
+                            <div><i class="fas fa-bath" style="margin-right: 0.5rem;"></i> 3 Baths</div>
+                            <div><i class="fas fa-ruler-combined" style="margin-right: 0.5rem;"></i> 3800 sqft</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <h4 style="margin: 0; color: #1a2a6c;">$950,000</h4>
+                            <a href="#" style="color: #1a2a6c; text-decoration: none; font-weight: bold;">View Details <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
+                        </div>
+                        <div style="margin-top: 1rem; font-size: 0.8rem; color: #666;">
+                            <i class="fas fa-link" style="margin-right: 0.3rem;"></i> NFT title deed available
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#" style="background: #1a2a6c; color: white; padding: 1rem 2rem; border-radius: 30px; text-decoration: none; font-weight: bold; display: inline-block;">View All Properties</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Match Section -->
+    <section id="ai" style="padding: 5rem 2rem; background: linear-gradient(135deg, #1a2a6c, #3a7bd5); color: white;">
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+            <div>
+                <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Find Your Perfect Home with AI</h2>
+                <p style="margin-bottom: 2rem; font-size: 1.1rem;">Our proprietary AI algorithm analyzes thousands of data points to match you with properties that fit your lifestyle, budget, and preferences.</p>
+                <ul style="list-style: none; padding: 0; margin-bottom: 2rem;">
+                    <li style="margin-bottom: 1rem; display: flex; align-items: flex-start;">
+                        <i class="fas fa-check-circle" style="font-size: 1.5rem; color: #ffd700; margin-right: 1rem;"></i>
+                        <span>Personalized recommendations based on your behavior</span>
+                    </li>
+                    <li style="margin-bottom: 1rem; display: flex; align-items: flex-start;">
+                        <i class="fas fa-check-circle" style="font-size: 1.5rem; color: #ffd700; margin-right: 1rem;"></i>
+                        <span>Predictive pricing analysis for optimal deals</span>
+                    </li>
+                    <li style="margin-bottom: 1rem; display: flex; align-items: flex-start;">
+                        <i class="fas fa-check-circle" style="font-size: 1.5rem; color: #ffd700; margin-right: 1rem;"></i>
+                        <span>Neighborhood compatibility scoring</span>
+                    </li>
+                </ul>
+                <a href="#" style="background: white; color: #1a2a6c; padding: 1rem 2rem; border-radius: 30px; text-decoration: none; font-weight: bold; display: inline-block;">Try AI Match Now</a>
+            </div>
+            <div style="background: white; border-radius: 10px; padding: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                <h3 style="color: #1a2a6c; margin-top: 0; margin-bottom: 1.5rem;">AI Property Match Questionnaire</h3>
+                <form>
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; color: #666;">Budget Range</label>
+                        <select style="width: 100%; padding: 0.8rem; border-radius: 5px; border: 1px solid #ddd;">
+                            <option>Select budget range</option>
+                            <option>$100,000 - $300,000</option>
+                            <option>$300,000 - $600,000</option>
+                            <option>$600,000 - $1,000,000</option>
+                            <option>$1,000,000+</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; color: #666;">Preferred Location(s)</label>
+                        <input type="text" style="width: 100%; padding: 0.8rem; border-radius: 5px; border: 1px solid #020202;" placeholder="City, neighborhood, or zip code">
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; color: #0c0c0c;">Property Type</label>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                            <label style="display: flex; align-items: center; margin-right: 1rem;color: #0c0c0c;">
+                                <input type="checkbox" style="margin-right: 0.5rem; "> House
+                            </label>
+                            <label style="display: flex; align-items: center; margin-right: 1rem;color: #0c0c0c;">
+                                <input type="checkbox" style="margin-right: 0.5rem;"> Apartment
+                            </label>
+                            <label style="display: flex; align-items: center; margin-right: 1rem;color: #0c0c0c;">
+                                <input type="checkbox" style="margin-right: 0.5rem;"> Condo
+                            </label>
+                            <label style="display: flex; align-items: center;color: #0c0c0c;">
+                                <input type="checkbox" style="margin-right: 0.5rem;"> Townhouse
+                            </label>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; color: #666;">Must-have Features</label>
+                        <input type="text" style="width: 100%; padding: 0.8rem; border-radius: 5px; border: 1px solid #ddd;" placeholder="e.g., pool, garage, backyard">
+                    </div>
+                    <button type="submit" style="background: #1a2a6c; color: white; border: none; padding: 1rem 2rem; border-radius: 30px; font-weight: bold; width: 100%; cursor: pointer;">Find My Matches</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blockchain Section -->
+    <section id="blockchain" style="padding: 5rem 2rem; background-color: white;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: #1a2a6c;">Blockchain-Powered Real Estate</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Blockchain Technology" style="width: 100%; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                </div>
+                <div>
+                    <h3 style="font-size: 2rem; margin-top: 0; color: #1a2a6c;">Secure, Transparent Transactions</h3>
+                    <p style="margin-bottom: 2rem; font-size: 1.1rem;">Our blockchain integration ensures every property transaction is secure, transparent, and tamper-proof.</p>
+                    <div style="background: #f5f7fa; padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem;">
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <i class="fas fa-shield-alt" style="font-size: 1.5rem; color: #1a2a6c; margin-right: 1rem;"></i>
+                            <h4 style="margin: 0;">Immutable Ownership Records</h4>
+                        </div>
+                        <p style="margin: 0;">Property ownership is recorded on the blockchain, eliminating title fraud and disputes.</p>
+                    </div>
+                    <div style="background: #f5f7fa; padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem;">
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <i class="fas fa-file-contract" style="font-size: 1.5rem; color: #1a2a6c; margin-right: 1rem;"></i>
+                            <h4 style="margin: 0;">Smart Contracts</h4>
+                        </div>
+                        <p style="margin: 0;">Automated, self-executing contracts ensure all parties fulfill their obligations without delays.</p>
+                    </div>
+                    <div style="background: #f5f7fa; padding: 1.5rem; border-radius: 10px;">
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <i class="fas fa-coins" style="font-size: 1.5rem; color: #1a2a6c; margin-right: 1rem;"></i>
+                            <h4 style="margin: 0;">Tokenized Assets</h4>
+                        </div>
+                        <p style="margin: 0;">Fractional ownership through property tokens opens new investment opportunities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section style="padding: 5rem 2rem; background-color: #f5f7fa;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: #1a2a6c;">What Our Clients Say</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                    <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                        <img src="images/woman.jpeg" alt="Sarah J." style="width: 60px; height: 60px; border-radius: 50%; margin-right: 1rem; object-fit: cover;">
+                        <div>
+                            <h4 style="margin: 0;">Sarah J.</h4>
+                            <p style="margin: 0; color: #666; font-size: 0.9rem;">First-time Homebuyer</p>
+                        </div>
+                    </div>
+                    <p style="margin-bottom: 1.5rem;">"The AI matching system found me a home I never would have considered but ended up loving. The blockchain transaction was so smooth and secure!"</p>
+                    <div style="color: #ffd700;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                    <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T." style="width: 60px; height: 60px; border-radius: 50%; margin-right: 1rem; object-fit: cover;">
+                        <div>
+                            <h4 style="margin: 0;">Michael T.</h4>
+                            <p style="margin: 0; color: #666; font-size: 0.9rem;">Real Estate Investor</p>
+                        </div>
+                    </div>
+                    <p style="margin-bottom: 1.5rem;">"Being able to verify property history on the blockchain gives me confidence in my investments. The AI recommendations have helped me identify undervalued properties."</p>
+                    <div style="color: #ffd700;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                    <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Lisa M." style="width: 60px; height: 60px; border-radius: 50%; margin-right: 1rem; object-fit: cover;">
+                        <div>
+                            <h4 style="margin: 0;">Lisa M.</h4>
+                            <p style="margin: 0; color: #666; font-size: 0.9rem;">Property Seller</p>
+                        </div>
+                    </div>
+                    <p style="margin-bottom: 1.5rem;">"Selling through PropChain was incredibly efficient. The smart contract handled everything automatically, and I received payment instantly upon closing."</p>
+                    <div style="color: #ffd700;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="padding: 5rem 2rem; background: linear-gradient(135deg, #1a2a6c, #3a7bd5); color: white; text-align: center;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Ready to Experience the Future of Real Estate?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2.5rem;">Join thousands of satisfied clients who have bought, sold, and invested with confidence using our AI and blockchain-powered platform.</p>
+            <div style="display: flex; justify-content: center; gap: 1.5rem;">
+                <a href="#" style="background: white; color: #1a2a6c; padding: 1rem 2rem; border-radius: 30px; text-decoration: none; font-weight: bold; display: inline-block;">Get Started</a>
+                <a href="#" style="background: transparent; color: white; padding: 1rem 2rem; border: 2px solid white; border-radius: 30px; text-decoration: none; font-weight: bold; display: inline-block;">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" style="background-color: #0f172a; color: white; padding: 4rem 2rem 2rem;">
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
+            <div>
+                <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                    <i class="fas fa-home" style="font-size: 2rem; margin-right: 1rem; color: #ffd700;"></i>
+                    <h3 style="margin: 0; font-size: 1.5rem;">Prop<span style="color: #ffd700;">Chain</span></h3>
+                </div>
+                <p style="margin-bottom: 1.5rem;">The future of real estate transactions powered by AI and blockchain technology.</p>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
+                    <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-facebook"></i></a>
+                    <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 style="margin-top: 0; margin-bottom: 1.5rem; font-size: 1.2rem;">Quick Links</h4>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 0.8rem;"><a href="#" style="color: #cbd5e1; text-decoration: none;">Home</a></li>
+                    <li style="margin-bottom: 0.8rem;"><a href="#features" style="color: #cbd5e1; text-decoration: none;">Features</a></li>
+                    <li style="margin-bottom: 0.8rem;"><a href="#listings" style="color: #cbd5e1; text-decoration: none;">Properties</a></li>
+                    <li style="margin-bottom: 0.8rem;"><a href="#ai" style="color: #cbd5e1; text-decoration: none;">AI Match</a></li>
+                    <li style="margin-bottom: 0.8rem;"><a href="#blockchain" style="color: #cbd5e1; text-decoration: none;">Blockchain</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="margin-top: 0; margin-bottom: 1.5rem; font-size: 1.2rem;">Contact Us</h4>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 0.8rem; display: flex; align-items: flex-start;">
+                        <i class="fas fa-map-marker-alt" style="margin-right: 1rem; color: #ffd700;"></i>
+                        <span>123 Blockchain Ave, Tech City, TC 10101</span>
+                    </li>
+                    <li style="margin-bottom: 0.8rem; display: flex; align-items: center;">
+                        <i class="fas fa-phone" style="margin-right: 1rem; color: #ffd700;"></i>
+                        <span>(555) 123-4567</span>
+                    </li>
+                    <li style="margin-bottom: 0.8rem; display: flex; align-items: center;">
+                        <i class="fas fa-envelope" style="margin-right: 1rem; color: #ffd700;"></i>
+                        <span>info@propchain.com</span>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="margin-top: 0; margin-bottom: 1.5rem; font-size: 1.2rem;">Newsletter</h4>
+                <p style="margin-bottom: 1.5rem; color: #cbd5e1;">Subscribe to our newsletter for the latest updates on properties and blockchain real estate news.</p>
+                <form>
+                    <input type="email" placeholder="Your email address" style="width: 100%; padding: 0.8rem; border-radius: 5px; border: none; margin-bottom: 1rem;">
+                    <button type="submit" style="background: #ffd700; color: #1a2a6c; border: none; padding: 0.8rem 1.5rem; border-radius: 5px; font-weight: bold; width: 100%; cursor: pointer;">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div style="max-width: 1200px; margin: 3rem auto 0; padding-top: 2rem; border-top: 1px solid #334155; text-align: center; color: #cbd5e1; font-size: 0.9rem;">
+            <p>&copy; 2023 PropChain. All rights reserved. | <a href="#" style="color: #cbd5e1; text-decoration: none;">Privacy Policy</a> | <a href="#" style="color: #cbd5e1; text-decoration: none;">Terms of Service</a></p>
+        </div>
+    </footer>
+</body>
+</html>

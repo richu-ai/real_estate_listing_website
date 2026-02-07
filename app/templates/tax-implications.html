@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive guide to tax implications when buying, selling, or owning land in India">
+    <title>Land Tax Implications | Prime Land Properties</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #c7232e;
+            --secondary-color: #556b2f;
+            --accent-color: #e5ede6;
+            --light-color: #f8f9fa;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --border-radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lato', sans-serif;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+
+        body {
+            background-color: #f9f9f7;
+            color: var(--text-color);
+            line-height: 1.6;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        header h1 span {
+            color: var(--accent-color);
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        nav a.active {
+            background-color: var(--accent-color);
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .breadcrumb {
+            padding: 1rem 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .page-header {
+            margin-bottom: 2rem;
+        }
+
+        .page-header h2 {
+            font-size: 2.2rem;
+            color: var(--secondary-color);
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            color: #666;
+            max-width: 800px;
+        }
+
+        .content-section {
+            background-color: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        .content-section h3 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .content-section p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .tax-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .tax-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            border-top: 4px solid var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .tax-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .tax-card h4 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .tax-card h4 i {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        .tax-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .tax-card ul {
+            margin-left: 1.5rem;
+            color: #666;
+        }
+
+        .tax-card ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .calculator-container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin: 2rem 0;
+        }
+
+        .calculator-tabs {
+            display: flex;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 1.5rem;
+        }
+
+        .tab-button {
+            padding: 0.75rem 1.5rem;
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            font-weight: 600;
+            color: #666;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .tab-button.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .calculator-input {
+            margin-bottom: 1.5rem;
+        }
+
+        .calculator-input label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        .calculator-input input, 
+        .calculator-input select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+        }
+
+        .calculator-input input:focus, 
+        .calculator-input select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        .calculator-results {
+            background-color: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-top: 1.5rem;
+            display: none;
+        }
+
+        .calculator-results h4 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .result-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .result-row:last-child {
+            border-bottom: none;
+        }
+
+        .result-label {
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        .result-value {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .calculate-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+            font-size: 1rem;
+        }
+
+        .calculate-btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        .comparison-table th, 
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .comparison-table th {
+            background-color: var(--accent-color);
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .comparison-table tr:hover {
+            background-color: #f0f0f0;
+        }
+
+        .info-box {
+            background-color: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .info-box h4 {
+            color: #2e7d32;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-box h4 i {
+            color: #2e7d32;
+        }
+
+        .warning-box {
+            background-color: #fff8e1;
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .warning-box h4 {
+            color: #ff9800;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .warning-box h4 i {
+            color: #ff9800;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .action-button {
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+            text-align: center;
+        }
+
+        .primary-button {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .primary-button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .secondary-button {
+            background-color: white;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+
+        .secondary-button:hover {
+            background-color: #f0f0f0;
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+
+        .footer-column h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column ul li a {
+            color: var(--light-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .tax-types {
+                grid-template-columns: 1fr;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            .calculator-tabs {
+                flex-direction: column;
+            }
+
+            .tab-button {
+                border-bottom: none;
+                border-left: 3px solid transparent;
+                text-align: left;
+            }
+
+            .tab-button.active {
+                border-bottom: none;
+                border-left-color: var(--primary-color);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1><span>Prime</span> Land Properties</h1>
+                <nav>
+                    <a href="/h">Home</a>
+                    <a href="/l">Login</a>
+                    <a href="/register">Register</a>
+                    <a href="/tax-implications" class="active">Tax Guide</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="breadcrumb">
+                <a href="/h">Home</a> &raquo; <a href="/resources">Resources</a> &raquo; <span>Tax Implications</span>
+            </div>
+
+            <div class="page-header">
+                <h2>Land Tax Implications in India</h2>
+                <p>Understanding the tax consequences of buying, selling, and owning land is crucial for making informed investment decisions. This guide covers the key tax considerations for landowners.</p>
+            </div>
+
+            <div class="content-section">
+                <h3>Types of Taxes on Land</h3>
+                <p>Land transactions and ownership are subject to several types of taxes at different government levels. Here are the main taxes you should be aware of:</p>
+
+                <div class="tax-types">
+                    <div class="tax-card">
+                        <h4><i class="fas fa-file-invoice-dollar"></i> Stamp Duty</h4>
+                        <p>A state tax paid when transferring property ownership. Rates vary by state and property type.</p>
+                        <ul>
+                            <li>Typically 5-7% of property value</li>
+                            <li>Higher for male buyers in some states</li>
+                            <li>Lower for women buyers in some states</li>
+                            <li>Varies by property type (agricultural, residential, commercial)</li>
+                        </ul>
+                    </div>
+
+                    <div class="tax-card">
+                        <h4><i class="fas fa-landmark"></i> Registration Charges</h4>
+                        <p>Fees paid to register the property transaction with the government.</p>
+                        <ul>
+                            <li>Usually 1% of property value</li>
+                            <li>Fixed in some states (e.g., ₹30,000 max in Maharashtra)</li>
+                            <li>Required to make the sale deed legally valid</li>
+                        </ul>
+                    </div>
+
+                    <div class="tax-card">
+                        <h4><i class="fas fa-chart-line"></i> Capital Gains Tax</h4>
+                        <p>Tax on profits from selling land, calculated based on holding period.</p>
+                        <ul>
+                            <li>Short-term (held < 24 months): Taxed as ordinary income</li>
+                            <li>Long-term (held ≥ 24 months): 20% with indexation</li>
+                            <li>Exemptions available under Section 54F, 54EC</li>
+                        </ul>
+                    </div>
+
+                    <div class="tax-card">
+                        <h4><i class="fas fa-home"></i> Property Tax</h4>
+                        <p>Annual tax levied by municipal corporations on land ownership.</p>
+                        <ul>
+                            <li>Based on location, size, and property type</li>
+                            <li>Paid yearly or semi-annually</li>
+                            <li>Tax rates vary by municipality</li>
+                        </ul>
+                    </div>
+
+                    <div class="tax-card">
+                        <h4><i class="fas fa-tractor"></i> Agricultural Land Tax</h4>
+                        <p>Special tax rates for agricultural land in rural areas.</p>
+                        <ul>
+                            <li>Generally lower than residential/commercial rates</li>
+                            <li>Varies by state and land productivity</li>
+                            <li>Different rules if land is converted to non-agricultural use</li>
+                        </ul>
+                    </div>
+
+                    <div class="tax-card">
+                        <h4><i class="fas fa-gift"></i> Gift & Inheritance Tax</h4>
+                        <p>Tax implications when receiving land as gift or inheritance.</p>
+                        <ul>
+                            <li>No gift tax in India, but may attract income tax</li>
+                            <li>Inherited property cost basis is original purchase price</li>
+                            <li>Clubbing provisions may apply for minor beneficiaries</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h3>Tax Calculators</h3>
+                <p>Estimate your tax liabilities using our specialized calculators:</p>
+
+                <div class="calculator-container">
+                    <div class="calculator-tabs">
+                        <button class="tab-button active" data-tab="stamp-duty">Stamp Duty</button>
+                        <button class="tab-button" data-tab="capital-gains">Capital Gains</button>
+                        <button class="tab-button" data-tab="property-tax">Property Tax</button>
+                    </div>
+
+                    <div id="stamp-duty" class="tab-content active">
+                        <div class="calculator-input">
+                            <label for="property-value">Property Value (₹)</label>
+                            <input type="number" id="property-value" placeholder="e.g. 5000000">
+                        </div>
+                        <div class="calculator-input">
+                            <label for="state">State</label>
+                            <select id="state">
+                                <option value="maharashtra">Maharashtra</option>
+                                <option value="karnataka">Karnataka</option>
+                                <option value="tamilnadu">Tamil Nadu</option>
+                                <option value="delhi">Delhi</option>
+                                <option value="up">Uttar Pradesh</option>
+                                <option value="gujarat">Gujarat</option>
+                            </select>
+                        </div>
+                        <div class="calculator-input">
+                            <label for="buyer-gender">Buyer Gender</label>
+                            <select id="buyer-gender">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="joint">Joint (Male + Female)</option>
+                            </select>
+                        </div>
+                        <div class="calculator-input">
+                            <label for="property-type">Property Type</label>
+                            <select id="property-type">
+                                <option value="residential">Residential</option>
+                                <option value="commercial">Commercial</option>
+                                <option value="agricultural">Agricultural</option>
+                            </select>
+                        </div>
+                        <button class="calculate-btn" id="calculate-stamp">Calculate Stamp Duty</button>
+                        <div class="calculator-results" id="stamp-results">
+                            <h4>Stamp Duty Calculation</h4>
+                            <div class="result-row">
+                                <span class="result-label">Stamp Duty Rate:</span>
+                                <span class="result-value" id="stamp-rate">5%</span>
+                            </div>
+                            <div class="result-row">
+                                <span class="result-label">Stamp Duty Amount:</span>
+                                <span class="result-value" id="stamp-amount">₹0</span>
+                            </div>
+                            <div class="result-row">
+                                <span class="result-label">Registration Fees:</span>
+                                <span class="result-value" id="registration-fees">₹0</span>
+                            </div>
+                            <div class="result-row">
+                                <span class="result-label">Total Tax Liability:</span>
+                                <span class="result-value" id="total-stamp-duty">₹0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="capital-gains" class="tab-content">
+                        <div class="calculator-input">
+                            <label for="purchase-price">Original Purchase Price (₹)</label>
+                            <input type="number" id="purchase-price" placeholder="e.g. 2000000">
+                        </div>
+                        <div class="calculator-input">
+                            <label for="sale-price">Sale Price (₹)</label>
+                            <input type="number" id="sale-price" placeholder="e.g. 5000000">
+                        </div>
+                        <div class="calculator-input">
+                            <label for="purchase-year">Purchase Year</label>
+                            <input type="number" id="purchase-year" min="2000" max="2023" value="2018">
+                        </div>
+                        <div class="calculator-input">
+                            <label for="sale-year">Sale Year</label>
+                            <input type="number" id="sale-year" min="2000" max="2023" value="2023">
+                        </div>
+                        <div class="calculator-input">
+                            <label for="improvement-cost">Improvement Costs (₹)</label>
+                            <input type="number" id="improvement-cost" placeholder="e.g. 500000">
+                        </div>
+                        <button class="calculate-btn" id="calculate-gains">Calculate Capital Gains</button>
+                        <div class="calculator-results" id="gains-results">
+                            <h4>Capital Gains Calculation</h4>
+                            <div class="result-row">
+                                <span class="result-label">Holding Period:</span>
+                                <span class="result-value" id="holding-period">0 years</span>
+                            </div>
+                            <div class="result-row">
+                                <span class="result-label">Indexed Cost Basis:</span>
+                                <span class="result-value" id="indexed-cost">₹0</span>
+                            </div>
+                            <div class="result-row">
+                                <span class="result-label">Capital Gains:</span>
+                                <span class="result-value" id="capital-gains-amount">₹0</span>
+                            </div>
+                            <div class="result-row">
+                                <span class="result-label">Tax Rate:</span>
+                                <span class="result-value" id="tax-rate">0%</span>
+                            </div>
+                            <div class="result-row">
+                                <span class="result-label">Tax Liability:</span>
+                                <span class="result-value" id="tax-liability">₹0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="property-tax" class="tab-content">
+                        <div class="calculator-input">
+                            <label for="municipality">Municipality</label>
+                            <select id="municipality">
+                                <option value="mumbai">Mumbai Municipal Corporation</option>
+                                <option value="pune">Pune Municipal Corporation</option>
+                                <option value="bangalore">Bangalore Municipal Corporation</option>
+                                <option value="hyderabad">Hyderabad Municipal Corporation</option>
+                                <option value="delhi">Delhi Municipal Corporation</option>
+                            </select>
+                        </div>
+                        <div class="calculator-input">
+                            <label for="property-area">Property Area (sq.ft.)</label>
+                            <input type="number" id="property-area" placeholder="e.g. 1000">
+                        </div>
+                        <div class="calculator-input">
+                            <label for="property-usage">Property Usage</label>
+                            <select id="property-usage">
+                                <option value="residential">Residential</option>
+                                <option value="commercial">Commercial</option>
+                                <option value="vacant">Vacant Land</option>
+                                <option value="industrial">Industrial</option>
+                            </select>
+                        </div>
+                        <div class="calculator-input">
+                            <label for="zone">Zone Classification</label>
+                            <select id="zone">
+                                <option value="a">Zone A (Premium)</option>
+                                <option value="b">Zone B</option>
+                                <option value="c">Zone C</option>
+                                <option value="d">Zone D (Outskirts)</option>
+                            </select>
+                        </div>
+                        <button class="calculate-btn" id="calculate-property-tax">Calculate Property Tax</button>
+                        <div class="calculator-results" id="property-tax-results">
+                            <h4>Property Tax Calculation</h4>
+                            <div class="result-row">
+                                <span class="result-label">Annual Tax Rate:</span>
+                                <span class="result-value" id="tax-rate-display">0.5%</span>
+                            </div>
+                            <div class="result-row">
+                                <span class="result-label">Base Value:</span>
+                                <span class="result-value" id="base-value">₹0</span>
+                            </div>
+                            <div class="result-row">
+                                <span class="result-label">Annual Property Tax:</span>
+                                <span class="result-value" id="annual-tax">₹0</span>
+                            </div>
+                            <div class="result-row">
+                                <span class="result-label">Quarterly Payment:</span>
+                                <span class="result-value" id="quarterly-tax">₹0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <h4><i class="fas fa-lightbulb"></i> Tax Saving Tip</h4>
+                    <p>Consider holding land for more than 24 months to qualify for long-term capital gains treatment at lower tax rates. Reinvesting sale proceeds in specified bonds (54EC) or another property (54F) can defer or eliminate capital gains tax.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h3>Tax Deductions and Exemptions</h3>
+                <p>Several provisions in the Income Tax Act can help reduce your tax burden on land transactions:</p>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Section</th>
+                            <th>Benefit</th>
+                            <th>Conditions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Section 54F</td>
+                            <td>Exemption on capital gains if proceeds reinvested in residential house</td>
+                            <td>Must purchase 1 year before or 2 years after sale, or construct within 3 years</td>
+                        </tr>
+                        <tr>
+                            <td>Section 54EC</td>
+                            <td>Exemption if gains invested in specified bonds (REC, NHAI)</td>
+                            <td>Invest within 6 months, max ₹50 lakh, lock-in of 5 years</td>
+                        </tr>
+                        <tr>
+                            <td>Section 80C</td>
+                            <td>Deduction for stamp duty/registration fees (with home loan)</td>
+                            <td>Max ₹1.5 lakh, only for first-time home buyers in some cases</td>
+                        </tr>
+                        <tr>
+                            <td>Section 24</td>
+                            <td>Interest deduction on loan for land purchase if construction completed</td>
+                            <td>Max ₹2 lakh if construction within 5 years</td>
+                        </tr>
+                        <tr>
+                            <td>Section 10(37)</td>
+                            <td>Exemption for compulsory acquisition of agricultural land</td>
+                            <td>Must be agricultural land in rural area, held for 2+ years</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="content-section">
+                <h3>State-Specific Tax Considerations</h3>
+                <p>Land taxes vary significantly by state in India. Here are key differences in major states:</p>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>State</th>
+                            <th>Stamp Duty Rate</th>
+                            <th>Registration Fee</th>
+                            <th>Property Tax Base</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Maharashtra</td>
+                            <td>5% (residential), 6% (male), 5% (female)</td>
+                            <td>₹30,000 max</td>
+                            <td>Capital Value System</td>
+                        </tr>
+                        <tr>
+                            <td>Karnataka</td>
+                            <td>5% + surcharge</td>
+                            <td>1% of property value</td>
+                            <td>Annual Rental Value</td>
+                        </tr>
+                        <tr>
+                            <td>Tamil Nadu</td>
+                            <td>7% + surcharge</td>
+                            <td>4% of property value</td>
+                            <td>Plinth Area System</td>
+                        </tr>
+                        <tr>
+                            <td>Delhi</td>
+                            <td>6% (male), 4% (female)</td>
+                            <td>1% of property value</td>
+                            <td>Unit Area System</td>
+                        </tr>
+                        <tr>
+                            <td>Uttar Pradesh</td>
+                            <td>7% + surcharge</td>
+                            <td>1% of property value</td>
+                            <td>Annual Rental Value</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="warning-box">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Important Note</h4>
+                    <p>Tax rates and rules change frequently. Always consult with a tax professional or check current state government websites for the most up-to-date information before making land transactions.</p>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="/h" class="action-button secondary-button">Back to Home</a>
+                <a href="/contact" class="action-button primary-button">Consult Tax Expert</a>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-column">
+                   <h3>Land Buying</h3>
+                    <ul>
+                        <li><a href="/buying-guide">Land Buying Guide</a></li>
+                        <li><a href="/zoning-info">Zoning Information</a></li>
+                        <li><a href="/financing">Land Loans</a></li>
+                        <li><a href="/due-diligence">Due Diligence</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Land Selling</h3>
+                    <ul>
+                        <li><a href="/selling-process">Selling Process</a></li>
+                        <li><a href="/land-valuation">Valuation Tools</a></li>
+                        <li><a href="/tax-implications">Tax Implications</a></li>
+                        <li><a href="/listing-options">Listing Options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="/land-use">Land Use Planning</a></li>
+                        <li><a href="/environmental">Environmental Factors</a></li>
+                        <li><a href="/surveying">Surveying Info</a></li>
+                        <li><a href="/faq">Land Buying FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fas fa-phone-alt"></i></a>
+                    </div>
+                    <p style="margin-top: 1rem; color: #ccc;">Sign up for our Land Investor newsletter</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <b>2023 Prime Land Properties</b>. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Tab functionality
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding content
+                button.classList.add('active');
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Stamp Duty Calculator
+        document.getElementById('calculate-stamp').addEventListener('click', function() {
+            // Get input values
+            const propertyValue = parseFloat(document.getElementById('property-value').value) || 0;
+            const state = document.getElementById('state').value;
+            const buyerGender = document.getElementById('buyer-gender').value;
+            const propertyType = document.getElementById('property-type').value;
+            
+            // Calculate stamp duty based on state and other factors
+            let stampRate = 0.05; // Default 5%
+            
+            // State-specific rates (simplified for demonstration)
+            const stateRates = {
+                'maharashtra': {
+                    'residential': buyerGender === 'female' ? 0.04 : 0.05,
+                    'commercial': 0.06,
+                    'agricultural': 0.05
+                },
+                'karnataka': 0.05,
+                'tamilnadu': 0.07,
+                'delhi': buyerGender === 'female' ? 0.04 : 0.06,
+                'up': 0.07,
+                'gujarat': 0.049
+            };
+
+            if (typeof stateRates[state] === 'object') {
+                stampRate = stateRates[state][propertyType] || 0.05;
+            } else {
+                stampRate = stateRates[state] || 0.05;
+            }
+            
+            // Calculate registration fees (simplified)
+            let regFees = 0;
+            if (state === 'maharashtra') {
+                regFees = Math.min(30000, propertyValue * 0.01);
+            } else if (state === 'tamilnadu') {
+                regFees = propertyValue * 0.04;
+            } else {
+                regFees = propertyValue * 0.01;
+            }
+            
+            // Calculate amounts
+            const stampDuty = propertyValue * stampRate;
+            const totalTax = stampDuty + regFees;
+            
+            // Display results
+            document.getElementById('stamp-rate').textContent = (stampRate * 100).toFixed(1) + '%';
+            document.getElementById('stamp-amount').textContent = '₹' + stampDuty.toLocaleString('en-IN');
+            document.getElementById('registration-fees').textContent = '₹' + regFees.toLocaleString('en-IN');
+            document.getElementById('total-stamp-duty').textContent = '₹' + totalTax.toLocaleString('en-IN');
+            
+            // Show results
+            document.getElementById('stamp-results').style.display = 'block';
+        });
+
+        // Capital Gains Calculator
+        document.getElementById('calculate-gains').addEventListener('click', function() {
+            // Get input values
+            const purchasePrice = parseFloat(document.getElementById('purchase-price').value) || 0;
+            const salePrice = parseFloat(document.getElementById('sale-price').value) || 0;
+            const purchaseYear = parseInt(document.getElementById('purchase-year').value) || 2023;
+            const saleYear = parseInt(document.getElementById('sale-year').value) || 2023;
+            const improvementCost = parseFloat(document.getElementById('improvement-cost').value) || 0;
+            
+            // Calculate holding period
+            const holdingYears = saleYear - purchaseYear;
+            const isLongTerm = holdingYears >= 2;
+            
+            // Cost inflation index (simplified)
+            const costInflationIndex = {
+                2018: 280,
+                2019: 289,
+                2020: 301,
+                2021: 317,
+                2022: 331,
+                2023: 348
+            };
+            
+            // Calculate indexed cost
+            let indexedCost = purchasePrice;
+            if (isLongTerm && costInflationIndex[purchaseYear] && costInflationIndex[saleYear]) {
+                indexedCost = purchasePrice * (costInflationIndex[saleYear] / costInflationIndex[purchaseYear]);
+            }
+            
+            // Total cost basis
+            const totalCost = indexedCost + improvementCost;
+            
+            // Calculate capital gains
+            const capitalGains = Math.max(0, salePrice - totalCost);
+            
+            // Determine tax rate
+            const taxRate = isLongTerm ? 0.20 : 0.30;
+            const taxLiability = capitalGains * taxRate;
+            
+            // Display results
+            document.getElementById('holding-period').textContent = holdingYears + ' year' + (holdingYears !== 1 ? 's' : '');
+            document.getElementById('indexed-cost').textContent = '₹' + totalCost.toLocaleString('en-IN');
+            document.getElementById('capital-gains-amount').textContent = '₹' + capitalGains.toLocaleString('en-IN');
+            document.getElementById('tax-rate').textContent = (taxRate * 100) + '%';
+            document.getElementById('tax-liability').textContent = '₹' + taxLiability.toLocaleString('en-IN');
+            
+            // Show results
+            document.getElementById('gains-results').style.display = 'block';
+        });
+
+        // Property Tax Calculator
+        document.getElementById('calculate-property-tax').addEventListener('click', function() {
+            // Get input values
+            const municipality = document.getElementById('municipality').value;
+            const propertyArea = parseFloat(document.getElementById('property-area').value) || 0;
+            const propertyUsage = document.getElementById('property-usage').value;
+            const zone = document.getElementById('zone').value;
+            
+            // Calculate base value based on zone and usage
+            let baseValuePerSqft = 1000; // Default
+            
+            if (municipality === 'mumbai') {
+                baseValuePerSqft = zone === 'a' ? 5000 : 
+                                  zone === 'b' ? 4000 :
+                                  zone === 'c' ? 3000 : 2000;
+            } else if (municipality === 'delhi') {
+                baseValuePerSqft = zone === 'a' ? 4500 :
+                                  zone === 'b' ? 3500 :
+                                  zone === 'c' ? 2500 : 1500;
+            } else {
+                baseValuePerSqft = zone === 'a' ? 3000 :
+                                  zone === 'b' ? 2500 :
+                                  zone === 'c' ? 2000 : 1500;
+            }
+            
+            // Adjust for property usage
+            if (propertyUsage === 'commercial') baseValuePerSqft *= 1.5;
+            if (propertyUsage === 'industrial') baseValuePerSqft *= 1.2;
+            if (propertyUsage === 'vacant') baseValuePerSqft *= 0.7;
+            
+            // Calculate base value
+            const baseValue = propertyArea * baseValuePerSqft;
+            
+            // Determine tax rate
+            let taxRate = 0.005; // Default 0.5%
+            if (municipality === 'mumbai') taxRate = 0.006;
+            if (municipality === 'delhi') taxRate = 0.007;
+            if (propertyUsage === 'commercial') taxRate *= 1.5;
+            
+            // Calculate taxes
+            const annualTax = baseValue * taxRate;
+            const quarterlyTax = annualTax / 4;
+            
+            // Display results
+            document.getElementById('tax-rate-display').textContent = (taxRate * 100).toFixed(2) + '%';
+            document.getElementById('base-value').textContent = '₹' + baseValue.toLocaleString('en-IN');
+            document.getElementById('annual-tax').textContent = '₹' + annualTax.toLocaleString('en-IN');
+            document.getElementById('quarterly-tax').textContent = '₹' + quarterlyTax.toLocaleString('en-IN');
+            
+            // Show results
+            document.getElementById('property-tax-results').style.display = 'block';
+        });
+
+        // Initialize first calculator on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('calculate-stamp').click();
+        });
+    </script>
+</body>
+</html>

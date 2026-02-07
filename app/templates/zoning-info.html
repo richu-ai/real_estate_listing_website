@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive guide to land zoning regulations and classifications for property buyers and developers">
+    <title>Zoning Information | Prime Land Properties</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #c7232e;
+            --secondary-color: #556b2f;
+            --accent-color: #e5ede6;
+            --light-color: #f8f9fa;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --border-radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lato', sans-serif;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+
+        body {
+            background-color: #f9f9f7;
+            color: var(--text-color);
+            line-height: 1.6;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        header h1 span {
+            color: var(--accent-color);
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        nav a.active {
+            background-color: var(--accent-color);
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .breadcrumb {
+            padding: 1rem 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .page-header {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .page-header h2 {
+            font-size: 2.2rem;
+            color: var(--secondary-color);
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            max-width: 800px;
+            margin: 0 auto;
+            color: #666;
+        }
+
+        .zoning-section {
+            background-color: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        .zoning-section h3 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .zoning-section h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .zoning-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .zoning-card {
+            border: 1px solid #eee;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .zoning-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .zoning-card-header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 1rem;
+            font-weight: 600;
+        }
+
+        .zoning-card-body {
+            padding: 1.5rem;
+        }
+
+        .zoning-card-body ul {
+            list-style: none;
+        }
+
+        .zoning-card-body li {
+            margin-bottom: 0.75rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .zoning-card-body li:before {
+            content: '\f054';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-size: 0.8rem;
+        }
+
+        .zoning-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        .zoning-table th {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: left;
+            padding: 1rem;
+        }
+
+        .zoning-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .zoning-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .zoning-table tr:hover {
+            background-color: #f0f0f0;
+        }
+
+        .zoning-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge-residential {
+            background-color: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .badge-commercial {
+            background-color: #e8f5e9;
+            color: #388e3c;
+        }
+
+        .badge-industrial {
+            background-color: #fff3e0;
+            color: #e65100;
+        }
+
+        .badge-agricultural {
+            background-color: #f3e5f5;
+            color: #8e24aa;
+        }
+
+        .badge-mixed {
+            background-color: #e0f7fa;
+            color: #00838f;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .action-button {
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+            text-align: center;
+        }
+
+        .primary-button {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .primary-button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .secondary-button {
+            background-color: white;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+
+        .secondary-button:hover {
+            background-color: #f0f0f0;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-question {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            transition: var(--transition);
+        }
+
+        .faq-question.active:after {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            display: none;
+            padding-top: 0.5rem;
+            color: #666;
+        }
+
+        .faq-answer.show {
+            display: block;
+        }
+
+        .contact-card {
+            background-color: var(--accent-color);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .contact-card i {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+        }
+
+        .contact-card-content h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+
+        .footer-column h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column ul li a {
+            color: var(--light-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .contact-card {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .zoning-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1><span>Prime</span> Land Properties</h1>
+                <nav>
+                    <a href="/h">Home</a>
+                    <a href="/l">Login</a>
+                    <a href="/register">Register</a>
+                    <a href="/zoning-info" class="active">Zoning Info</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="breadcrumb">
+                <a href="/h">Home</a> &raquo; <span>Zoning Information</span>
+            </div>
+
+            <div class="page-header">
+                <h2>Land Zoning Information</h2>
+                <p>Understanding zoning regulations is crucial when purchasing land. Our comprehensive guide helps you navigate the complexities of land use classifications and restrictions.</p>
+            </div>
+
+            <div class="zoning-section">
+                <h3>Common Zoning Classifications</h3>
+                <p>Zoning determines how a property can be used. Below are the most common zoning classifications you'll encounter:</p>
+                
+                <div class="zoning-grid">
+                    <div class="zoning-card">
+                        <div class="zoning-card-header" style="background-color: #1976d2;">
+                            Residential (R)
+                        </div>
+                        <div class="zoning-card-body">
+                            <ul>
+                                <li>Single-family homes</li>
+                                <li>Multi-family dwellings</li>
+                                <li>Mobile homes</li>
+                                <li>Subdivisions</li>
+                                <li>May include accessory buildings</li>
+                            </ul>
+                            <div style="margin-top: 1rem;">
+                                <span class="zoning-badge badge-residential">R-1</span>
+                                <span class="zoning-badge badge-residential">R-2</span>
+                                <span class="zoning-badge badge-residential">R-3</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="zoning-card">
+                        <div class="zoning-card-header" style="background-color: #388e3c;">
+                            Commercial (C)
+                        </div>
+                        <div class="zoning-card-body">
+                            <ul>
+                                <li>Retail stores</li>
+                                <li>Office buildings</li>
+                                <li>Hotels</li>
+                                <li>Restaurants</li>
+                                <li>Entertainment venues</li>
+                            </ul>
+                            <div style="margin-top: 1rem;">
+                                <span class="zoning-badge badge-commercial">C-1</span>
+                                <span class="zoning-badge badge-commercial">C-2</span>
+                                <span class="zoning-badge badge-commercial">C-3</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="zoning-card">
+                        <div class="zoning-card-header" style="background-color: #e65100;">
+                            Industrial (I)
+                        </div>
+                        <div class="zoning-card-body">
+                            <ul>
+                                <li>Manufacturing</li>
+                                <li>Warehouses</li>
+                                <li>Distribution centers</li>
+                                <li>Research facilities</li>
+                                <li>Heavy industry</li>
+                            </ul>
+                            <div style="margin-top: 1rem;">
+                                <span class="zoning-badge badge-industrial">I-1</span>
+                                <span class="zoning-badge badge-industrial">I-2</span>
+                                <span class="zoning-badge badge-industrial">I-3</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="zoning-card">
+                        <div class="zoning-card-header" style="background-color: #8e24aa;">
+                            Agricultural (A)
+                        </div>
+                        <div class="zoning-card-body">
+                            <ul>
+                                <li>Farming</li>
+                                <li>Ranching</li>
+                                <li>Forestry</li>
+                                <li>Vineyards</li>
+                                <li>Limited residential use</li>
+                            </ul>
+                            <div style="margin-top: 1rem;">
+                                <span class="zoning-badge badge-agricultural">A-1</span>
+                                <span class="zoning-badge badge-agricultural">A-2</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="zoning-card">
+                        <div class="zoning-card-header" style="background-color: #00838f;">
+                            Mixed-Use (MU)
+                        </div>
+                        <div class="zoning-card-body">
+                            <ul>
+                                <li>Combines residential & commercial</li>
+                                <li>Live-work spaces</li>
+                                <li>Urban developments</li>
+                                <li>Planned communities</li>
+                                <li>Transit-oriented</li>
+                            </ul>
+                            <div style="margin-top: 1rem;">
+                                <span class="zoning-badge badge-mixed">MU-1</span>
+                                <span class="zoning-badge badge-mixed">MU-2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="zoning-section">
+                <h3>Zoning Restrictions by Type</h3>
+                <p>The following table outlines common restrictions associated with each zoning classification:</p>
+                
+                <table class="zoning-table">
+                    <thead>
+                        <tr>
+                            <th>Zoning Type</th>
+                            <th>Allowed Uses</th>
+                            <th>Common Restrictions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Residential (R-1)</td>
+                            <td>Single-family homes</td>
+                            <td>Minimum lot size, setback requirements, height limits</td>
+                        </tr>
+                        <tr>
+                            <td>Commercial (C-2)</td>
+                            <td>Retail, offices, services</td>
+                            <td>Parking requirements, signage limits, operating hours</td>
+                        </tr>
+                        <tr>
+                            <td>Industrial (I-3)</td>
+                            <td>Manufacturing, warehouses</td>
+                            <td>Noise limits, environmental regulations, truck access</td>
+                        </tr>
+                        <tr>
+                            <td>Agricultural (A-1)</td>
+                            <td>Farming, ranching</td>
+                            <td>Minimum acreage, livestock limits, pesticide use</td>
+                        </tr>
+                        <tr>
+                            <td>Mixed-Use (MU-1)</td>
+                            <td>Residential/commercial mix</td>
+                            <td>Density limits, parking ratios, design standards</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="zoning-section">
+                <h3>Zoning Variance & Special Use Permits</h3>
+                <p>If your intended use doesn't comply with current zoning, you may need to apply for a variance or special use permit. The process typically involves:</p>
+                
+                <ul style="margin: 1.5rem 0; list-style-type: none;">
+                    <li style="margin-bottom: 1rem; position: relative; padding-left: 2rem;">
+                        <i class="fas fa-check-circle" style="color: var(--accent-color); position: absolute; left: 0; top: 0.2rem;"></i>
+                        <strong>Application Submission:</strong> Complete forms with detailed project description
+                    </li>
+                    <li style="margin-bottom: 1rem; position: relative; padding-left: 2rem;">
+                        <i class="fas fa-check-circle" style="color: var(--accent-color); position: absolute; left: 0; top: 0.2rem;"></i>
+                        <strong>Public Notice:</strong> Notification to adjacent property owners
+                    </li>
+                    <li style="margin-bottom: 1rem; position: relative; padding-left: 2rem;">
+                        <i class="fas fa-check-circle" style="color: var(--accent-color); position: absolute; left: 0; top: 0.2rem;"></i>
+                        <strong>Public Hearing:</strong> Presentation before zoning board
+                    </li>
+                    <li style="margin-bottom: 1rem; position: relative; padding-left: 2rem;">
+                        <i class="fas fa-check-circle" style="color: var(--accent-color); position: absolute; left: 0; top: 0.2rem;"></i>
+                        <strong>Board Decision:</strong> Approval, denial, or approval with conditions
+                    </li>
+                    <li style="margin-bottom: 1rem; position: relative; padding-left: 2rem;">
+                        <i class="fas fa-check-circle" style="color: var(--accent-color); position: absolute; left: 0; top: 0.2rem;"></i>
+                        <strong>Appeal Period:</strong> Typically 30 days to appeal decision
+                    </li>
+                </ul>
+                
+                <div class="contact-card">
+                    <i class="fas fa-file-alt"></i>
+                    <div class="contact-card-content">
+                        <h4>Need Help with Zoning?</h4>
+                        <p>Our zoning specialists can help you navigate the variance process and understand local regulations.</p>
+                        <div class="action-buttons" style="margin-top: 1rem;">
+                            <a href="tel:+919876543210" class="action-button primary-button">
+                                <i class="fas fa-phone"></i> Call Zoning Expert
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="zoning-section">
+                <h3>Zoning FAQ</h3>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How do I find out the zoning of a property?</div>
+                    <div class="faq-answer">
+                        <p>Zoning information is available through your local planning or zoning department. Many municipalities provide online zoning maps. You can also check the property's deed or contact the county assessor's office.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Can zoning laws change after I purchase property?</div>
+                    <div class="faq-answer">
+                        <p>Yes, zoning laws can change through a process called rezoning. However, existing structures typically enjoy "grandfather" protection, meaning they can continue their current use even if new zoning would prohibit it.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What's the difference between zoning and building codes?</div>
+                    <div class="faq-answer">
+                        <p>Zoning regulates land use (what you can build), while building codes regulate construction standards (how you build it). Both must be complied with for any development project.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How long does a zoning variance take to obtain?</div>
+                    <div class="faq-answer">
+                        <p>The variance process typically takes 2-4 months, depending on the municipality. Complex cases or appeals can take longer. Special use permits may require additional time for environmental reviews.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What are setback requirements?</div>
+                    <div class="faq-answer">
+                        <p>Setbacks specify how far structures must be from property lines, roads, or other features. They vary by zoning district and may have different requirements for front, side, and rear yards.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Land Buying</h3>
+                    <ul>
+                        <li><a href="buying-guide">Land Buying Guide</a></li>
+                        <li><a href="zoning-info">Zoning Information</a></li>
+                        <li><a href="financing">Land Loans</a></li>
+                        <li><a href="due-diligence">Due Diligence</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Land Selling</h3>
+                    <ul>
+                        <li><a href="/selling-process">Selling Process</a></li>
+                        <li><a href="/land-valuation">Valuation Tools</a></li>
+                        <li><a href="/tax-implications">Tax Implications</a></li>
+                        <li><a href="/listing-options">Listing Options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="/land-use">Land Use Planning</a></li>
+                        <li><a href="/environmental">Environmental Factors</a></li>
+                        <li><a href="/surveying">Surveying Info</a></li>
+                        <li><a href="/faq">Land Buying FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fas fa-phone-alt"></i></a>
+                    </div>
+                    <p style="margin-top: 1rem; color: #ccc;">Sign up for our Land Investor newsletter</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <b>2023 Prime Land Properties</b>. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // FAQ functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const answer = this.nextElementSibling;
+                answer.classList.toggle('show');
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Initialize first FAQ as open
+        document.addEventListener('DOMContentLoaded', function() {
+            const firstQuestion = document.querySelector('.faq-question');
+            if (firstQuestion) {
+                firstQuestion.classList.add('active');
+                firstQuestion.nextElementSibling.classList.add('show');
+            }
+        });
+    </script>
+</body>
+</html>

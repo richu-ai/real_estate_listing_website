@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive guide to land use planning, zoning regulations, and property development potential">
+    <title>Land Use Planning | Prime Land Properties</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #c7232e;
+            --secondary-color: #556b2f;
+            --accent-color: #e5ede6;
+            --light-color: #f8f9fa;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --border-radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lato', sans-serif;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+
+        body {
+            background-color: #f9f9f7;
+            color: var(--text-color);
+            line-height: 1.6;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        header h1 span {
+            color: var(--accent-color);
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        nav a.active {
+            background-color: var(--accent-color);
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .breadcrumb {
+            padding: 1rem 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h2 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            max-width: 800px;
+            margin: 0 auto;
+            color: #666;
+        }
+
+        .content-section {
+            background-color: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        .content-section h3 {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .content-section h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .content-section p {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .content-section ul {
+            margin: 1.5rem 0;
+        }
+
+        .content-section li {
+            margin-bottom: 1rem;
+            list-style-type: none;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .content-section li:before {
+            content: '\f054';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-size: 0.8rem;
+            top: 0.2rem;
+        }
+
+        .zoning-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .zoning-card {
+            background-color: var(--light-color);
+            border-left: 4px solid var(--accent-color);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .zoning-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .zoning-card h4 {
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .zoning-card h4 i {
+            color: var(--primary-color);
+        }
+
+        .zoning-card .allowed-uses {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px dashed #ddd;
+        }
+
+        .allowed-uses h5 {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .use-tag {
+            display: inline-block;
+            background-color: #f0f0f0;
+            color: var(--secondary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .use-tag.allowed {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .use-tag.restricted {
+            background-color: #fff3e0;
+            color: #e65100;
+        }
+
+        .use-tag.prohibited {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .process-steps:before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--accent-color);
+            z-index: 1;
+        }
+
+        .process-step {
+            display: flex;
+            gap: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            flex: 1;
+        }
+
+        .step-content h4 {
+            color: var(--secondary-color);
+            margin-bottom: 0.75rem;
+        }
+
+        .case-studies {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .case-study {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .case-study:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .case-study-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .case-study-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .case-study:hover .case-study-image img {
+            transform: scale(1.05);
+        }
+
+        .case-study-content {
+            padding: 1.5rem;
+        }
+
+        .case-study-content h4 {
+            color: var(--secondary-color);
+            margin-bottom: 0.75rem;
+        }
+
+        .case-study-content .location {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .case-study-content .outcome {
+            font-size: 0.9rem;
+            padding: 0.75rem;
+            background-color: #f5f5f5;
+            border-radius: var(--border-radius);
+            margin-top: 1rem;
+        }
+
+        .outcome.positive {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .outcome.negative {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+
+        .warning-box {
+            background-color: #fff8e1;
+            border-left: 4px solid #ffc107;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin: 2rem 0;
+        }
+
+        .warning-box h4 {
+            color: #ff9800;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .warning-box i {
+            color: #ff9800;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .action-button {
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+            text-align: center;
+        }
+
+        .primary-button {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .primary-button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .secondary-button {
+            background-color: white;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+
+        .secondary-button:hover {
+            background-color: #f0f0f0;
+        }
+
+        .faq-section {
+            margin-top: 3rem;
+        }
+
+        .faq-item {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question i {
+            transition: var(--transition);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding-bottom: 1.5rem;
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+
+        .footer-column h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column ul li a {
+            color: var(--light-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .page-header h2 {
+                font-size: 2rem;
+            }
+
+            .process-steps:before {
+                left: 19px;
+            }
+
+            .step-number {
+                width: 38px;
+                height: 38px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .process-step {
+                flex-direction: column;
+            }
+
+            .step-number {
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1><span>Prime</span> Land Properties</h1>
+                <nav>
+                    <a href="/h">Home</a>
+                    <a href="/l">Login</a>
+                    <a href="/register">Register</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="breadcrumb">
+                <a href="/h">Home</a> &raquo; <a href="/resources">Resources</a> &raquo; <span>Land Use Planning</span>
+            </div>
+
+            <div class="page-header">
+                <h2>Land Use Planning Guide</h2>
+                <p>Understanding zoning, permitted uses, and development potential for your property</p>
+            </div>
+
+            <div class="content-section">
+                <h3>Understanding Zoning Regulations</h3>
+                <p>Zoning laws dictate how land can be used in specific areas, affecting everything from the types of buildings allowed to density, height restrictions, and setback requirements. Before purchasing land or planning development, it's crucial to understand the zoning classification and how it impacts your intended use.</p>
+                
+                <div class="zoning-grid">
+                    <div class="zoning-card">
+                        <h4><i class="fas fa-home"></i> Residential</h4>
+                        <p>Designated for housing, ranging from single-family homes to high-density apartments.</p>
+                        <div class="allowed-uses">
+                            <h5>Allowed Uses</h5>
+                            <span class="use-tag allowed">Single-family</span>
+                            <span class="use-tag allowed">Multi-family</span>
+                            <span class="use-tag restricted">Home business</span>
+                            <span class="use-tag prohibited">Commercial</span>
+                        </div>
+                    </div>
+                    <div class="zoning-card">
+                        <h4><i class="fas fa-building"></i> Commercial</h4>
+                        <p>For business activities like retail stores, offices, restaurants, and hotels.</p>
+                        <div class="allowed-uses">
+                            <h5>Allowed Uses</h5>
+                            <span class="use-tag allowed">Retail</span>
+                            <span class="use-tag allowed">Office</span>
+                            <span class="use-tag restricted">Residential</span>
+                            <span class="use-tag prohibited">Industrial</span>
+                        </div>
+                    </div>
+                    <div class="zoning-card">
+                        <h4><i class="fas fa-industry"></i> Industrial</h4>
+                        <p>For manufacturing, warehousing, and other industrial activities.</p>
+                        <div class="allowed-uses">
+                            <h5>Allowed Uses</h5>
+                            <span class="use-tag allowed">Manufacturing</span>
+                            <span class="use-tag allowed">Warehousing</span>
+                            <span class="use-tag restricted">Office</span>
+                            <span class="use-tag prohibited">Residential</span>
+                        </div>
+                    </div>
+                    <div class="zoning-card">
+                        <h4><i class="fas fa-tractor"></i> Agricultural</h4>
+                        <p>For farming, ranching, and related agricultural uses.</p>
+                        <div class="allowed-uses">
+                            <h5>Allowed Uses</h5>
+                            <span class="use-tag allowed">Farming</span>
+                            <span class="use-tag allowed">Livestock</span>
+                            <span class="use-tag restricted">Agritourism</span>
+                            <span class="use-tag prohibited">Commercial</span>
+                        </div>
+                    </div>
+                    <div class="zoning-card">
+                        <h4><i class="fas fa-tree"></i> Conservation</h4>
+                        <p>Protected areas for environmental preservation and limited recreational use.</p>
+                        <div class="allowed-uses">
+                            <h5>Allowed Uses</h5>
+                            <span class="use-tag allowed">Recreation</span>
+                            <span class="use-tag restricted">Camping</span>
+                            <span class="use-tag prohibited">Development</span>
+                        </div>
+                    </div>
+                    <div class="zoning-card">
+                        <h4><i class="fas fa-random"></i> Mixed-Use</h4>
+                        <p>Combines residential, commercial, and sometimes industrial uses in one area.</p>
+                        <div class="allowed-uses">
+                            <h5>Allowed Uses</h5>
+                            <span class="use-tag allowed">Residential</span>
+                            <span class="use-tag allowed">Retail</span>
+                            <span class="use-tag restricted">Office</span>
+                            <span class="use-tag prohibited">Heavy Industry</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h3>Navigating the Land Use Approval Process</h3>
+                <p>Developing land often requires navigating a complex approval process. Understanding these steps can help you plan effectively and avoid costly delays.</p>
+                
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Pre-Application Research</h4>
+                            <p>Review zoning maps, comprehensive plans, and local ordinances. Identify any environmental constraints or protected areas.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Preliminary Consultation</h4>
+                            <p>Meet with planning department staff to discuss your project and identify potential issues or special requirements.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Application Submission</h4>
+                            <p>Prepare and submit all required documents, which may include surveys, environmental studies, site plans, and traffic impact analyses.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Public Review Process</h4>
+                            <p>Many projects require public hearings before planning commissions or zoning boards, with opportunities for community input.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Final Approval</h4>
+                            <p>Receive final decision with any conditions of approval. May require additional permits before construction can begin.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="warning-box">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Important Considerations</h4>
+                    <p>The approval process can take anywhere from 3 months for simple projects to over a year for complex developments. Always factor this timeline into your project planning and financing. Many applicants hire land use attorneys or professional planners to navigate the process.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h3>Case Studies: Land Use Successes & Challenges</h3>
+                <p>Real-world examples of land use planning and zoning challenges, and how they were resolved.</p>
+                
+                <div class="case-studies">
+                    <div class="case-study">
+                        <div class="case-study-image">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Residential Development">
+                        </div>
+                        <div class="case-study-content">
+                            <h4>Subdivision Approval</h4>
+                            <div class="location">
+                                <i class="fas fa-map-marker-alt"></i> Pune, Maharashtra
+                            </div>
+                            <p>20-acre parcel rezoned from agricultural to residential for 50-unit subdivision.</p>
+                            <div class="outcome positive">
+                                Approved with conditions for parkland dedication and road improvements.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="case-study">
+                        <div class="case-study-image">
+                            <img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Commercial Development">
+                        </div>
+                        <div class="case-study-content">
+                            <h4>Commercial Rezoning</h4>
+                            <div class="location">
+                                <i class="fas fa-map-marker-alt"></i> Hyderabad, Telangana
+                            </div>
+                            <p>Corner lot at major intersection sought commercial zoning in residential area.</p>
+                            <div class="outcome negative">
+                                Denied due to traffic concerns and neighborhood opposition.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="case-study">
+                        <div class="case-study-image">
+                            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Agricultural Land">
+                        </div>
+                        <div class="case-study-content">
+                            <h4>Agricultural Exception</h4>
+                            <div class="location">
+                                <i class="fas fa-map-marker-alt"></i> Nashik, Maharashtra
+                            </div>
+                            <p>Farm owner sought approval for agritourism activities in conservation zone.</p>
+                            <div class="outcome positive">
+                                Approved with limitations on visitor numbers and operating hours.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h3>Changing Zoning or Seeking Variances</h3>
+                <p>If your desired use doesn't conform to current zoning, you may need to apply for a rezoning or variance. This process varies by municipality but typically involves:</p>
+                
+                <ul>
+                    <li><strong>Rezoning:</strong> Permanently changes the zoning classification of a property. Requires showing the change aligns with the community's comprehensive plan.</li>
+                    <li><strong>Variance:</strong> Provides relief from specific zoning requirements (like setbacks or height limits) when strict compliance would cause undue hardship.</li>
+                    <li><strong>Special Use Permit:</strong> Allows a use that's not permitted by right but may be appropriate under certain conditions.</li>
+                    <li><strong>Conditional Use Permit:</strong> Similar to special use permit but often for more intensive uses with additional requirements.</li>
+                </ul>
+                
+                <div class="action-buttons">
+                    <a href="/zoning-info" class="action-button primary-button">Detailed Zoning Information</a>
+                    <a href="/contact" class="action-button secondary-button">Consult Our Experts</a>
+                </div>
+            </div>
+
+            <div class="faq-section">
+                <h3 style="color: var(--secondary-color); margin-bottom: 1.5rem;">Land Use Planning FAQs</h3>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do I find out the zoning of a property?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Zoning information is available through your local planning or zoning department. Many municipalities now provide online zoning maps where you can search by address or parcel ID. You can also contact the planning department directly for official zoning verification, which is recommended before purchasing property.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can zoning laws change after I purchase property?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, zoning can change through legislative actions by local governments. However, most jurisdictions provide protections for existing uses (called "grandfathering" or "nonconforming use rights"). If you purchase property with specific zoning, any changes typically won't affect your right to continue the existing use, but may limit future expansions or changes.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What's the difference between zoning and land use?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Zoning refers to the legal classification of land that dictates permissible uses, while land use describes the actual physical use of the land. Zoning is prescriptive (what can be done), while land use is descriptive (what is being done). There may be nonconforming land uses that existed before current zoning laws were established.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How can I challenge a zoning decision?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Zoning decisions can typically be appealed to a zoning board of appeals or through the court system. The process and timeline for appeals varies by jurisdiction. Most require filing within a specific period (often 30 days) after the decision. Consulting with a land use attorney is highly recommended when challenging zoning decisions.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Land Buying</h3>
+                    <ul>
+                        <li><a href="/buying-guide">Land Buying Guide</a></li>
+                        <li><a href="/zoning-info">Zoning Information</a></li>
+                        <li><a href="/financing">Land Loans</a></li>
+                        <li><a href="/due-diligence">Due Diligence</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Land Selling</h3>
+                    <ul>
+                        <li><a href="/selling-process">Selling Process</a></li>
+                        <li><a href="/land-valuation">Valuation Tools</a></li>
+                        <li><a href="/tax-implications">Tax Implications</a></li>
+                        <li><a href="/listing-options">Listing Options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="land-use.html">Land Use Planning</a></li>
+                        <li><a href="environmental.html">Environmental Factors</a></li>
+                        <li><a href="surveying.html">Surveying Info</a></li>
+                        <li><a href="faq.html">Land Buying FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fas fa-phone-alt"></i></a>
+                    </div>
+                    <p style="margin-top: 1rem; color: #ccc;">Sign up for our Land Investor newsletter</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <b>2023 Prime Land Properties</b>. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // FAQ accordion functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const item = this.parentElement;
+                item.classList.toggle('active');
+                
+                // Close other open items
+                document.querySelectorAll('.faq-item').forEach(faq => {
+                    if (faq !== item && faq.classList.contains('active')) {
+                        faq.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // Case study hover effect
+        document.querySelectorAll('.case-study').forEach(study => {
+            study.addEventListener('mouseenter', function() {
+                this.querySelector('img').style.transform = 'scale(1.05)';
+            });
+            study.addEventListener('mouseleave', function() {
+                this.querySelector('img').style.transform = 'scale(1)';
+            });
+        });
+
+        // Initialize first FAQ item as open
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.faq-item').classList.add('active');
+        });
+    </script>
+</body>
+</html>

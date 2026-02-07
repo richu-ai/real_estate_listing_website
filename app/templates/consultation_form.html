@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>New Consultation</title>
+</head>
+<body>
+    <h1>Schedule a New Consultation</h1>
+    <form method="POST" action="{{ url_for('new_consultation') }}">
+        <label for="client_name">Client Name:</label><br />
+        <input type="text" id="client_name" name="client_name" required /><br /><br />
+
+        <label for="client_email">Client Email:</label><br />
+        <input type="email" id="client_email" name="client_email" required /><br /><br />
+
+        <label for="agent_id">Agent:</label><br />
+        <select id="agent_id" name="agent_id" required>
+            {% for agent in agents %}
+            <option value="{{ agent.id }}">{{ agent.name }} ({{ agent.email }})</option>
+            {% endfor %}
+        </select><br /><br />
+
+        <label for="date">Date:</label><br />
+        <input type="date" id="date" name="date" required /><br /><br />
+
+        <label for="notes">Notes:</label><br />
+        <textarea id="notes" name="notes" rows="4" cols="50"></textarea><br /><br />
+
+        <button type="submit">Submit Consultation</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive guide to land surveying - types of surveys, importance, and how to work with surveyors">
+    <title>Land Surveying Guide | Prime Land Properties</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #c7232e;
+            --secondary-color: #556b2f;
+            --accent-color: #e5ede6;
+            --light-color: #f8f9fa;
+            --dark-color: #2c3e50;
+            --text-color: #080000;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --border-radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lato', sans-serif;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+
+        body {
+            background-color: #f9f9f7;
+            color: var(--text-color);
+            line-height: 1.6;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        header h1 span {
+            color: var(--accent-color);
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        nav a.active {
+            background-color: var(--accent-color);
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .breadcrumb {
+            padding: 1rem 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h2 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            max-width: 800px;
+            margin: 0 auto;
+            color: #666;
+        }
+
+        .content-section {
+            background-color: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        .content-section h3 {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .content-section h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .content-section p {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .content-section ul {
+            margin: 1.5rem 0;
+        }
+
+        .content-section li {
+            margin-bottom: 1rem;
+            list-style-type: none;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .content-section li:before {
+            content: '\f054';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-size: 0.8rem;
+            top: 0.2rem;
+        }
+
+        .survey-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .survey-card {
+            background-color: var(--light-color);
+            border-left: 4px solid var(--accent-color);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .survey-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .survey-card h4 {
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .survey-card h4 i {
+            color: var(--primary-color);
+        }
+
+        .survey-card .survey-details {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px dashed #ddd;
+        }
+
+        .survey-details h5 {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .detail-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .detail-item .label {
+            color: #666;
+        }
+
+        .detail-item .value {
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .process-steps:before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--accent-color);
+            z-index: 1;
+        }
+
+        .process-step {
+            display: flex;
+            gap: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            flex: 1;
+        }
+
+        .step-content h4 {
+            color: var(--secondary-color);
+            margin-bottom: 0.75rem;
+        }
+
+        .survey-tools {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .tool-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .tool-card i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .tool-card h4 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .warning-box {
+            background-color: #fff8e1;
+            border-left: 4px solid #ffc107;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin: 2rem 0;
+        }
+
+        .warning-box h4 {
+            color: #ff9800;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .warning-box i {
+            color: #ff9800;
+        }
+
+        .cost-comparison {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        .cost-comparison th {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .cost-comparison td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cost-comparison tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .cost-comparison .highlight {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .action-button {
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+            text-align: center;
+        }
+
+        .primary-button {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .primary-button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .secondary-button {
+            background-color: white;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+
+        .secondary-button:hover {
+            background-color: #f0f0f0;
+        }
+
+        .faq-section {
+            margin-top: 3rem;
+        }
+
+        .faq-item {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question i {
+            transition: var(--transition);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding-bottom: 1.5rem;
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+
+        .footer-column h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column ul li a {
+            color: var(--light-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            background-color: rgba(148, 24, 24, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .page-header h2 {
+                font-size: 2rem;
+            }
+
+            .process-steps:before {
+                left: 19px;
+            }
+
+            .step-number {
+                width: 38px;
+                height: 38px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .process-step {
+                flex-direction: column;
+            }
+
+            .step-number {
+                margin-bottom: 1rem;
+            }
+
+            .cost-comparison {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1><span>Prime</span> Land Properties</h1>
+                <nav>
+                    <a href="/h">Home</a>
+                    <a href="/l">Login</a>
+                    <a href="/register">Register</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="breadcrumb">
+                <a href="/h">Home</a> &raquo; <a href="/resources">Resources</a> &raquo; <span>Surveying Information</span>
+            </div>
+
+            <div class="page-header">
+                <h2>Land Surveying Guide</h2>
+                <p>Essential information about property surveys - types, importance, and how to work with surveyors</p>
+            </div>
+
+            <div class="content-section">
+                <h3>Why Land Surveys Are Essential</h3>
+                <p>A professional land survey establishes your property's legal boundaries and identifies important features. Surveys protect your investment by preventing boundary disputes, identifying easements, and ensuring proper construction placement. They're often required for loans, construction permits, and property divisions.</p>
+                
+                <div class="survey-types">
+                    <div class="survey-card">
+                        <h4><i class="fas fa-ruler-combined"></i> Boundary Survey</h4>
+                        <p>Establishes the exact property corners and boundary lines. Essential for fencing, construction, and resolving disputes.</p>
+                        <div class="survey-details">
+                            <h5>Details</h5>
+                            <div class="detail-item">
+                                <span class="label">Typical Cost:</span>
+                                <span class="value">₹15,000 - ₹50,000</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Timeframe:</span>
+                                <span class="value">2-4 weeks</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">When Needed:</span>
+                                <span class="value">Purchasing, disputes, construction</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="survey-card">
+                        <h4><i class="fas fa-home"></i> Topographic Survey</h4>
+                        <p>Maps the elevation changes and natural features of a property. Required for site planning and engineering.</p>
+                        <div class="survey-details">
+                            <h5>Details</h5>
+                            <div class="detail-item">
+                                <span class="label">Typical Cost:</span>
+                                <span class="value">₹25,000 - ₹75,000</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Timeframe:</span>
+                                <span class="value">3-6 weeks</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">When Needed:</span>
+                                <span class="value">Construction planning, grading</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="survey-card">
+                        <h4><i class="fas fa-road"></i> ALTA/NSPS Survey</h4>
+                        <p>Comprehensive survey meeting national standards. Often required for commercial transactions and financing.</p>
+                        <div class="survey-details">
+                            <h5>Details</h5>
+                            <div class="detail-item">
+                                <span class="label">Typical Cost:</span>
+                                <span class="value">₹50,000 - ₹1,50,000</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Timeframe:</span>
+                                <span class="value">4-8 weeks</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">When Needed:</span>
+                                <span class="value">Commercial purchases, title insurance</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="survey-card">
+                        <h4><i class="fas fa-tint"></i> Flood Elevation Survey</h4>
+                        <p>Determines if property is in a flood zone and establishes base flood elevation. Required for flood insurance.</p>
+                        <div class="survey-details">
+                            <h5>Details</h5>
+                            <div class="detail-item">
+                                <span class="label">Typical Cost:</span>
+                                <span class="value">₹20,000 - ₹40,000</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Timeframe:</span>
+                                <span class="value">2-3 weeks</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">When Needed:</span>
+                                <span class="value">Flood zone properties, insurance</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="survey-card">
+                        <h4><i class="fas fa-vector-square"></i> Subdivision Survey</h4>
+                        <p>Divides a single property into multiple lots. Required for approval of new subdivisions.</p>
+                        <div class="survey-details">
+                            <h5>Details</h5>
+                            <div class="detail-item">
+                                <span class="label">Typical Cost:</span>
+                                <span class="value">₹75,000+</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Timeframe:</span>
+                                <span class="value">6-12 weeks</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">When Needed:</span>
+                                <span class="value">Land development, parcel splits</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="survey-card">
+                        <h4><i class="fas fa-search"></i> Location Survey</h4>
+                        <p>Simpler than boundary survey, shows improvement locations relative to boundaries. For zoning permits.</p>
+                        <div class="survey-details">
+                            <h5>Details</h5>
+                            <div class="detail-item">
+                                <span class="label">Typical Cost:</span>
+                                <span class="value">₹10,000 - ₹30,000</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Timeframe:</span>
+                                <span class="value">1-3 weeks</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">When Needed:</span>
+                                <span class="value">Permits, minor construction</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h3>The Surveying Process</h3>
+                <p>Understanding what to expect when commissioning a land survey helps ensure you get the results you need.</p>
+                
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Research & Preparation</h4>
+                            <p>The surveyor researches historical records, previous surveys, deeds, and title information to understand the property's history.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Field Work</h4>
+                            <p>Survey crew visits the property to locate boundary markers, measure distances and angles, and map physical features using specialized equipment.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Data Analysis</h4>
+                            <p>Surveyor analyzes field data against historical records to resolve any discrepancies and determine accurate boundary locations.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Monumentation</h4>
+                            <p>Physical markers (monuments) are placed or verified at property corners, typically metal rods or pipes with caps.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Final Plat Preparation</h4>
+                            <p>Surveyor prepares the official survey plat (map) showing boundaries, easements, improvements, and other relevant details.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <h4>Recording (If Required)</h4>
+                            <p>For some survey types, the final plat must be recorded with local government to become official.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="warning-box">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Survey Accuracy Matters</h4>
+                    <p>Not all surveys are created equal. Accuracy standards vary by survey type and purpose. For legal boundary establishment, ensure your survey meets "Minimum Standard Detail Requirements for Land Title Surveys" (or local equivalent). Always verify your surveyor's qualifications and insurance.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h3>Surveying Equipment & Technology</h3>
+                <p>Modern surveyors use sophisticated tools to achieve precise measurements and detailed mapping.</p>
+                
+                <div class="survey-tools">
+                    <div class="tool-card">
+                        <i class="fas fa-satellite-dish"></i>
+                        <h4>GPS/GNSS</h4>
+                        <p>Global positioning systems provide centimeter-level accuracy for establishing control points.</p>
+                    </div>
+                    <div class="tool-card">
+                        <i class="fas fa-laser"></i>
+                        <h4>Total Stations</h4>
+                        <p>Electronic distance and angle measurement devices with data recording capabilities.</p>
+                    </div>
+                    <div class="tool-card">
+                        <i class="fas fa-drone"></i>
+                        <h4>Drones</h4>
+                        <p>Aerial photogrammetry for topographic surveys and large area mapping.</p>
+                    </div>
+                    <div class="tool-card">
+                        <i class="fas fa-wave-square"></i>
+                        <h4>LIDAR</h4>
+                        <p>Laser scanning for highly detailed 3D mapping of terrain and structures.</p>
+                    </div>
+                    <div class="tool-card">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <h4>GIS Software</h4>
+                        <p>Geographic information systems for analyzing and presenting spatial data.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h3>Survey Cost Comparison</h3>
+                <p>Survey costs vary based on property size, terrain, vegetation, and location. Below are typical price ranges:</p>
+                
+                <table class="cost-comparison">
+                    <thead>
+                        <tr>
+                            <th>Survey Type</th>
+                            <th>Residential (1/4 acre)</th>
+                            <th>Residential (1 acre)</th>
+                            <th>Commercial (1 acre)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Boundary Survey</td>
+                            <td>₹15,000 - ₹25,000</td>
+                            <td>₹25,000 - ₹40,000</td>
+                            <td>₹40,000 - ₹75,000</td>
+                        </tr>
+                        <tr>
+                            <td>Topographic Survey</td>
+                            <td>₹25,000 - ₹40,000</td>
+                            <td>₹40,000 - ₹60,000</td>
+                            <td>₹60,000 - ₹1,00,000</td>
+                        </tr>
+                        <tr>
+                            <td>ALTA/NSPS Survey</td>
+                            <td>N/A</td>
+                            <td>₹50,000 - ₹75,000</td>
+                            <td class="highlight">₹75,000 - ₹1,50,000</td>
+                        </tr>
+                        <tr>
+                            <td>Location Survey</td>
+                            <td>₹10,000 - ₹20,000</td>
+                            <td>₹15,000 - ₹25,000</td>
+                            <td>₹25,000 - ₹40,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="action-buttons">
+                    <a href="/contact" class="action-button primary-button">Find a Surveyor</a>
+                    <a href="/buying-guide" class="action-button secondary-button">Back to Buying Guide</a>
+                </div>
+            </div>
+
+            <div class="faq-section">
+                <h3 style="color: var(--secondary-color); margin-bottom: 1.5rem;">Surveying FAQs</h3>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How often should I get my property surveyed?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Consider a new survey when: purchasing property (especially vacant land), before construction or major improvements, when selling or subdividing property, if boundary disputes arise, or if no survey exists or the existing one is outdated (more than 10-20 years old). Surveys don't expire, but physical markers can be disturbed or destroyed over time.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What's the difference between a mortgage survey and boundary survey?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>A mortgage survey (also called location survey) is a minimal survey often required by lenders to show the building's location relative to boundaries. It doesn't establish legal boundaries. A boundary survey is more comprehensive, locating and verifying property corners and lines, and is legally sufficient for resolving disputes and establishing property lines.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I use my neighbor's survey?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Generally no. Surveys are property-specific and not transferable. Even adjacent properties may have different boundary interpretations. Relying on someone else's survey could lead to costly mistakes. Always get your own survey from a licensed professional.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What should I look for when hiring a surveyor?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Verify the surveyor is licensed in your state, carries professional liability insurance, has experience with your type of property and survey needs, provides clear contracts outlining deliverables and costs, and has good references. Professional affiliations (like Institution of Surveyors in India) are also a good sign.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-column">
+                     <h3>Land Buying</h3>
+                    <ul>
+                        <li><a href="/buying-guide">Land Buying Guide</a></li>
+                        <li><a href="/zoning-info">Zoning Information</a></li>
+                        <li><a href="/financing">Land Loans</a></li>
+                        <li><a href="/due-diligence">Due Diligence</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Land Selling</h3>
+                    <ul>
+                        <li><a href="/selling-process">Selling Process</a></li>
+                        <li><a href="/land-valuation">Valuation Tools</a></li>
+                        <li><a href="/tax-implications">Tax Implications</a></li>
+                        <li><a href="/listing-options">Listing Options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="/land-use">Land Use Planning</a></li>
+                        <li><a href="/environmental">Environmental Factors</a></li>
+                        <li><a href="/surveying">Surveying Info</a></li>
+                        <li><a href="/faq">Land Buying FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fas fa-phone-alt"></i></a>
+                    </div>
+                    <p style="margin-top: 1rem; color: #ccc;">Sign up for our Land Investor newsletter</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <b>2023 Prime Land Properties</b>. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // FAQ accordion functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const item = this.parentElement;
+                item.classList.toggle('active');
+                
+                // Close other open items
+                document.querySelectorAll('.faq-item').forEach(faq => {
+                    if (faq !== item && faq.classList.contains('active')) {
+                        faq.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // Survey card hover effect
+        document.querySelectorAll('.survey-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.1)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'var(--shadow)';
+            });
+        });
+
+        // Initialize first FAQ item as open
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.faq-item').classList.add('active');
+        });
+    </script>
+</body>
+</html>

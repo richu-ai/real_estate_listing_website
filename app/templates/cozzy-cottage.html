@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover charming cozy cottages for sale in picturesque Indian locations">
+    <title>Charming Cozy Cottages | Real Estate Listing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #9a1a1a;
+            --secondary-color: #2e5d4c;
+            --accent-color: #ff9a76;
+            --light-color: #f8f9fa;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --border-radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Merriweather', Georgia, serif;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+
+        body {
+            background-color: #f8f5f2;
+            color: var(--text-color);
+            line-height: 1.6;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: 'Merriweather', serif;
+        }
+
+        header h1 span {
+            color: var(--accent-color);
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        nav a.active {
+            background-color: var(--accent-color);
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .page-header h2 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-family: 'Merriweather', serif;
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .page-header::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 1.5rem auto 0;
+        }
+
+        .property-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .property-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .property-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .property-image {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .property-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .property-card:hover .property-image img {
+            transform: scale(1.05);
+        }
+
+        .property-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 1;
+        }
+
+        .property-details {
+            padding: 1.5rem;
+        }
+
+        .property-details h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+            font-family: 'Merriweather', serif;
+        }
+
+        .property-price {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .property-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .property-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .property-meta i {
+            color: var(--accent-color);
+        }
+
+        .property-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .property-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-tag {
+            background-color: #f0f0f0;
+            color: var(--secondary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .view-details {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            width: 100%;
+            text-align: center;
+        }
+
+        .view-details:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 3rem;
+            gap: 0.5rem;
+        }
+
+        .pagination a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: white;
+            color: var(--dark-color);
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .pagination a.active, .pagination a:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+
+        .footer-column h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-family: 'Merriweather', serif;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column ul li a {
+            color: var(--light-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .page-header h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .property-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1><span>Cozzy</span> Cottages Collection</h1>
+                <nav>
+                    <a href="/h">Home</a>
+                    </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="page-header">
+                <h2><b>Discover Your Dream Cottage</b></h2>
+                <p>Explore our selection of charming cottages perfect for peaceful living in beautiful Indian locations</p>
+            </div>
+
+            <div class="property-grid">
+                <div class="property-card" onclick="location.href='cottage1.html'">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf" alt="Dal Lake Houseboat Cottage">
+                        <span class="property-badge">Featured</span>
+                    </div>
+                    <div class="property-details">
+                        <h3>Dal Lake Houseboat Cottage</h3>
+                        <div class="property-price">₹1.2 Crore</div>
+                        <div class="property-meta">
+                            <span><i class="fas fa-bed"></i> 2 Beds</span>
+                            <span><i class="fas fa-bath"></i> 1 Bath</span>
+                            <span><i class="fas fa-ruler-combined"></i> 1,200 sqft</span>
+                        </div>
+                        <p class="property-description">
+                            Traditional Kashmiri houseboat on Dal Lake with stunning mountain views. Features walnut wood carvings, handwoven carpets, and private deck.
+                        </p>
+                        <div class="property-features">
+                            <span class="feature-tag">Waterfront</span>
+                            <span class="feature-tag">Heritage</span>
+                            <span class="feature-tag">Mountain Views</span>
+                        </div>
+                        <a href="/cottage1" class="view-details">View Details</a>
+                    </div>
+                </div>
+
+                <div class="property-card" onclick="location.href='cottage2.html'">
+                    <div class="property-image">
+<img src="{{ url_for('static', filename='images/portugese.jpeg') }}" alt="Goan Portuguese Villa">
+                    </div>
+                    <div class="property-details">
+                        <h3>Goan Portuguese Villa</h3>
+                        <div class="property-price">₹1.8 Crore</div>
+                        <div class="property-meta">
+                            <span><i class="fas fa-bed"></i> 3 Beds</span>
+                            <span><i class="fas fa-bath"></i> 2 Baths</span>
+                            <span><i class="fas fa-ruler-combined"></i> 1,800 sqft</span>
+                        </div>
+                        <p class="property-description">
+                            Charming 19th century Portuguese-style villa in North Goa. Features terracotta roofs, azulejo tiles, and private coconut grove.
+                        </p>
+                        <div class="property-features">
+                            <span class="feature-tag">Heritage</span>
+                            <span class="feature-tag">Beach Access</span>
+                            <span class="feature-tag">Private Garden</span>
+                        </div>
+                        <a href="/cottage2" class="view-details">View Details</a>
+                    </div>
+                </div>
+
+                <div class="property-card" onclick="location.href='cottage3.html'">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1605283176568-9b41fde3672e" alt="Munnar Tea Estate Bungalow">
+                        <span class="property-badge">New Listing</span>
+                    </div>
+                    <div class="property-details">
+                        <h3>Munnar Tea Estate Bungalow</h3>
+                        <div class="property-price">₹2.5 Crore</div>
+                        <div class="property-meta">
+                            <span><i class="fas fa-bed"></i> 4 Beds</span>
+                            <span><i class="fas fa-bath"></i> 3 Baths</span>
+                            <span><i class="fas fa-ruler-combined"></i> 2,500 sqft</span>
+                        </div>
+                        <p class="property-description">
+                            Colonial-era planter's bungalow nestled in rolling tea gardens. Features wide verandas, fireplace, and panoramic valley views.
+                        </p>
+                        <div class="property-features">
+                            <span class="feature-tag">Tea Estate</span>
+                            <span class="feature-tag">Colonial</span>
+                            <span class="feature-tag">Mountain Views</span>
+                        </div>
+                        <a href="/cottage3" class="view-details">View Details</a>
+                    </div>
+                </div>
+
+                <div class="property-card" onclick="location.href='cottage4.html'">
+                    <div class="property-image">
+                        <img src="{{ url_for('static', filename='images/retreate.jpeg') }}" alt="Rishikesh Riverside Cottage">
+                    </div>
+                    <div class="property-details">
+                        <h3>Rishikesh Riverside Cottage</h3>
+                        <div class="property-price">₹95 Lakhs</div>
+                        <div class="property-meta">
+                            <span><i class="fas fa-bed"></i> 2 Beds</span>
+                            <span><i class="fas fa-bath"></i> 2 Baths</span>
+                            <span><i class="fas fa-ruler-combined"></i> 1,400 sqft</span>
+                        </div>
+                        <p class="property-description">
+                            Eco-friendly cottage on the banks of the Ganges. Features meditation deck, yoga shala, and direct access to the river.
+                        </p>
+                        <div class="property-features">
+                            <span class="feature-tag">Riverside</span>
+                            <span class="feature-tag">Eco-Friendly</span>
+                            <span class="feature-tag">Yoga Space</span>
+                        </div>
+                        <a href="/cottage4" class="view-details">View Details</a>
+                    </div>
+                </div>
+
+                <div class="property-card" onclick="location.href='cottage5.html'">
+                    <div class="property-image">
+                        <img src="{{ url_for('static', filename='images/pondi.jpeg') }}" alt="Pondicherry French Quarter Villa">
+                        <span class="property-badge">Heritage</span>
+                    </div>
+                    <div class="property-details">
+                        <h3>Pondicherry French Quarter Villa</h3>
+                        <div class="property-price">₹2.2 Crore</div>
+                        <div class="property-meta">
+                            <span><i class="fas fa-bed"></i> 3 Beds</span>
+                            <span><i class="fas fa-bath"></i> 2 Baths</span>
+                            <span><i class="fas fa-ruler-combined"></i> 2,000 sqft</span>
+                        </div>
+                        <p class="property-description">
+                            Elegant yellow villa in White Town with high ceilings, courtyard garden, and French colonial architecture. Walking distance to Promenade Beach.
+                        </p>
+                        <div class="property-features">
+                            <span class="feature-tag">Heritage</span>
+                            <span class="feature-tag">Beach Access</span>
+                            <span class="feature-tag">Courtyard</span>
+                        </div>
+                        <a href="/cottage5" class="view-details">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <ul>
+                        <li><a href="/about">Our Story</a></li>
+                        <li><a href="/team">Meet the Team</a></li>
+                        <li><a href="/testimonials">Client Stories</a></li>
+                        <li><a href="/blog">Cottage Living Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="/buy">Buy a Cottage</a></li>
+                        <li><a href="/sell">Sell Your Cottage</a></li>
+                        <li><a href="/rent">Vacation Rentals</a></li>
+                        <li><a href="/consultation">Design Consultation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="/faq">Cottage Buying FAQ</a></li>
+                        <li><a href="/guides">Country Living Guides</a></li>
+                        <li><a href="/financing">Financing Options</a></li>
+                        <li><a href="/maintenance">Cottage Care Tips</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                    <p style="margin-top: 1rem; color: #ccc;">Subscribe to our Cottage Life newsletter</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <b>2023 Cozy Cottages Realty</b>. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Enhanced property card interactions
+        document.querySelectorAll('.property-card').forEach(card => {
+            // Click handling
+            card.addEventListener('click', function(e) {
+                // Don't navigate if clicking on the view details button
+                if (!e.target.classList.contains('view-details')) {
+                    window.location.href = this.querySelector('a').getAttribute('href');
+                }
+            });
+
+            // Hover effects
+            card.addEventListener('mouseenter', function() {
+                this.querySelector('img').style.transform = 'scale(1.05)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.querySelector('img').style.transform = 'scale(1)';
+            });
+        });
+
+        // Pagination functionality
+        document.querySelectorAll('.pagination a').forEach(page => {
+            page.addEventListener('click', function(e) {
+                e.preventDefault();
+                // In a real app, this would load the appropriate page
+                document.querySelector('.pagination a.active').classList.remove('active');
+                this.classList.add('active');
+            });
+        });
+
+        // Would implement filter functionality here in a real application
+    </script>
+</body>
+</html>

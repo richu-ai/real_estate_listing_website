@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Search Results for "{{ query }}"</title>
+</head>
+<body>
+    <h1>Search Results for "{{ query }}"</h1>
+    {% if results %}
+        <ul>
+        {% for property in results %}
+            <li>
+                <h2>{{ property.title }}</h2>
+                <p>{{ property.description }}</p>
+                <p>Price: {{ property.price }}</p>
+                <a href="{{ url_for('property_detail', property_id=property.id) }}">View Details</a>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No properties found matching your search.</p>
+    {% endif %}
+    <a href="/properties">Back to Properties</a>
+</body>
+</html>

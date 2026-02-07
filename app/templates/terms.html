@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Terms of Service - Premium Real Estate Listings">
+    <title>Terms of Service | Premium Real Estate Listings</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            height: 100px;
+            width: auto;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        header h1 span {
+            color: var(--accent-color);
+        }
+
+        .logo-tagline {
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-top: 0.2rem;
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        nav a.active {
+            background-color: var(--accent-color);
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/terms-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .terms-content {
+            background-color: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            margin-bottom: 4rem;
+        }
+
+        .terms-content h2 {
+            color: var(--dark-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .terms-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .terms-content h3 {
+            color: var(--dark-color);
+            margin: 2rem 0 1rem;
+            font-size: 1.4rem;
+        }
+
+        .terms-content p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .terms-content ul {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+
+        .terms-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .last-updated {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 2rem;
+            text-align: right;
+        }
+
+        .contact-section {
+            background-color: var(--light-color);
+            padding: 3rem 2rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+
+        .contact-section p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .contact-btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+
+        .footer-column h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column ul li a {
+            color: var(--light-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .logo-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+
+            nav {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .page-header h2 {
+                font-size: 2rem;
+            }
+
+            .terms-content {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .terms-content {
+                padding: 1.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="C:\Users\Dell\Desktop\sample\logo.jpeg" alt="Premium Real Estate" class="logo">
+                    <div class="logo-text">
+                        <h1><span>Premium</span> Real Estate</h1>
+                        <p class="logo-tagline">Find your dream property</p>
+                    </div>
+                </div>
+                <nav>
+                    <a href="/h">Home</a>
+                    <a href="/about">About</a>
+                    <a href="/faq">FAQ</a>
+                    <a href="/terms" class="active">Terms</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="page-header">
+                <h2>Terms of <b>Service</b></h2>
+                <p>Please read these terms carefully before using our services</p>
+            </section>
+
+            <div class="terms-content">
+                <p class="last-updated">Last Updated: June 15, 2023</p>
+                
+                <h2>1. Introduction</h2>
+                <p>Welcome to Premium Real Estate Listings ("Company", "we", "our", "us"). These Terms of Service ("Terms", "Terms of Service") govern your use of our website located at www.premiumrealestate.com (together or individually "Service") operated by Premium Real Estate Listings.</p>
+                <p>By accessing or using the Service, you agree to be bound by these Terms. If you disagree with any part of the terms, then you may not access the Service.</p>
+
+                <h2>2. Definitions</h2>
+                <p>For the purposes of these Terms:</p>
+                <ul>
+                    <li>"Account" means a unique account created for you to access our Service.</li>
+                    <li>"Content" refers to content such as text, images, or other information that can be posted, uploaded, linked to or otherwise made available by you.</li>
+                    <li>"Service" refers to the website and all real estate services provided.</li>
+                    <li>"User", "You" and "Your" refers to you, the person accessing or using the Service.</li>
+                </ul>
+
+                <h2>3. User Responsibilities</h2>
+                <h3>3.1 Account Creation</h3>
+                <p>When you create an account with us, you must provide accurate, complete, and current information at all times. Failure to do so constitutes a breach of the Terms.</p>
+                
+                <h3>3.2 Acceptable Use</h3>
+                <p>You agree not to use the Service:</p>
+                <ul>
+                    <li>For any unlawful purpose or to violate any laws in your jurisdiction</li>
+                    <li>To harass, abuse, or harm others</li>
+                    <li>To impersonate any person or entity</li>
+                    <li>To upload or transmit viruses or any other malicious code</li>
+                    <li>To interfere with or disrupt the Service</li>
+                </ul>
+
+                <h2>4. Real Estate Services</h2>
+                <h3>4.1 Property Listings</h3>
+                <p>All property listings are provided for informational purposes only. While we strive for accuracy, we cannot guarantee that all information is complete, current, or error-free.</p>
+                
+                <h3>4.2 Agency Relationships</h3>
+                <p>Premium Real Estate Listings acts as a real estate broker in accordance with state laws. Specific agency relationships will be disclosed in writing as required by law.</p>
+                
+                <h3>4.3 Financial Responsibility</h3>
+                <p>Users are solely responsible for verifying all financial information, including but not limited to mortgage rates, property taxes, and insurance costs.</p>
+
+                <h2>5. Intellectual Property</h2>
+                <p>The Service and its original content, features, and functionality are and will remain the exclusive property of Premium Real Estate Listings and its licensors. The Service is protected by copyright, trademark, and other laws of both the United States and foreign countries.</p>
+                <p>Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of Premium Real Estate Listings.</p>
+
+                <h2>6. Privacy Policy</h2>
+                <p>Your use of the Service is also governed by our Privacy Policy, which explains how we collect, use, and protect your personal information. Please review our Privacy Policy at <a href="privacy.html">www.premiumrealestate.com/privacy</a>.</p>
+
+                <h2>7. Limitation of Liability</h2>
+                <p>In no event shall Premium Real Estate Listings, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from:</p>
+                <ul>
+                    <li>Your access to or use of or inability to access or use the Service</li>
+                    <li>Any conduct or content of any third party on the Service</li>
+                    <li>Any content obtained from the Service</li>
+                    <li>Unauthorized access, use or alteration of your transmissions or content</li>
+                </ul>
+
+                <h2>8. Termination</h2>
+                <p>We may terminate or suspend your account and bar access to the Service immediately, without prior notice or liability, under our sole discretion, for any reason whatsoever and without limitation, including but not limited to a breach of the Terms.</p>
+                <p>All provisions of the Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity and limitations of liability.</p>
+
+                <h2>9. Governing Law</h2>
+                <p>These Terms shall be governed and construed in accordance with the laws of Florida, United States, without regard to its conflict of law provisions.</p>
+                <p>Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect.</p>
+
+                <h2>10. Changes to Terms</h2>
+                <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
+                <p>By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.</p>
+
+                <h2>11. Contact Us</h2>
+                <p>If you have any questions about these Terms, please contact us at:</p>
+                <p>
+                    Premium Real Estate Listings<br>
+                    123 Luxury Avenue, Suite 500<br>
+                    Miami, FL 33139<br>
+                    Email: legal@premiumrealestate.com<br>
+                    Phone: (305) 555-1234
+                </p>
+            </div>
+
+            <section class="contact-section">
+                <h2>Questions About Our Terms?</h2>
+                <p>Our legal team is available to clarify any aspect of our Terms of Service.</p>
+                <a href="/contact" class="contact-btn">Contact Legal Department</a>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/team">Our Team</a></li>
+                        <li><a href="/careers">Careers</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="/buy">Buy Property</a></li>
+                        <li><a href="/sell">Sell Property</a></li>
+                        <li><a href="/rent">Rent Properties</a></li>
+                        <li><a href="/valuation">Property Valuation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="/contact">Contact Us</a></li>
+                        <li><a href="/faq">FAQ</a></li>
+                        <li><a href="/privacy">Privacy Policy</a></li>
+                        <li><a href="/terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <b>2023 Premium Real Estate Listings</b>. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Highlight current section in the navigation
+        const sections = document.querySelectorAll('h2[id]');
+        const navItems = document.querySelectorAll('nav a');
+
+        window.addEventListener('scroll', function() {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 300)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === `#${current}`) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
